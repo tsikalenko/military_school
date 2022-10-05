@@ -1,0 +1,20 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint==laptop {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint==tablet {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+}
+
+@mixin flex($dir: row, $align: center, $justify: center, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
