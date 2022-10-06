@@ -12,9 +12,9 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #999;
-  height: 100vh;
   position: relative;
+  min-height: 100vh;
+  min-width: 320px;
 }
 
 a {
