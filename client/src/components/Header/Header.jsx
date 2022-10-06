@@ -29,16 +29,16 @@ const Header = () => {
             </Link>
             <ul className={navClass}>
                 <li className='nav__item'>
-                    <Link to="#" className="nav__link">Все услуги</Link>
+                    <Link to="/all-courses" className="nav__link">Все услуги</Link>
                 </li>
                 <li className='nav__item'>
-                    <Link to="#" className="nav__link">Корпоративы</Link>
+                    <Link to="/team-building" className="nav__link">Корпоративы</Link>
                 </li>
                 <li className='nav__item'>
-                    <Link to="#" className="nav__link">Контакты</Link>
+                    <Link to="/contacts" className="nav__link">Контакты</Link>
                 </li>
                 <li className='nav__item nav__item--mobile nav__item--colored'>
-                    <Link to="#" className="nav__link">Регистрация</Link>
+                    <Link to="/registration" className="nav__link">Регистрация</Link>
                 </li>
                 <li className='nav__item nav__item--special'>
                     <a href="https://www.instagram.com/" target='_blank' className="nav__social">
