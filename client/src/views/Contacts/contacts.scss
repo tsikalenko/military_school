@@ -1,0 +1,73 @@
+@import "./src/utils/styles/colors";
+@import "./src/utils/styles/mixins";
+
+.contacts {
+  width: 100%;
+  padding: 0 20px;
+  color: $main-color;
+  margin: 80px 0 50px;
+  @include flex($dir: column);
+
+  @include respond(tablet) {
+    margin-top: 100px;
+  }
+
+  @include respond(laptop) {
+    margin-top: 150px;
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 50px 0 20px;
+  }
+
+  &__address {
+    font-size: 18px;
+    font-weight: 700;
+    display: block;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  &__phone {
+    @include flex();
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__icon {
+    font-size: 25px;
+    margin: 5px;
+
+    &--accent {
+      color: $accent-color;
+    }
+
+    &--violet {
+      color: #7360F2;
+    }
+
+    &--blue {
+      color: #2AABEE;
+    }
+
+    &--pink {
+      color: #F77737;
+    }
+  }
+
+  &__social {
+    margin-top: 20px;
+    font-size: 0;
+    @include flex();
+  }
+
+  &__username {
+    font-size: 16px;
+  }
+}
