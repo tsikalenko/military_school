@@ -1,5 +1,6 @@
 import {Route, Routes} from "react-router-dom";
 import Main from "../../views/Main";
+import Contacts from "../../views/Contacts";
 
 const Routing = () => {
     return (
@@ -8,7 +9,7 @@ const Routing = () => {
             <Route path="/registration" element={<p>Registration</p>}/>
             <Route path="/all-courses" element={<p>All courses</p>}/>
             <Route path="/team-building" element={<p>Team building</p>}/>
-            <Route path="/contacts" element={<p>Contacts</p>}/>
+            <Route path="/contacts" element={<Contacts/>}/>
         </Routes>
     );
 }

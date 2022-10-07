@@ -9,7 +9,8 @@ const Footer = () => {
                 <img src='../img/logo_white.png' alt='mail logo' className='footer__logo' width={150} height={107}/>
             </Link>
             <div className="footer__info">
-                <p className='footer__address'>Україна, Київ, вул. Набережно-Лугова, 6</p>
+                <a className='footer__address' target='_blank' href='https://goo.gl/maps/oSLHAgKbLhdpjrtBA'>Україна, Київ, вул. Хрещатик,
+                    1</a>
                 <div className="footer__contacts">
                     <BsTelephone className='footer__icon footer__icon--accent'/>
                     <a href="tel:+380123456789" className="footer__tel">+380123456789</a>
