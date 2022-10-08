@@ -30,13 +30,11 @@ const Header = () => {
     useEffect(() => {
         if (width < 1200 && isBurgerOpen) {
             document.addEventListener('click', function func(event) {
-                console.log(event.target.closest('a'));
                 if (
                     event.target.closest('a') ||
                     (!event.target.closest('header') &&
                         !event.target.closest('.header__burger'))
                 ) {
-                    console.log('test');
                     setIsBurgerOpen(false);
                     document.removeEventListener('click', func);
                 }
