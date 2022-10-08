@@ -20,6 +20,7 @@ const Footer = () => {
                         className='footer__address'
                         target='_blank'
                         href='https://goo.gl/maps/oSLHAgKbLhdpjrtBA'
+                        rel='noreferrer'
                     >
                         Україна, Київ, вул. Хрещатик, 1
                     </a>
