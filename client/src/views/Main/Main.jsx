@@ -1,8 +1,8 @@
 import {Link} from "react-router-dom";
-import MainSlider from "../../components/MainSlider";
 import MainInfo from "../../components/MainInfo";
 import './main.scss'
 import '../../utils/styles/_utils.scss'
+import Slider from "../../components/Slider";
 
 const Main = () => {
     return <>
@@ -16,7 +16,12 @@ const Main = () => {
                 <Link to='/all-courses' className='button button--border'>Наши курсы</Link>
                 <Link to='/registration' className='button button--accent'>Регистрация</Link>
                 <section className="main__info">
-                    <MainSlider/>
+                    <Slider slides={[
+                        {img: './img/1.JPG', alt: 'slide 1'},
+                        {img: './img/2.JPG', alt: 'slide 2'},
+                        {img: './img/7.JPG', alt: 'slide 3'},
+                        {img: './img/9.JPG', alt: 'slide 4'},
+                    ]}/>
                     <MainInfo/>
                 </section>
                 <section className="main__about">

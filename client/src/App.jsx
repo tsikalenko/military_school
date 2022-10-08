@@ -6,7 +6,7 @@ import '../src/utils/styles/_utils.scss'
 
 function App() {
     return (
-        <div className='app' style={{backgroundImage: 'url(/img/cover.jpg)',}}>
+        <div className='app' style={{backgroundImage: 'url(/img/cover2.jpg)',}}>
             <Header/>
             <Routing/>
             <Footer/>

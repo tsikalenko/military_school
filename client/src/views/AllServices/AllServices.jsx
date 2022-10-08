@@ -7,7 +7,7 @@ const AllServices = () => {
 
         <div className="services__item">
             <div className="services__photo">
-                <img src="./img/mainSlider(1).jpg" alt="service 1" className="services__img" width={280}/>
+                <img src="./img/1.JPG" alt="service 1" className="services__img" width={280}/>
             </div>
             <div className="services__info">
                 <h3 className="services__subtitle">Lorem ipsum</h3>
@@ -22,7 +22,7 @@ const AllServices = () => {
 
         <div className="services__item services__item--right">
             <div className="services__photo">
-                <img src="./img/mainSlider(2).jpg" alt="service 2" className="services__img" width={280}/>
+                <img src="./img/2.JPG" alt="service 2" className="services__img" width={280}/>
             </div>
 
             <div className="services__info">
@@ -36,7 +36,7 @@ const AllServices = () => {
 
         <div className="services__item">
             <div className="services__photo">
-                <img src="./img/mainSlider(3).jpg" alt="service 3" className="services__img" width={280}/>
+                <img src="./img/10.JPG" alt="service 3" className="services__img" width={280}/>
             </div>
 
             <div className="services__info">
@@ -50,7 +50,7 @@ const AllServices = () => {
 
         <div className="services__item services__item--right">
             <div className="services__photo">
-                <img src="./img/mainSlider(4).jpg" alt="service 4" className="services__img" width={280}/>
+                <img src="./img/4.JPG" alt="service 4" className="services__img" width={280}/>
             </div>
 
             <div className="services__info">
