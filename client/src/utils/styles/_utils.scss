@@ -5,6 +5,8 @@
   max-width: 1440px;
   margin: 0 auto;
   width: 100%;
+  padding: 0 20px;
+
 
   &--app {
     flex-grow: 1;
@@ -15,6 +17,7 @@
   min-height: 100vh;
   @include flex($dir: column, $justify: space-between);
   background: $bg-main-color top/200% no-repeat;
+  position: relative;
 
   @include respond(laptop) {
     background: $bg-main-color top/100% no-repeat;
