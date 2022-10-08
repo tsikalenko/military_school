@@ -41,9 +41,9 @@
 
 
   &__info{
+    padding: 0 20px;
     @include respond(laptop) {
       @include flex();
-      padding: 0 20px;
     }
   }
 

@@ -1,9 +1,10 @@
 @import "./src/utils/styles/colors";
 @import "./src/utils/styles/mixins";
 
-.mainSlider {
-  margin: 50px 20px 0;
+.slider {
+  margin: 50px 0;
   position: relative;
+  width: 100%;
 
   @include respond(tablet){
     margin: 70px auto;
@@ -12,7 +13,6 @@
 
   @include respond(laptop){
     margin: 70px auto;
-    //max-width: 800px;
   }
 
   &::before {
@@ -51,7 +51,14 @@
 }
 
 .swiper-button-next {
-  color: $accent-color
+  color: $accent-color;
+}
+
+.swiper-pagination-bullet{
+  opacity: 0.6;
+  border: 1px solid $main-color;
+  height: 10px;
+  width: 10px;
 }
 
 .swiper-pagination-bullet-active {
