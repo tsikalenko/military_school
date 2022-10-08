@@ -6,7 +6,6 @@ import * as path from "path";
 
 dotenv.config();
 
-const PORT = process.env.DB_PORT || 4000;
 const app = express();
 
 app.use(bp.json());
@@ -26,6 +25,8 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
+
+const PORT = process.env.DB_PORT || 3001;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
