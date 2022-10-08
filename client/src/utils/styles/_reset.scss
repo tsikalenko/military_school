@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+
   &:before {
     box-sizing: border-box;
   }
@@ -47,7 +48,8 @@ ul, dd {
   padding: 0;
   list-style: none;
 }
-ol{
+
+ol {
   margin: 0;
   padding: 0;
 }

@@ -1,3 +1,5 @@
+@import "colors";
+
 @mixin respond($breakpoint) {
   @if $breakpoint==laptop {
     @media only screen and (min-width: 1200px) {
@@ -19,7 +21,7 @@
   flex-wrap: $wrap;
 }
 
-@mixin green-bg(){
+@mixin green-bg() {
   &::before {
     content: "";
     display: block;

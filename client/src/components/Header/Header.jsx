@@ -30,13 +30,11 @@ const Header = () => {
     useEffect(() => {
         if (width < 1200 && isBurgerOpen) {
             document.addEventListener('click', function func(event) {
-                console.log(event.target.closest('a'));
                 if (
                     event.target.closest('a') ||
                     (!event.target.closest('header') &&
                         !event.target.closest('.header__burger'))
                 ) {
-                    console.log('test');
                     setIsBurgerOpen(false);
                     document.removeEventListener('click', func);
                 }
@@ -63,15 +61,6 @@ const Header = () => {
                         <GiHamburgerMenu className='header__img' />
                     </button>
                 )}
-                {/*{width < 1200 && isBurgerOpen && (*/}
-                {/*    <div*/}
-                {/*        className='header__bg'*/}
-                {/*        onClick={(event) => {*/}
-                {/*            console.log(event.currentTarget);*/}
-                {/*            // toggleBurger();*/}
-                {/*        }}*/}
-                {/*    ></div>*/}
-                {/*)}*/}
                 <Link to='/' className='header__link'>
                     <img
                         src='../img/logo_white.png'

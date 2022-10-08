@@ -8,11 +8,11 @@ import Registration from '../../views/Registration';
 const Routing = () => {
     return (
         <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/registration" element={<Registration />} />
-            <Route path="/all-courses" element={<AllServices />} />
-            <Route path="/team-building" element={<TeamBuilding />} />
-            <Route path="/contacts" element={<Contacts />} />
+            <Route path='/' element={<Main />} />
+            <Route path='/registration' element={<Registration />} />
+            <Route path='/all-courses' element={<AllServices />} />
+            <Route path='/team-building' element={<TeamBuilding />} />
+            <Route path='/contacts' element={<Contacts />} />
         </Routes>
     );
 };

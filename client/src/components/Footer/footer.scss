@@ -50,8 +50,8 @@
       @include flex($dir: column);
     }
 
-    &__link{
-      &:hover{
+    &__link {
+      &:hover {
         border-bottom: 2px solid $accent-color;
       }
     }
@@ -72,8 +72,9 @@
         border: 2px solid $accent-color;
         padding: 7px;
         cursor: pointer;
-        .nav__link{
-          &:hover{
+
+        .nav__link {
+          &:hover {
             border: 0;
           }
         }
