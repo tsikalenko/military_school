@@ -1,3 +1,3 @@
-import TeamBuilding from './TeamBuilding'
+import TeamBuilding from './TeamBuilding';
 
 export default TeamBuilding;

@@ -63,15 +63,6 @@ const Header = () => {
                         <GiHamburgerMenu className='header__img' />
                     </button>
                 )}
-                {/*{width < 1200 && isBurgerOpen && (*/}
-                {/*    <div*/}
-                {/*        className='header__bg'*/}
-                {/*        onClick={(event) => {*/}
-                {/*            console.log(event.currentTarget);*/}
-                {/*            // toggleBurger();*/}
-                {/*        }}*/}
-                {/*    ></div>*/}
-                {/*)}*/}
                 <Link to='/' className='header__link'>
                     <img
                         src='../img/logo_white.png'

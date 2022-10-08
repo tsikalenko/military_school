@@ -1,3 +1,3 @@
-import AutoScrollToTop from "./AutoScrollToTop";
+import AutoScrollToTop from './AutoScrollToTop';
 
 export default AutoScrollToTop;

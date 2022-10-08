@@ -13,17 +13,8 @@
     @include flex($justify: space-between);
   }
 
-  &__burger{
+  &__burger {
     font-size: 0;
-  }
-
-  &__bg{
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    z-index: 1;
-    top: 0;
-    left: 0;
   }
 
   &__img {
@@ -38,7 +29,7 @@
     }
   }
 
-  &__link{
+  &__link {
     font-size: 0;
   }
 
@@ -122,8 +113,8 @@
       }
     }
 
-    &__link{
-      &:hover{
+    &__link {
+      &:hover {
         border-bottom: 2px solid $accent-color;
       }
     }
@@ -160,7 +151,8 @@
     &__icon {
       font-size: 20px;
       margin: 5px;
-      &--accent{
+
+      &--accent {
         color: $accent-color;
       }
     }

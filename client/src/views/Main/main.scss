@@ -8,7 +8,7 @@
 
   padding-top: 80px;
 
-  @include respond(tablet){
+  @include respond(tablet) {
     padding-top: 200px;
   }
 
@@ -20,7 +20,7 @@
     letter-spacing: 2px;
     text-align: center;
 
-    @include respond(tablet){
+    @include respond(tablet) {
       text-align: left;
     }
   }
@@ -30,7 +30,7 @@
     margin-top: 20px;
     text-align: center;
 
-    @include respond(tablet){
+    @include respond(tablet) {
       text-align: left;
       width: 80%;
       margin-bottom: 20px;
@@ -38,36 +38,37 @@
   }
 
 
-  &__info{
+  &__info {
     @include respond(laptop) {
       @include flex();
     }
   }
 
-  &__about{
+  &__about {
     margin: 50px 0;
   }
-  
-  &__subtitle{
+
+  &__subtitle {
     font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
 
-    @include respond(tablet){
+    @include respond(tablet) {
       text-align: left;
       margin-left: 30px;
     }
 
-    &--center{
+    &--center {
       text-align: center;
     }
 
-    &--large{
+    &--large {
       font-size: 30px;
     }
   }
-  &__text{
+
+  &__text {
     margin-top: 15px;
     color: $secondary-text-color;
   }

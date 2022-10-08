@@ -6,12 +6,12 @@
   position: relative;
   width: 100%;
 
-  @include respond(tablet){
+  @include respond(tablet) {
     margin: 70px auto;
     max-width: 600px;
   }
 
-  @include respond(laptop){
+  @include respond(laptop) {
     margin: 70px auto;
   }
 
@@ -30,7 +30,7 @@
   color: $accent-color;
 }
 
-.swiper-pagination-bullet{
+.swiper-pagination-bullet {
   opacity: 0.6;
   border: 1px solid $main-color;
   height: 10px;
