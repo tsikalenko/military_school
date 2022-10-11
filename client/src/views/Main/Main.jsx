@@ -36,11 +36,11 @@ const Main = () => {
                 <section className='main__info'>
                     <Slider
                         slides={[
-                            { img: './img/mainSlider(1).jpg', alt: 'slide 1' },
-                            { img: './img/mainSlider(2).jpg', alt: 'slide 2' },
-                            { img: './img/mainSlider(3).jpg', alt: 'slide 3' },
-                            { img: './img/mainSlider(4).jpg', alt: 'slide 4' },
-                            { img: './img/mainSlider(5).jpg', alt: 'slide 5' },
+                            { img: './img/mainSlider1.jpg', alt: 'slide 1' },
+                            { img: './img/mainSlider2.jpg', alt: 'slide 2' },
+                            { img: './img/mainSlider3.jpg', alt: 'slide 3' },
+                            { img: './img/mainSlider4.jpg', alt: 'slide 4' },
+                            { img: './img/mainSlider5.jpg', alt: 'slide 5' },
                         ]}
                     />
                     <MainInfo />
