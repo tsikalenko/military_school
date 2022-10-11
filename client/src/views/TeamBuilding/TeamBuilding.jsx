@@ -10,11 +10,11 @@ const TeamBuilding = () => {
             <div className='team-building__header'>
                 <Slider
                     slides={[
-                        { img: './img/team-building(1).JPG', alt: 'slide 1' },
-                        { img: './img/team-building(2).JPG', alt: 'slide 2' },
-                        { img: './img/team-building(3).JPG', alt: 'slide 3' },
-                        { img: './img/team-building(4).JPG', alt: 'slide 4' },
-                        { img: './img/team-building(5).JPG', alt: 'slide 4' },
+                        { img: './img/team-building(1).jpg', alt: 'slide 1' },
+                        { img: './img/team-building(2).jpg', alt: 'slide 2' },
+                        { img: './img/team-building(3).jpg', alt: 'slide 3' },
+                        { img: './img/team-building(4).jpg', alt: 'slide 4' },
+                        { img: './img/team-building(5).jpg', alt: 'slide 4' },
                     ]}
                 />
 
