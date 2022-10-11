@@ -93,7 +93,7 @@ const Header = () => {
                     </li>
                     <li className='nav__item nav__item--special'>
                         <a
-                            href='https://www.instagram.com/'
+                            href='https://www.instagram.com/militaryschool_kyiv/'
                             target='_blank'
                             className='nav__social'
                             rel='noreferrer'

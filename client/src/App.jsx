@@ -7,7 +7,7 @@ function App() {
     return (
         <div
             className='app'
-            style={{ backgroundImage: 'url(/img/cover2.jpg)' }}
+            style={{ backgroundImage: 'url(/img/cover3.jpg)' }}
         >
             <Header />
             <Routing />
