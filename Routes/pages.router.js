@@ -1,5 +1,5 @@
 import Router from 'express';
-import PagesController from '../Controllers/pages.controller.js';
+import PagesController from '../controllers/pages.controller.js';
 import { check } from 'express-validator';
 
 const pageRouter = new Router();
