@@ -9,7 +9,7 @@ const AllServices = () => {
             <div className='services__item'>
                 <div className='services__photo'>
                     <img
-                        src='./img/1.JPG'
+                        src='./img/services(1).JPG'
                         alt='service 1'
                         className='services__img'
                         width={280}
@@ -36,7 +36,7 @@ const AllServices = () => {
             <div className='services__item services__item--right'>
                 <div className='services__photo'>
                     <img
-                        src='./img/2.JPG'
+                        src='./img/services(2).JPG'
                         alt='service 2'
                         className='services__img'
                         width={280}
@@ -64,7 +64,7 @@ const AllServices = () => {
             <div className='services__item'>
                 <div className='services__photo'>
                     <img
-                        src='./img/10.JPG'
+                        src='./img/services(3).JPG'
                         alt='service 3'
                         className='services__img'
                         width={280}
@@ -92,7 +92,7 @@ const AllServices = () => {
             <div className='services__item services__item--right'>
                 <div className='services__photo'>
                     <img
-                        src='./img/4.JPG'
+                        src='./img/services(4).JPG'
                         alt='service 4'
                         className='services__img'
                         width={280}

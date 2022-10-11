@@ -16,18 +16,22 @@ const Footer = () => {
                     />
                 </Link>
                 <div className='footer__info'>
-                    <a
-                        className='footer__address'
-                        target='_blank'
-                        href='https://goo.gl/maps/oSLHAgKbLhdpjrtBA'
-                        rel='noreferrer'
-                    >
-                        Україна, Київ, вул. Хрещатик, 1
-                    </a>
                     <div className='footer__contacts'>
                         <BsTelephone className='footer__icon footer__icon--accent' />
-                        <a href='tel:+380123456789' className='footer__tel'>
-                            +380123456789
+                        <a href='tel:+380953594482' className='footer__tel'>
+                            +380953594482
+                        </a>
+                    </div>
+                    <div className='footer__contacts'>
+                        <BsTelephone className='footer__icon footer__icon--accent' />
+                        <a href='tel:+380733594482' className='footer__tel'>
+                            +380733594482
+                        </a>
+                    </div>
+                    <div className='footer__contacts'>
+                        <BsTelephone className='footer__icon footer__icon--accent' />
+                        <a href='tel:+380677741949' className='footer__tel'>
+                            +380677741949
                         </a>
                     </div>
                 </div>

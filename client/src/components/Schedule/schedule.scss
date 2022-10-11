@@ -18,6 +18,11 @@
       margin: 30px 20px;
       padding: 50px 0;
     }
+
+    &:hover{
+      background-color: $bg-main-color-transparent-dark;
+      transition: 200ms;
+    }
   }
 
   &__title {

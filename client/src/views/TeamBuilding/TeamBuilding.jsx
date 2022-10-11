@@ -10,10 +10,11 @@ const TeamBuilding = () => {
             <div className='team-building__header'>
                 <Slider
                     slides={[
-                        { img: './img/9.JPG', alt: 'slide 1' },
-                        { img: './img/3.JPG', alt: 'slide 2' },
-                        { img: './img/5.JPG', alt: 'slide 3' },
-                        { img: './img/8.JPG', alt: 'slide 4' },
+                        { img: './img/team-building(1).JPG', alt: 'slide 1' },
+                        { img: './img/team-building(2).JPG', alt: 'slide 2' },
+                        { img: './img/team-building(3).JPG', alt: 'slide 3' },
+                        { img: './img/team-building(4).JPG', alt: 'slide 4' },
+                        { img: './img/team-building(5).JPG', alt: 'slide 4' },
                     ]}
                 />
 
@@ -31,7 +32,7 @@ const TeamBuilding = () => {
                     </p>
                     <HashLink
                         to='/team-building#form'
-                        className='button button--center button--accent'
+                        className='button button--center button--accent button--fifteen'
                     >
                         Заказать рассчет
                     </HashLink>

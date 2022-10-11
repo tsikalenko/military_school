@@ -11,11 +11,21 @@ const Main = () => {
             <div className='main container'>
                 <h2 className='main__title'>Military School</h2>
                 <p className='main__description'>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Adipisci asperiores culpa cumque, delectus ea, eaque
-                    explicabo ipsa ipsam molestias neque perferendis ratione
-                    temporibus vel voluptate voluptatum. Eum exercitationem
-                    maiores minus.
+                    Ваша підготовка - ваша БЕЗПЕКА!
+                    <br />
+                    <br />
+                    Military School - це школа тактичної підготовки та медицини
+                    для цивільних осіб.
+                    <br />
+                    <br />
+                    Ми про безпеку, про готовність до будь яких обставин життя.
+                    З нами ви отримаєте необхідні в сучасному житті навички,
+                    теоретичні та практичні знання для захисту себе та зможете
+                    тренуватись!
+                    <br />
+                    <br />
+                    Ваша БЕЗПЕКА - це знання, які запезбечують вашу впевненість
+                    у майбутньому!
                 </p>
                 <Link to='/all-courses' className='button button--border'>
                     Наши курсы
@@ -26,10 +36,11 @@ const Main = () => {
                 <section className='main__info'>
                     <Slider
                         slides={[
-                            { img: './img/1.JPG', alt: 'slide 1' },
-                            { img: './img/2.JPG', alt: 'slide 2' },
-                            { img: './img/7.JPG', alt: 'slide 3' },
-                            { img: './img/9.JPG', alt: 'slide 4' },
+                            { img: './img/mainSlider(1).jpg', alt: 'slide 1' },
+                            { img: './img/mainSlider(2).jpg', alt: 'slide 2' },
+                            { img: './img/mainSlider(3).jpg', alt: 'slide 3' },
+                            { img: './img/mainSlider(4).jpg', alt: 'slide 4' },
+                            { img: './img/mainSlider(5).jpg', alt: 'slide 5' },
                         ]}
                     />
                     <MainInfo />
