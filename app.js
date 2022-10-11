@@ -13,8 +13,8 @@ const app = express();
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
 
-app.use('/auth', usersRouter);
-app.use('/pages', pagesRouter);
+app.use('/api/auth', usersRouter);
+app.use('/api/pages', pagesRouter);
 
 mongoose
     .connect(
