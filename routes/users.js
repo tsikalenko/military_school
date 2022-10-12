@@ -1,5 +1,5 @@
 import Router from 'express';
-import UserController from '../Controllers/users.controller.js';
+import UserController from '../controllers/users.controller.js';
 import { check } from 'express-validator';
 
 const users = new Router();
