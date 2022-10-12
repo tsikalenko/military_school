@@ -75,3 +75,17 @@
 .accent {
   color: $accent-color;
 }
+
+.error, .loading {
+  color: $main-color;
+  margin: 120px 0 50px;
+  font-size: 30px;
+
+  @include respond(tablet) {
+    margin: 167px 0 50px;
+  }
+
+  @include respond(laptop) {
+    margin: 250px 0 50px;
+  }
+}

@@ -29,12 +29,12 @@ class PagesController {
 
     async readPage(req, res) {
         try {
-            const { name } = req.body;
+            const { name } = req.query;
             const page = await Pages.findOne({ name });
             if (page) {
                 return res.json(page);
             }
-            res.status(400).json({ message: 'User not found' });
+            res.status(400).json({ message: 'Page not found' });
         } catch (err) {
             res.status(400).json({ message: err.message });
         }
@@ -49,7 +49,7 @@ class PagesController {
             }
             const page = await Pages.find({ name });
 
-            if (name !== oldPage.username && page.length > 0) {
+            if (name !== oldPage.name && page.length > 0) {
                 return res
                     .status(400)
                     .json({ message: 'This page name is busy' });
@@ -78,7 +78,7 @@ class PagesController {
             const result = await Pages.deleteOne({ _id });
 
             if (result.deletedCount > 0) {
-                return res.json({ message: 'User was deleted' });
+                return res.json({ message: 'Page was deleted' });
             }
 
             res.status(400).json({ message: 'Something going wrong' });

@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import bp from 'body-parser';
 import * as path from 'path';
-// import pagesRouter from './routes/pages.router.js';
+import pagesRouter from './routes/pages.router.js';
 // import usersRouter from './routes/users.router.js';
 
 dotenv.config();
@@ -14,7 +14,7 @@ app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
 
 // app.use('/api/auth', usersRouter);
-// app.use('/api/pages', pagesRouter);
+app.use('/api/pages', pagesRouter);
 
 mongoose
     .connect(

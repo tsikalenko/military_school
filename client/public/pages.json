@@ -1,0 +1,41 @@
+[
+  {
+    "name": "main",
+    "data": {
+      "title": "MILITARY SCHOOL",
+      "description": "Ваша підготовка - ваша БЕЗПЕКА!\n\nMilitary School - це школа тактичної підготовки та медицини для цивільних осіб.\n\nМи про безпеку, про готовність до будь яких обставин життя. З нами ви отримаєте необхідні в сучасному житті навички, теоретичні та практичні знання для захисту себе та зможете тренуватись!\n\nВаша БЕЗПЕКА - це знання, які запезбечують вашу впевненість у майбутньому!",
+      "slider": [
+        {
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554629/military_school/mainSlider1_iwgln5.jpg",
+          "alt": "slide 1"
+        },
+        {
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554629/military_school/mainSlider2_wkwmjx.jpg",
+          "alt": "slide 2"
+        },
+        {
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554629/military_school/mainSlider3_tfz1dc.jpg",
+          "alt": "slide 3"
+        },
+        {
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/mainSlider4_zenm3x.jpg",
+          "alt": "slide 4"
+        },
+        {
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554631/military_school/mainSlider5_gpsqk4.jpg",
+          "alt": "slide 5"
+        }
+      ],
+      "info": {
+        "title": "LOREM IPSUM DOLOR",
+        "subtitle": "LOREM IPSUM DOLOR SIT AMET, CONSECTETUR",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci atque, minima! Consectetur dicta impedit laborum magnam nam neque, nihil, numquam pariatur quidem quis quisquam reiciendis similique voluptatem? Ad aliquam animi assumenda atque autem eaque facilis iusto magni minus nostrum obcaecati officia quae quod quos tempora, velit vero? Cumque, dolore, tenetur."
+      },
+      "text": {
+        "title": "LOREM IPSUM DOLOR SIT AMET",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci aliquam amet architecto atque, blanditiis deleniti earum esse eum excepturi explicabo id illum ipsum iste magnam maxime, minus molestias nemo nisi odio placeat quae quis repellat ullam ut vel vero. Adipisci amet consequuntur iure nostrum placeat sint tempora temporibus voluptatem voluptatum? Aliquam, dicta dolorem exercitationem id ipsa perferendis quas quasi repellat. Accusamus autem cupiditate dolores earum laudantium sunt tenetur? Adipisci architecto consectetur consequatur cum eveniet explicabo fuga harum id iure magni, maiores natus non obcaecati officiis quidem reiciendis temporibus? At corporis esse ex minus quisquam quo rerum sint temporibus."
+      }
+    },
+    "_id": "6346649328c5af6f3cda889b"
+  }
+]

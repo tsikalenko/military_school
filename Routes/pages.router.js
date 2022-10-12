@@ -15,7 +15,7 @@ pageRouter.post(
 
 pageRouter.get(
     '/',
-    [check('_id', "_id can't is empty").notEmpty()],
+    [check('name', "Name can't is empty").notEmpty()],
     PagesController.readPage
 );
 
