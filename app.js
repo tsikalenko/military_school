@@ -3,8 +3,8 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import bp from 'body-parser';
 import * as path from 'path';
-import pagesRouter from './routes1/pages.js';
-import usersRouter from './routes1/users.js';
+import pagesRouter from './routes/pages.js';
+import usersRouter from './routes/users.js';
 
 dotenv.config();
 
