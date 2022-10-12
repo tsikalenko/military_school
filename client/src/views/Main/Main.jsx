@@ -36,10 +36,10 @@ const Main = () => {
                     <h2 className='main__title'>{pageInfo.title}</h2>
                     <p className='main__description'>{pageInfo.description}</p>
                     <Link to='/all-courses' className='button button--border'>
-                        Наши курсы
+                        Наші курси
                     </Link>
                     <Link to='/registration' className='button button--accent'>
-                        Регистрация
+                        Записатися на тренування
                     </Link>
                     <section className='main__info'>
                         <Slider slides={pageInfo.slider} />
@@ -47,7 +47,7 @@ const Main = () => {
                     </section>
 
                     <h3 className='main__subtitle main__subtitle--center main__subtitle--large'>
-                        Nearest <span className='accent'>events</span>
+                        Найближчі <span className='accent'>події</span>
                     </h3>
                     <Schedule />
 

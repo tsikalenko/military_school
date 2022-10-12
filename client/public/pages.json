@@ -41,7 +41,7 @@
   {
     "name": "all-services",
     "data": {
-      "title": "All Services",
+      "title": "Усі послуги",
       "services": [
         {
           "title": "Lorem ipsum 1",
@@ -114,13 +114,47 @@
     "data": {
       "title": "Наші контакти",
       "phones": [
-        "+380953594482","+380733594482","+380677741949"
+        "+380953594482",
+        "+380733594482",
+        "+380677741949"
       ],
       "email": "militari.shop.ua@gmail.com",
       "telegram": "military_school",
       "viber": "380123456789",
-      "instagram": "military_school"
+      "instagram": "militaryschool_kyiv"
     },
-    "_id": "6346b31b8b2472669913cc76"
+    "_id": "6346ee810356bc8aa626ce23"
+  },
+  {
+    "name": "schedule",
+    "data": {
+      "events": [
+        {
+          "name": "Зброя",
+          "date": "дд.мм.рррр",
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg",
+          "link": "#"
+        },
+        {
+          "name": "Тактична медецина",
+          "date": "дд.мм.рррр",
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg",
+          "link": "#"
+        },
+        {
+          "name": "Оріентування",
+          "date": "дд.мм.рррр",
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg",
+          "link": "#"
+        },
+        {
+          "name": "Загальний курс",
+          "date": "дд.мм.рррр",
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg",
+          "link": "#"
+        }
+      ]
+    },
+    "_id": "6346f3fcdef5022b3aad23cc"
   }
 ]

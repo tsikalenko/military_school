@@ -73,22 +73,22 @@ const Header = () => {
                 <ul className={navClass}>
                     <li className='nav__item'>
                         <Link to='/all-courses' className='nav__link'>
-                            Все услуги
+                            Усі послуги
                         </Link>
                     </li>
                     <li className='nav__item'>
                         <Link to='/team-building' className='nav__link'>
-                            Корпоративы
+                            Корпоративи
                         </Link>
                     </li>
                     <li className='nav__item'>
                         <Link to='/contacts' className='nav__link'>
-                            Контакты
+                            Контакти
                         </Link>
                     </li>
                     <li className='nav__item nav__item--mobile nav__item--colored'>
                         <Link to='/registration' className='nav__link'>
-                            Регистрация
+                            Запис на тренування
                         </Link>
                     </li>
                     <li className='nav__item nav__item--special'>
@@ -114,7 +114,7 @@ const Header = () => {
                 >
                     <MdNoteAlt className='header__registration header__registration--img' />
                     <span className='header__registration header__registration--text'>
-                        Регистрация на игру
+                        Запис на тренування
                     </span>
                 </button>
             </div>

@@ -4,7 +4,7 @@ import './registration.scss';
 const Registration = () => {
     return (
         <div className='registration'>
-            <p className='registration__title'>All nearest events</p>
+            <p className='registration__title'>Усі найближчі події</p>
             <Schedule />
         </div>
     );

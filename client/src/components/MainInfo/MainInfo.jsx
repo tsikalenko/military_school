@@ -14,7 +14,7 @@ const MainInfo = ({ data }) => {
                 to='/team-building'
                 className='button button--accent button--center button--fifteen'
             >
-                Корпоративы
+                Корпоративи
             </Link>
         </div>
     );

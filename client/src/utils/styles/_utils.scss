@@ -80,6 +80,7 @@
   color: $main-color;
   margin: 120px 0 50px;
   font-size: 30px;
+  text-align: center;
 
   @include respond(tablet) {
     margin: 167px 0 50px;
