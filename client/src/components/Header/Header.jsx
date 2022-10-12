@@ -63,7 +63,7 @@ const Header = () => {
                 )}
                 <Link to='/' className='header__link'>
                     <img
-                        src='../img/logo_white.png'
+                        src='https://res.cloudinary.com/dkngcqeid/image/upload/v1665554629/military_school/logo_white_czn2zu.png'
                         alt='mail logo'
                         className='header__logo'
                         width={100}

@@ -7,7 +7,10 @@ function App() {
     return (
         <div
             className='app'
-            style={{ backgroundImage: 'url(/img/cover3.jpg)' }}
+            style={{
+                backgroundImage:
+                    'url(https://res.cloudinary.com/dkngcqeid/image/upload/v1665554629/military_school/cover3_ora3x2.jpg)',
+            }}
         >
             <Header />
             <Routing />

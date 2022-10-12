@@ -10,11 +10,26 @@ const TeamBuilding = () => {
             <div className='team-building__header'>
                 <Slider
                     slides={[
-                        { img: './img/team-building1.jpg', alt: 'slide 1' },
-                        { img: './img/team-building2.jpg', alt: 'slide 2' },
-                        { img: './img/team-building3.jpg', alt: 'slide 3' },
-                        { img: './img/team-building4.jpg', alt: 'slide 4' },
-                        { img: './img/team-building5.jpg', alt: 'slide 4' },
+                        {
+                            img: 'https://res.cloudinary.com/dkngcqeid/image/upload/v1665554632/military_school/team-building1_hjxfrx.jpg',
+                            alt: 'slide 1',
+                        },
+                        {
+                            img: 'https://res.cloudinary.com/dkngcqeid/image/upload/v1665554632/military_school/team-building2_kx8s7c.jpg',
+                            alt: 'slide 2',
+                        },
+                        {
+                            img: 'https://res.cloudinary.com/dkngcqeid/image/upload/v1665554632/military_school/team-building3_l82tl5.jpg',
+                            alt: 'slide 3',
+                        },
+                        {
+                            img: 'https://res.cloudinary.com/dkngcqeid/image/upload/v1665554631/military_school/team-building4_yvuxto.jpg',
+                            alt: 'slide 4',
+                        },
+                        {
+                            img: 'https://res.cloudinary.com/dkngcqeid/image/upload/v1665554633/military_school/team-building5_tufjd1.jpg',
+                            alt: 'slide 4',
+                        },
                     ]}
                 />
 

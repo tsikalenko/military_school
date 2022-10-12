@@ -9,7 +9,7 @@ const AllServices = () => {
             <div className='services__item'>
                 <div className='services__photo'>
                     <img
-                        src='./img/services1.jpg'
+                        src='https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/services1_skvtcl.jpg'
                         alt='service 1'
                         className='services__img'
                         width={280}
@@ -36,7 +36,7 @@ const AllServices = () => {
             <div className='services__item services__item--right'>
                 <div className='services__photo'>
                     <img
-                        src='./img/services2.jpg'
+                        src='https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/services2_d9mygg.jpg'
                         alt='service 2'
                         className='services__img'
                         width={280}
@@ -64,7 +64,7 @@ const AllServices = () => {
             <div className='services__item'>
                 <div className='services__photo'>
                     <img
-                        src='./img/services3.jpg'
+                        src='https://res.cloudinary.com/dkngcqeid/image/upload/v1665554631/military_school/services3_zmeyas.jpg'
                         alt='service 3'
                         className='services__img'
                         width={280}
@@ -92,7 +92,7 @@ const AllServices = () => {
             <div className='services__item services__item--right'>
                 <div className='services__photo'>
                     <img
-                        src='./img/services4.jpg'
+                        src='https://res.cloudinary.com/dkngcqeid/image/upload/v1665554631/military_school/services4_qaljuf.jpg'
                         alt='service 4'
                         className='services__img'
                         width={280}

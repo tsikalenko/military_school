@@ -36,11 +36,26 @@ const Main = () => {
                 <section className='main__info'>
                     <Slider
                         slides={[
-                            { img: './img/mainSlider1.jpg', alt: 'slide 1' },
-                            { img: './img/mainSlider2.jpg', alt: 'slide 2' },
-                            { img: './img/mainSlider3.jpg', alt: 'slide 3' },
-                            { img: './img/mainSlider4.jpg', alt: 'slide 4' },
-                            { img: './img/mainSlider5.jpg', alt: 'slide 5' },
+                            {
+                                img: 'https://res.cloudinary.com/dkngcqeid/image/upload/v1665554629/military_school/mainSlider1_iwgln5.jpg',
+                                alt: 'slide 1',
+                            },
+                            {
+                                img: 'https://res.cloudinary.com/dkngcqeid/image/upload/v1665554629/military_school/mainSlider2_wkwmjx.jpg',
+                                alt: 'slide 2',
+                            },
+                            {
+                                img: 'https://res.cloudinary.com/dkngcqeid/image/upload/v1665554629/military_school/mainSlider3_tfz1dc.jpg',
+                                alt: 'slide 3',
+                            },
+                            {
+                                img: 'https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/mainSlider4_zenm3x.jpg',
+                                alt: 'slide 4',
+                            },
+                            {
+                                img: 'https://res.cloudinary.com/dkngcqeid/image/upload/v1665554631/military_school/mainSlider5_gpsqk4.jpg',
+                                alt: 'slide 5',
+                            },
                         ]}
                     />
                     <MainInfo />

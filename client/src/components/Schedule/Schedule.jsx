@@ -8,7 +8,10 @@ const Schedule = () => {
             <Link
                 to='#'
                 className='schedule__item'
-                style={{ backgroundImage: 'url(/img/schedule.jpg)' }}
+                style={{
+                    backgroundImage:
+                        'url(https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg)',
+                }}
             >
                 <h3 className='schedule__title'>Open space</h3>
                 <p className='schedule__date'>dd.mm.yyyy</p>
@@ -16,7 +19,10 @@ const Schedule = () => {
             <Link
                 to='#'
                 className='schedule__item'
-                style={{ backgroundImage: 'url(/img/schedule.jpg)' }}
+                style={{
+                    backgroundImage:
+                        'url(https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg)',
+                }}
             >
                 <h3 className='schedule__title'>City</h3>
                 <p className='schedule__date'>dd.mm.yyyy</p>
@@ -24,7 +30,10 @@ const Schedule = () => {
             <Link
                 to='#'
                 className='schedule__item'
-                style={{ backgroundImage: 'url(/img/schedule.jpg)' }}
+                style={{
+                    backgroundImage:
+                        'url(https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg)',
+                }}
             >
                 <h3 className='schedule__title'>Forest</h3>
                 <p className='schedule__date'>dd.mm.yyyy</p>
@@ -32,7 +41,10 @@ const Schedule = () => {
             <Link
                 to='#'
                 className='schedule__item'
-                style={{ backgroundImage: 'url(/img/schedule.jpg)' }}
+                style={{
+                    backgroundImage:
+                        'url(https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg)',
+                }}
             >
                 <h3 className='schedule__title'>CQB</h3>
                 <p className='schedule__date'>dd.mm.yyyy</p>
