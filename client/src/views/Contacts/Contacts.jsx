@@ -3,8 +3,23 @@ import { FaViber, FaTelegramPlane } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
 import './contacts.scss';
 import '../../utils/styles/_utils.scss';
+import { useEffect, useState } from 'react';
+import { getPage } from '../../api/pagesAPI';
 
 const Contacts = () => {
+    const [pageInfo, setPageInfo] = useState({});
+    const [isErrorLoading, setIsErrorLoading] = useState(false);
+
+    useEffect(() => {
+        (async () => {
+            try {
+                setPageInfo((await getPage('team-building')).data);
+            } catch (err) {
+                setIsErrorLoading(true);
+            }
+        })();
+    }, []);
+
     return (
         <div className='contacts container'>
             <h2 className='contacts__title'>Our contacts</h2>

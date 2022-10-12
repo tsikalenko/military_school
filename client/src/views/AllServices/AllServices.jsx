@@ -1,122 +1,72 @@
-import './allServices.scss';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { getPage } from '../../api/pagesAPI';
+import classNames from 'classnames';
+
+import './allServices.scss';
 
 const AllServices = () => {
+    const [pageInfo, setPageInfo] = useState({});
+    const [isErrorLoading, setIsErrorLoading] = useState(false);
+
+    useEffect(() => {
+        (async () => {
+            try {
+                setPageInfo((await getPage('all-services')).data);
+            } catch (err) {
+                setIsErrorLoading(true);
+            }
+        })();
+    }, []);
+
+    const renderItems = () => {
+        return pageInfo.services.map((item, index) => {
+            const itemClass = classNames({
+                services__item: true,
+                'services__item--right': index % 2 !== 0,
+            });
+            return (
+                <div className={itemClass} key={item.title}>
+                    <div className='services__photo'>
+                        <img
+                            src={item.photo}
+                            alt={item.alt}
+                            className='services__img'
+                            width={280}
+                        />
+                    </div>
+                    <div className='services__info'>
+                        <h3 className='services__subtitle'>{item.title}</h3>
+                        <p className='services__text'>{item.description}</p>
+                        <Link
+                            to={item.link}
+                            className='button button--center button--accent'
+                        >
+                            More info
+                        </Link>
+                    </div>
+                </div>
+            );
+        });
+    };
+
     return (
-        <div className='services container'>
-            <h2 className='services__title'>All Services</h2>
+        <>
+            {isErrorLoading ? (
+                <h2 className='error'>
+                    Нажаль, виникла проблема зі завантаженням сторінки,
+                    спробуйте оновити сторінку
+                </h2>
+            ) : Object.keys(pageInfo).length === 0 ? (
+                <h2 className='loading'>Loading...</h2>
+            ) : (
+                <div className='services container'>
+                    <h2 className='services__title'>{pageInfo.title}</h2>
 
-            <div className='services__item'>
-                <div className='services__photo'>
-                    <img
-                        src='https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/services1_skvtcl.jpg'
-                        alt='service 1'
-                        className='services__img'
-                        width={280}
-                    />
+                    {renderItems()}
                 </div>
-                <div className='services__info'>
-                    <h3 className='services__subtitle'>Lorem ipsum</h3>
-                    <p className='services__text'>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Aspernatur distinctio dolorem dolores fuga magnam
-                        magni porro qui. Amet consectetur deserunt error est
-                        ipsam perspiciatis repellendus voluptas. Architecto
-                        excepturi rem soluta
-                    </p>
-                    <Link
-                        to='#'
-                        className='button button--center button--accent'
-                    >
-                        More info
-                    </Link>
-                </div>
-            </div>
-
-            <div className='services__item services__item--right'>
-                <div className='services__photo'>
-                    <img
-                        src='https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/services2_d9mygg.jpg'
-                        alt='service 2'
-                        className='services__img'
-                        width={280}
-                    />
-                </div>
-
-                <div className='services__info'>
-                    <h3 className='services__subtitle'>Lorem ipsum</h3>
-                    <p className='services__text'>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Accusamus dolores eligendi illo, modi neque nobis
-                        perspiciatis quos sequi suscipit tempore. Consectetur
-                        corporis doloribus ex iusto laborum pariatur quibusdam
-                        repellat, vel.
-                    </p>
-                    <Link
-                        to='#'
-                        className='button button--center button--accent'
-                    >
-                        More info
-                    </Link>
-                </div>
-            </div>
-
-            <div className='services__item'>
-                <div className='services__photo'>
-                    <img
-                        src='https://res.cloudinary.com/dkngcqeid/image/upload/v1665554631/military_school/services3_zmeyas.jpg'
-                        alt='service 3'
-                        className='services__img'
-                        width={280}
-                    />
-                </div>
-
-                <div className='services__info'>
-                    <h3 className='services__subtitle'>Lorem ipsum</h3>
-                    <p className='services__text'>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. A atque cupiditate fugit incidunt labore odio,
-                        suscipit unde! Amet architecto aut delectus dignissimos
-                        dolorum, ipsam, magni officiis quam quia quis
-                        temporibus!
-                    </p>
-                    <Link
-                        to='#'
-                        className='button button--center button--accent'
-                    >
-                        More info
-                    </Link>
-                </div>
-            </div>
-
-            <div className='services__item services__item--right'>
-                <div className='services__photo'>
-                    <img
-                        src='https://res.cloudinary.com/dkngcqeid/image/upload/v1665554631/military_school/services4_qaljuf.jpg'
-                        alt='service 4'
-                        className='services__img'
-                        width={280}
-                    />
-                </div>
-
-                <div className='services__info'>
-                    <h3 className='services__subtitle'>Lorem ipsum</h3>
-                    <p className='services__text'>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Ad aliquid blanditiis, eaque facilis impedit
-                        laudantium modi nesciunt officiis optio voluptates?
-                        Blanditiis distinctio eius facere impedit labore
-                        repellat saepe soluta sunt.
-                    </p>
-                    <Link
-                        to='#'
-                        className='button button--center button--accent'
-                    >
-                        More info
-                    </Link>
-                </div>
-            </div>
-        </div>
+            )}
+        </>
     );
 };
 
