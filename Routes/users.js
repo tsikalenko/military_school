@@ -2,9 +2,9 @@ import Router from 'express';
 import UserController from '../Controllers/users.controller.js';
 import { check } from 'express-validator';
 
-const usersRouter = new Router();
+const users = new Router();
 
-usersRouter.post(
+users.post(
     '/registration',
     [
         check('username', "Username can't is empty").notEmpty(),
@@ -21,13 +21,13 @@ usersRouter.post(
     UserController.userCreate
 );
 
-usersRouter.post(
+users.post(
     '/login',
     [check('token', "Token can't be empty").notEmpty()],
     UserController.getToken
 );
 
-usersRouter.put(
+users.put(
     '/user/update',
     [
         check('username', "Username can't be empty").notEmpty(),
@@ -44,16 +44,16 @@ usersRouter.put(
     UserController.updateUser
 );
 
-usersRouter.post(
+users.post(
     '/user',
     [check('token', "Token can't be empty").notEmpty()],
     UserController.getUser
 );
 
-usersRouter.delete(
+users.delete(
     '/user',
     [check('token', "Token can't be empty").notEmpty()],
     UserController.deleteUser
 );
 
-export default usersRouter;
+export default users;
