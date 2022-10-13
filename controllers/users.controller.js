@@ -40,13 +40,32 @@ class UserController {
                     .pbkdf2Sync(password, KEY, 7, 16, 'sha512')
                     .toString('hex');
                 if (user.password === hashPassword) {
-                    const token = jwt.sign({ userId: user._id }, KEY, {
-                        expiresIn: '24h',
-                    });
+                    const token = jwt.sign(
+                        {
+                            userId: user._id,
+                            username: user.username,
+                            isAdmin: user.isAdmin,
+                        },
+                        KEY,
+                        {
+                            expiresIn: '24h',
+                        }
+                    );
                     return res.json({ token });
                 }
             }
             return res.status(400).json({ message: 'wrong login or password' });
+        } catch (err) {
+            res.status(400).json({ message: err.message });
+        }
+    }
+
+    async isAdmin(req, res) {
+        try {
+            const { token } = req.body;
+            const { isAdmin } = jwt.verify(token, KEY);
+
+            return res.json({ isAdmin });
         } catch (err) {
             res.status(400).json({ message: err.message });
         }
