@@ -4,7 +4,6 @@ import Slider from '../../components/Slider';
 import Schedule from '../../components/Schedule';
 import { useEffect, useState } from 'react';
 import { getPage } from '../../api/pagesAPI';
-
 import './main.scss';
 import '../../utils/styles/_utils.scss';
 

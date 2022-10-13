@@ -30,6 +30,7 @@
     font-weight: 500;
     margin-top: 20px;
     text-align: center;
+    white-space: pre-wrap;
 
     @include respond(tablet) {
       text-align: left;
@@ -72,5 +73,9 @@
   &__text {
     margin-top: 15px;
     color: $secondary-text-color;
+  }
+
+  &__edit{
+    font-size: 30px;
   }
 }

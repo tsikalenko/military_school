@@ -8,38 +8,37 @@ users.post(
     '/registration',
     [
         check('username', "Username can't is empty").notEmpty(),
-        check('firstName', "First name can't is empty").notEmpty(),
-        check('lastName', "Last name can't is empty").notEmpty(),
-        check('email', "Email can't is empty").notEmpty(),
-        check('email', 'Wrong email syntax').isEmail(),
-        check('username', "Username can't is empty").notEmpty(),
         check(
             'password',
             'password must be longer then 4 chars but shorter 10'
-        ).isLength({ min: 4, max: 10 }),
+        ).isLength({ min: 4, max: 20 }),
     ],
     UserController.userCreate
 );
 
 users.post(
     '/login',
-    [check('token', "Token can't be empty").notEmpty()],
+    [
+        check('username', "Username can't is empty").notEmpty(),
+        check('password', "Password can't is empty").notEmpty(),
+    ],
     UserController.getToken
+);
+
+users.post(
+    '/admin',
+    [check('token', "Token can't is empty").notEmpty()],
+    UserController.isAdmin
 );
 
 users.put(
     '/user/update',
     [
         check('username', "Username can't be empty").notEmpty(),
-        check('firstName', "First name can't be empty").notEmpty(),
-        check('lastName', "Last name can't be empty").notEmpty(),
-        check('email', "Email can't be empty").notEmpty(),
-        check('email', 'Wrong email syntax').isEmail(),
-        check('username', "Username can't be empty").notEmpty(),
         check(
             'password',
             'password must be longer then 4 chars but shorter 10'
-        ).isLength({ min: 4, max: 10 }),
+        ).isLength({ min: 4, max: 20 }),
     ],
     UserController.updateUser
 );
