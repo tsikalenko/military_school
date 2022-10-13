@@ -1,0 +1,160 @@
+[
+  {
+    "name": "main",
+    "data": {
+      "title": "MILITARY SCHOOL",
+      "description": "Ваша підготовка - ваша БЕЗПЕКА!\n\nMilitary School - це школа тактичної підготовки та медицини для цивільних осіб.\n\nМи про безпеку, про готовність до будь яких обставин життя. З нами ви отримаєте необхідні в сучасному житті навички, теоретичні та практичні знання для захисту себе та зможете тренуватись!\n\nВаша БЕЗПЕКА - це знання, які запезбечують вашу впевненість у майбутньому!",
+      "slider": [
+        {
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554629/military_school/mainSlider1_iwgln5.jpg",
+          "alt": "slide 1"
+        },
+        {
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554629/military_school/mainSlider2_wkwmjx.jpg",
+          "alt": "slide 2"
+        },
+        {
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554629/military_school/mainSlider3_tfz1dc.jpg",
+          "alt": "slide 3"
+        },
+        {
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/mainSlider4_zenm3x.jpg",
+          "alt": "slide 4"
+        },
+        {
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554631/military_school/mainSlider5_gpsqk4.jpg",
+          "alt": "slide 5"
+        }
+      ],
+      "info": {
+        "title": "LOREM IPSUM DOLOR",
+        "subtitle": "LOREM IPSUM DOLOR SIT AMET, CONSECTETUR",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci atque, minima! Consectetur dicta impedit laborum magnam nam neque, nihil, numquam pariatur quidem quis quisquam reiciendis similique voluptatem? Ad aliquam animi assumenda atque autem eaque facilis iusto magni minus nostrum obcaecati officia quae quod quos tempora, velit vero? Cumque, dolore, tenetur."
+      },
+      "text": {
+        "title": "LOREM IPSUM DOLOR SIT AMET",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci aliquam amet architecto atque, blanditiis deleniti earum esse eum excepturi explicabo id illum ipsum iste magnam maxime, minus molestias nemo nisi odio placeat quae quis repellat ullam ut vel vero. Adipisci amet consequuntur iure nostrum placeat sint tempora temporibus voluptatem voluptatum? Aliquam, dicta dolorem exercitationem id ipsa perferendis quas quasi repellat. Accusamus autem cupiditate dolores earum laudantium sunt tenetur? Adipisci architecto consectetur consequatur cum eveniet explicabo fuga harum id iure magni, maiores natus non obcaecati officiis quidem reiciendis temporibus? At corporis esse ex minus quisquam quo rerum sint temporibus."
+      }
+    },
+    "_id": "6346649328c5af6f3cda889b"
+  },
+  {
+    "name": "all-services",
+    "data": {
+      "title": "Усі послуги",
+      "services": [
+        {
+          "title": "Lorem ipsum 1",
+          "photo": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/services1_skvtcl.jpg",
+          "alt": "service 1",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur distinctio dolorem dolores fuga magnam magni porro qui. Amet consectetur deserunt error est ipsam perspiciatis repellendus voluptas. Architecto excepturi rem soluta",
+          "link": "#"
+        },
+        {
+          "title": "Lorem ipsum 2",
+          "photo": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/services2_d9mygg.jpg",
+          "alt": "service 2",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dolores eligendi illo, modi neque nobis perspiciatis quos sequi suscipit tempore. Consectetur corporis doloribus ex iusto laborum pariatur quibusdam repellat, vel.",
+          "link": "#"
+        },
+        {
+          "title": "Lorem ipsum 3",
+          "photo": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554631/military_school/services3_zmeyas.jpg",
+          "alt": "service 3",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque cupiditate fugit incidunt labore odio, suscipit unde! Amet architecto aut delectus dignissimos dolorum, ipsam, magni officiis quam quia quis temporibus!",
+          "link": "#"
+        },
+        {
+          "title": "Lorem ipsum 4",
+          "photo": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554631/military_school/services4_qaljuf.jpg",
+          "alt": "service 4",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid blanditiis, eaque facilis impedit laudantium modi nesciunt officiis optio voluptates? Blanditiis distinctio eius facere impedit labore repellat saepe soluta sunt.",
+          "link": "#"
+        }
+      ]
+    },
+    "_id": "6346ac40bd99b0fcf5335169"
+  },
+  {
+    "name": "team-building",
+    "data": {
+      "title": "Корпоративи",
+      "slider": [
+        {
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554632/military_school/team-building1_hjxfrx.jpg",
+          "alt": "slide 1"
+        },
+        {
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554632/military_school/team-building2_kx8s7c.jpg",
+          "alt": "slide 2"
+        },
+        {
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554632/military_school/team-building3_l82tl5.jpg",
+          "alt": "slide 3"
+        },
+        {
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554631/military_school/team-building4_yvuxto.jpg",
+          "alt": "slide 4"
+        },
+        {
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554633/military_school/team-building5_tufjd1.jpg",
+          "alt": "slide 5"
+        }
+      ],
+      "info": {
+        "title": "Lorem ipsum dolor sit",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores consectetur dicta distinctio, dolores earum eius eos et eum, excepturi harum iste iusto laboriosam maiores molestiae neque nulla odio pariatur quas quasi quod reiciendis rem repellat repellendus saepe ullam unde."
+      },
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, nulla, quidem! Accusantium aliquam aut beatae distinctio eius error fugit maiores minima, mollitia nobis perferendis porro quibusdam quod, similique tempora. Ad architecto culpa eaque excepturi exercitationem illum, incidunt ipsam nostrum quidem rerum tempora ullam vitae voluptatum. Aspernatur optio, ullam. Accusantium aspernatur eligendi fugit incidunt nesciunt nisi numquam quas quisquam recusandae. Accusamus dignissimos inventore ipsa iure laborum rem sed. Accusantium ad, alias animi beatae commodi consectetur consequuntur cumque eaque et expedita in, itaque officia quidem rem sint sit unde. Ab accusantium, deserunt id itaque porro veniam! Harum nobis odit repudiandae totam ut\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit. A ad, animi asperiores assumenda autem beatae consequatur corporis, deserunt doloribus dolorum est excepturi iusto labore maxime nulla optio pariatur quae qui quibusdam quo recusandae, repellendus similique sint ut voluptas. Consequatur delectus, earum molestiae tenetur velit voluptatibus. Dolorem, fugiat laboriosam libero nemo perferendis quasi ut velit! Accusamus aliquam aperiam beatae cumque deleniti, earum eligendi eos et fugiat fugit ipsa iste iure laudantium mollitia natus similique tenetur. Dignissimos esse et laborum saepe sint."
+    },
+    "_id": "6346b31b8b2472669913cc76"
+  },
+  {
+    "name": "contacts",
+    "data": {
+      "title": "Наші контакти",
+      "phones": [
+        "+380953594482",
+        "+380733594482",
+        "+380677741949"
+      ],
+      "email": "militari.shop.ua@gmail.com",
+      "telegram": "military_school",
+      "viber": "380123456789",
+      "instagram": "militaryschool_kyiv"
+    },
+    "_id": "6346ee810356bc8aa626ce23"
+  },
+  {
+    "name": "schedule",
+    "data": {
+      "events": [
+        {
+          "name": "Зброя",
+          "date": "дд.мм.рррр",
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg",
+          "link": "#"
+        },
+        {
+          "name": "Тактична медецина",
+          "date": "дд.мм.рррр",
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg",
+          "link": "#"
+        },
+        {
+          "name": "Оріентування",
+          "date": "дд.мм.рррр",
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg",
+          "link": "#"
+        },
+        {
+          "name": "Загальний курс",
+          "date": "дд.мм.рррр",
+          "img": "https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg",
+          "link": "#"
+        }
+      ]
+    },
+    "_id": "6346f3fcdef5022b3aad23cc"
+  }
+]

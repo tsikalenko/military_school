@@ -1,55 +1,55 @@
 import './schedule.scss';
 import '../../utils/styles/_utils.scss';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { getPage } from '../../api/pagesAPI';
 
 const Schedule = () => {
+    const [pageInfo, setPageInfo] = useState({});
+    const [isErrorLoading, setIsErrorLoading] = useState(false);
+
+    useEffect(() => {
+        (async () => {
+            try {
+                setPageInfo((await getPage('schedule')).data);
+            } catch (err) {
+                setIsErrorLoading(true);
+            }
+        })();
+    }, []);
+
+    const renderEvents = () => {
+        return pageInfo.events.map((event) => {
+            return (
+                <Link
+                    //change to link
+                    key={event.name}
+                    to={event.link}
+                    className='schedule__item'
+                    style={{
+                        backgroundImage: `url("${event.img}")`,
+                    }}
+                >
+                    <h3 className='schedule__title'>{event.name}</h3>
+                    <p className='schedule__date'>{event.date}</p>
+                </Link>
+            );
+        });
+    };
+
     return (
-        <div className='schedule'>
-            <Link
-                to='#'
-                className='schedule__item'
-                style={{
-                    backgroundImage:
-                        'url(https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg)',
-                }}
-            >
-                <h3 className='schedule__title'>Open space</h3>
-                <p className='schedule__date'>dd.mm.yyyy</p>
-            </Link>
-            <Link
-                to='#'
-                className='schedule__item'
-                style={{
-                    backgroundImage:
-                        'url(https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg)',
-                }}
-            >
-                <h3 className='schedule__title'>City</h3>
-                <p className='schedule__date'>dd.mm.yyyy</p>
-            </Link>
-            <Link
-                to='#'
-                className='schedule__item'
-                style={{
-                    backgroundImage:
-                        'url(https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg)',
-                }}
-            >
-                <h3 className='schedule__title'>Forest</h3>
-                <p className='schedule__date'>dd.mm.yyyy</p>
-            </Link>
-            <Link
-                to='#'
-                className='schedule__item'
-                style={{
-                    backgroundImage:
-                        'url(https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg)',
-                }}
-            >
-                <h3 className='schedule__title'>CQB</h3>
-                <p className='schedule__date'>dd.mm.yyyy</p>
-            </Link>
-        </div>
+        <>
+            {isErrorLoading ? (
+                <h2 className='error'>
+                    Нажаль, виникла проблема зі завантаженням сторінки,
+                    спробуйте оновити сторінку
+                </h2>
+            ) : Object.keys(pageInfo).length === 0 ? (
+                <h2 className='loading'>Loading...</h2>
+            ) : (
+                <div className='schedule'>{renderEvents()}</div>
+            )}
+        </>
     );
 };
 

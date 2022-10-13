@@ -15,6 +15,7 @@
 
     @include respond(tablet) {
       max-width: 280px;
+      min-height: 230px;
       margin: 30px 20px;
       padding: 50px 0;
     }
@@ -31,6 +32,7 @@
     font-weight: 700;
     margin: 20px 0;
     letter-spacing: 1px;
+    text-align: center;
   }
 
   &__date {
