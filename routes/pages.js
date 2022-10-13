@@ -23,7 +23,6 @@ pageRouter.put(
     '/',
     [
         check('_id', "_id can't is empty").notEmpty(),
-        check('name', "Name can't is empty").notEmpty(),
         check('data', "Data can't is empty").notEmpty(),
     ],
     PagesController.updatePage

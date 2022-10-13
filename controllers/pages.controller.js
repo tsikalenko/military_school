@@ -42,22 +42,14 @@ class PagesController {
 
     async updatePage(req, res) {
         try {
-            const { _id, name, data } = req.body;
-            const oldPage = await Pages.findOne({ _id });
-            if (!oldPage) {
+            const { _id, data } = req.body;
+            const page = await Pages.findOne({ _id });
+            if (!page) {
                 return res.status(400).json({ message: 'Page not found' });
-            }
-            const page = await Pages.find({ name });
-
-            if (name !== oldPage.name && page.length > 0) {
-                return res
-                    .status(400)
-                    .json({ message: 'This page name is busy' });
             }
 
             const filter = { _id };
             const update = {
-                name,
                 data,
             };
 

@@ -4,6 +4,7 @@ import Contacts from '../../views/Contacts';
 import AllServices from '../../views/AllServices';
 import TeamBuilding from '../../views/TeamBuilding';
 import Registration from '../../views/Registration';
+import EditMain from '../../views/EditMain';
 
 const Routing = () => {
     return (
@@ -13,6 +14,9 @@ const Routing = () => {
             <Route path='/all-courses' element={<AllServices />} />
             <Route path='/team-building' element={<TeamBuilding />} />
             <Route path='/contacts' element={<Contacts />} />
+            <Route path='/edit/'>
+                <Route path='main' element={<EditMain />} />
+            </Route>
         </Routes>
     );
 };
