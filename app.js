@@ -6,6 +6,12 @@ import * as path from 'path';
 import pagesRouter from './routes/pages.js';
 import usersRouter from './routes/users.js';
 
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 dotenv.config();
 
 const app = express();
@@ -30,6 +36,7 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
 
     app.get('*', (req, res) => {
+        console.log(__dirname);
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
