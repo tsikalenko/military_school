@@ -27,7 +27,7 @@
     ],
     "react/jsx-uses-react": ["off"],
     "react/react-in-jsx-scope": ["off"],
-    "react/jsx-props-no-spreading": ["warn"],
+    "react/jsx-props-no-spreading": ["off"],
     "react/no-unknown-property": ["warn"],
     "no-shadow": "off",
     "no-unused-vars": [

@@ -3,9 +3,11 @@ import '../../utils/styles/_utils.scss';
 import '../../utils/styles/_edit.scss';
 import { login } from '../../api/userAPI';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const {
         register,
@@ -18,6 +20,7 @@ const Login = () => {
             try {
                 const { token } = await login(data.username, data.password);
                 localStorage.setItem('token', JSON.stringify(token));
+                navigate('/admin');
             } catch (err) {
                 setError(err.response.data.message);
             }

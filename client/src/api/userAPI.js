@@ -6,7 +6,6 @@ export const login = async (username, password) => {
 };
 
 export const admin = async (token) => {
-    console.log(token);
     const { data } = await axios.post('/auth/admin', { token });
     return data;
 };
