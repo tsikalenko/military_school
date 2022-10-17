@@ -39,7 +39,14 @@ class EventsController {
 
     async updateEvent(req, res) {
         try {
-            const { _id, title, date, description, fields, enable } = req.body;
+            const {
+                id: _id,
+                title,
+                date,
+                description,
+                fields,
+                enable,
+            } = req.body;
             const event = await Events.findOne({ _id });
             if (!event) {
                 return res.status(400).json({ message: 'Event not found' });

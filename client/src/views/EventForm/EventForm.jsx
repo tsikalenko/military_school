@@ -1,7 +1,7 @@
 import { useFieldArray, useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { createEvent, getEvent } from '../../api/eventsAPI';
+import { createEvent, getEvent, updateEvent } from '../../api/eventsAPI';
 
 import '../../utils/styles/_edit.scss';
 import '../../utils/styles/_utils.scss';
@@ -14,7 +14,7 @@ const EventForm = () => {
     const { eventID } = useParams();
 
     useEffect(() => reset(initialState), [initialState]);
-    console.log(initialState);
+    console.log(!!'0');
 
     useEffect(() => {
         if (eventID) {
@@ -90,7 +90,11 @@ const EventForm = () => {
     const onSubmit = (data) => {
         (async () => {
             try {
-                await createEvent({ ...data, enable: true });
+                if (eventID) {
+                    await updateEvent({ ...data, id: eventID });
+                } else {
+                    await createEvent({ ...data, enable: true });
+                }
                 navigate('/admin');
             } catch (err) {
                 setError(err.response.data.message);
@@ -99,75 +103,119 @@ const EventForm = () => {
     };
 
     return (
-        <div className='edit container'>
-            <h2 className='edit__title'>Створення форми події</h2>
-            <form onSubmit={handleSubmit(onSubmit)} className='edit__form'>
-                <div className='edit__item'>
-                    <label className='edit__label'>Назва події:</label>
-                    <input
-                        type='text'
-                        {...register('title', {
-                            required: true,
-                        })}
-                        className='edit__input edit__input--text'
-                    />
+        <>
+            {eventID && isErrorLoading ? (
+                <h2 className='error'>
+                    Нажаль, виникла проблема зі завантаженням сторінки,
+                    спробуйте оновити сторінку
+                </h2>
+            ) : eventID && Object.keys(initialState).length === 0 ? (
+                <h2 className='loading'>Loading...</h2>
+            ) : (
+                <div className='edit container'>
+                    <h2 className='edit__title'>Створення форми події</h2>
+                    <form
+                        onSubmit={handleSubmit(onSubmit)}
+                        className='edit__form'
+                    >
+                        {eventID && (
+                            <>
+                                <div className='edit__item'>
+                                    <label className='edit__label'>
+                                        Активна
+                                    </label>
+                                    <input
+                                        type='checkbox'
+                                        {...register('enable')}
+                                        // value={true}
+                                        name='enable'
+                                        className='edit__input edit__input--checkbox'
+                                    />
+                                </div>
+
+                                {/*<div className='edit__item'>*/}
+                                {/*    <label className='edit__label'>*/}
+                                {/*        Вимкнена*/}
+                                {/*    </label>*/}
+                                {/*    <input*/}
+                                {/*        type='radio'*/}
+                                {/*        {...register('enable')}*/}
+                                {/*        value={'false'}*/}
+                                {/*        name='enable'*/}
+                                {/*        className='edit__input edit__input--text'*/}
+                                {/*    />*/}
+                                {/*</div>*/}
+                            </>
+                        )}
+
+                        <div className='edit__item'>
+                            <label className='edit__label'>Назва події:</label>
+                            <input
+                                type='text'
+                                {...register('title', {
+                                    required: true,
+                                })}
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
+                        {errors?.title?.type === 'required' && (
+                            <p role='alert' className='edit__error'>
+                                Назва події обов{"'"}язкова
+                            </p>
+                        )}
+                        <div className='edit__item'>
+                            <label className='edit__label'>Опис події:</label>
+                            <textarea
+                                {...register('description', {
+                                    required: true,
+                                })}
+                                className='edit__input edit__input--textarea'
+                            />
+                        </div>
+                        {errors?.description?.type === 'required' && (
+                            <p role='alert' className='edit__error'>
+                                Опис події обов{"'"}язковий
+                            </p>
+                        )}
+
+                        <div className='edit__item'>
+                            <label className='edit__label'>Дата події:</label>
+                            <input
+                                type='text'
+                                {...register('date', {
+                                    required: true,
+                                })}
+                                placeholder='дд.мм.рррр'
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
+                        {errors?.date?.type === 'required' && (
+                            <p role='alert' className='edit__error'>
+                                Дата події обов{"'"}язкова
+                            </p>
+                        )}
+
+                        {renderFields()}
+
+                        {error && <p className='edit__error'>{error}</p>}
+
+                        <button
+                            className='button button--border'
+                            onClick={() => {
+                                append({});
+                            }}
+                        >
+                            Додати поле
+                        </button>
+                        <input
+                            type='submit'
+                            className='button button--accent'
+                            value={eventID ? 'Оновити' : 'Створити'}
+                        />
+                    </form>
                 </div>
-                {errors?.title?.type === 'required' && (
-                    <p role='alert' className='edit__error'>
-                        Назва події обов{"'"}язкова
-                    </p>
-                )}
-                <div className='edit__item'>
-                    <label className='edit__label'>Опис події:</label>
-                    <textarea
-                        {...register('description', {
-                            required: true,
-                        })}
-                        className='edit__input edit__input--textarea'
-                    />
-                </div>
-                {errors?.description?.type === 'required' && (
-                    <p role='alert' className='edit__error'>
-                        Опис події обов{"'"}язковий
-                    </p>
-                )}
-
-                <div className='edit__item'>
-                    <label className='edit__label'>Дата події:</label>
-                    <input
-                        type='text'
-                        {...register('date', {
-                            required: true,
-                        })}
-                        placeholder='дд.мм.рррр'
-                        className='edit__input edit__input--text'
-                    />
-                </div>
-                {errors?.date?.type === 'required' && (
-                    <p role='alert' className='edit__error'>
-                        Дата події обов{"'"}язкова
-                    </p>
-                )}
-
-                {renderFields()}
-
-                {error && <p className='edit__error'>{error}</p>}
-
-                <button
-                    className='button button--border'
-                    onClick={() => {
-                        append({});
-                    }}
-                >
-                    Додати поле
-                </button>
-                <input
-                    type='submit'
-                    className='button button--accent'
-                    value='Створити'
-                />
-            </form>
-        </div>
+            )}
+        </>
     );
 };
 

@@ -14,3 +14,8 @@ export const getEvent = async (eventID) => {
     const { data } = await axios.get(`/events?id=${eventID}`);
     return data;
 };
+
+export const updateEvent = async (eventData) => {
+    const { data } = await axios.put('/events', eventData);
+    return data;
+};

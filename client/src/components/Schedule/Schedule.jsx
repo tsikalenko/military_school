@@ -21,25 +21,29 @@ const Schedule = ({ type }) => {
 
     const renderEvents = () => {
         return events.map((event) => {
-            if (event.enable) {
-                return (
-                    <Link
-                        key={event._id}
-                        to={
-                            type === 'edit'
-                                ? `/edit/events/${event._id}`
-                                : `/events/${event._id}`
-                        }
-                        className='schedule__item'
-                        style={{
-                            backgroundImage:
-                                'url(https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg)',
-                        }}
-                    >
-                        <h3 className='schedule__title'>{event.title}</h3>
-                        <p className='schedule__date'>{event.date}</p>
-                    </Link>
-                );
+            const item = (
+                <Link
+                    key={event._id}
+                    to={
+                        type === 'edit'
+                            ? `/edit/events/${event._id}`
+                            : `/events/${event._id}`
+                    }
+                    className='schedule__item'
+                    style={{
+                        backgroundImage:
+                            'url(https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg)',
+                    }}
+                >
+                    <h3 className='schedule__title'>{event.title}</h3>
+                    <p className='schedule__date'>{event.date}</p>
+                </Link>
+            );
+            if (type !== 'edit' && event.enable) {
+                return item;
+            }
+            if (type === 'edit') {
+                return item;
             }
         });
     };

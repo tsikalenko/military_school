@@ -21,6 +21,7 @@ eventsRouter.get('/', EventsController.readEvent);
 eventsRouter.put(
     '/',
     [
+        check('id', "ID can't is empty").notEmpty(),
         check('title', "Title can't is empty").notEmpty(),
         check('date', "Date can't is empty").notEmpty(),
         check('fields', "Fields can't is empty").notEmpty(),
