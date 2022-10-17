@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const EventsSchema = new Schema(
     {
-        name: {
+        title: {
             type: Schema.Types.String,
             required: true,
         },
@@ -28,6 +28,6 @@ const EventsSchema = new Schema(
     { timestamps: true }
 );
 
-const Events = mongoose.model('pages', EventsSchema);
+const Events = mongoose.model('events', EventsSchema);
 
 export default Events;

@@ -14,7 +14,8 @@ import Login from '../../views/Login';
 import Edit from '../../views/Edit';
 import PrivateRoute from '../PrivateRoute';
 import Admin from '../../views/Admin/Admin';
-import EventCreator from '../../views/EventCreator';
+import EditEvents from '../../views/EditEvents';
+import EventForm from '../../views/EventForm';
 
 const Routing = () => {
     const setPrivateElement = (element) => (
@@ -50,10 +51,18 @@ const Routing = () => {
                     path='schedule'
                     element={setPrivateElement(<EditSchedule />)}
                 />
+                <Route
+                    path='events'
+                    element={setPrivateElement(<EditEvents />)}
+                />
+                <Route
+                    path='events/:eventID'
+                    element={setPrivateElement(<EventForm />)}
+                />
             </Route>
             <Route
                 path='/create-event'
-                element={setPrivateElement(<EventCreator />)}
+                element={setPrivateElement(<EventForm />)}
             />
 
             <Route path='*' element={<Page404 />} />

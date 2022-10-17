@@ -10,8 +10,8 @@ const Admin = () => {
             <Link to='/editor' className='button button--border'>
                 Редагувати сторінки
             </Link>
-            <Link to='/forms' className='button button--border'>
-                Редагувати форми
+            <Link to='/edit/events' className='button button--border'>
+                Редагувати події
             </Link>
             <button
                 onClick={() => {

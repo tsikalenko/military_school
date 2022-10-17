@@ -17,6 +17,6 @@ const ParticipantsSchema = new Schema(
     { timestamps: true }
 );
 
-const Participants = mongoose.model('pages', ParticipantsSchema);
+const Participants = mongoose.model('participants', ParticipantsSchema);
 
 export default Participants;

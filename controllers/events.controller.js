@@ -22,7 +22,12 @@ class EventsController {
     async readEvent(req, res) {
         try {
             const { id } = req.query;
-            const event = await Events.findOne({ _id: id });
+            let event;
+            if (id) {
+                event = await Events.findOne({ _id: id });
+            } else {
+                event = await Events.find();
+            }
             if (event) {
                 return res.json(event);
             }
@@ -34,7 +39,7 @@ class EventsController {
 
     async updateEvent(req, res) {
         try {
-            const { _id, name, date, description, fields, enable } = req.body;
+            const { _id, title, date, description, fields, enable } = req.body;
             const event = await Events.findOne({ _id });
             if (!event) {
                 return res.status(400).json({ message: 'Event not found' });
@@ -42,7 +47,7 @@ class EventsController {
 
             const filter = { _id };
             const update = {
-                name,
+                title,
                 date,
                 description,
                 fields,

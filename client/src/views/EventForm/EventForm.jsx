@@ -1,18 +1,49 @@
+import { useFieldArray, useForm } from 'react-hook-form';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { createEvent, getEvent } from '../../api/eventsAPI';
+
 import '../../utils/styles/_edit.scss';
 import '../../utils/styles/_utils.scss';
-import { useFieldArray, useForm } from 'react-hook-form';
 
-const EventCreator = () => {
+const EventForm = () => {
+    const [error, setError] = useState('');
+    const [initialState, setInitialState] = useState({});
+    const [isErrorLoading, setIsErrorLoading] = useState(false);
+    const navigate = useNavigate();
+    const { eventID } = useParams();
+
+    useEffect(() => reset(initialState), [initialState]);
+    console.log(initialState);
+
+    useEffect(() => {
+        if (eventID) {
+            getInitialState();
+        }
+    }, []);
+
     const {
         register,
         handleSubmit,
         control,
         formState: { errors },
-    } = useForm();
+        reset,
+    } = useForm({ defaultValues: initialState });
+
     const { fields, append, remove } = useFieldArray({
         control,
         name: 'fields',
     });
+
+    const getInitialState = () => {
+        (async () => {
+            try {
+                setInitialState(await getEvent(eventID));
+            } catch (err) {
+                setIsErrorLoading(true);
+            }
+        })();
+    };
 
     const renderFields = () => {
         return fields.map((item, index) => {
@@ -57,7 +88,14 @@ const EventCreator = () => {
     };
 
     const onSubmit = (data) => {
-        console.log('data:', data);
+        (async () => {
+            try {
+                await createEvent({ ...data, enable: true });
+                navigate('/admin');
+            } catch (err) {
+                setError(err.response.data.message);
+            }
+        })();
     };
 
     return (
@@ -112,6 +150,9 @@ const EventCreator = () => {
                 )}
 
                 {renderFields()}
+
+                {error && <p className='edit__error'>{error}</p>}
+
                 <button
                     className='button button--border'
                     onClick={() => {
@@ -130,4 +171,4 @@ const EventCreator = () => {
     );
 };
 
-export default EventCreator;
+export default EventForm;

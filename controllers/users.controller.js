@@ -11,7 +11,7 @@ class UserController {
             if (!errors.isEmpty()) {
                 return res
                     .status(400)
-                    .json({ message: 'Registration error', errors });
+                    .json({ message: 'EditEvents error', errors });
             }
             const { username, password } = req.body;
             const existingUser = await Users.findOne({ username });
