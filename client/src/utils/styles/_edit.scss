@@ -64,6 +64,7 @@
     margin-top: 15px;
     font-size: 18px;
     font-weight: 700;
+    text-align: center;
 
     &--sm {
       margin-top: 5px;
@@ -89,5 +90,12 @@
 
   &__error{
     color:#ff0000;
+    @include respond(tablet){
+      text-align: center;
+    }
+  }
+
+  &__block{
+    width: 100%;
   }
 }

@@ -9,6 +9,7 @@ eventsRouter.post(
     [
         check('name', "Name can't is empty").notEmpty(),
         check('date', "Date can't is empty").notEmpty(),
+        check('description', "Description can't is empty").notEmpty(),
         check('fields', "Fields can't is empty").notEmpty(),
         check('enable', "Enable can't is empty").notEmpty(),
     ],

@@ -20,6 +20,9 @@ const Edit = () => {
             <Link to='/edit/schedule' className='button button--border'>
                 Edit registration
             </Link>
+            <Link to='/admin' className='button button--border'>
+                Back
+            </Link>
         </div>
     );
 };

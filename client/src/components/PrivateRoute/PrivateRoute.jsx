@@ -20,7 +20,6 @@ const PrivateRoute = ({ children }) => {
             : setIsAdmin(false);
     }, []);
 
-    console.log(isAdmin);
     return isAdmin === null ? (
         <h2 className='loading'>Loading...</h2>
     ) : isAdmin ? (

@@ -14,6 +14,7 @@ import Login from '../../views/Login';
 import Edit from '../../views/Edit';
 import PrivateRoute from '../PrivateRoute';
 import Admin from '../../views/Admin/Admin';
+import EventCreator from '../../views/EventCreator';
 
 const Routing = () => {
     const setPrivateElement = (element) => (
@@ -50,6 +51,10 @@ const Routing = () => {
                     element={setPrivateElement(<EditSchedule />)}
                 />
             </Route>
+            <Route
+                path='/create-event'
+                element={setPrivateElement(<EventCreator />)}
+            />
 
             <Route path='*' element={<Page404 />} />
         </Routes>
