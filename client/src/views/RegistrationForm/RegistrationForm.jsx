@@ -1,19 +1,21 @@
 import '../../utils/styles/_edit.scss';
 import '../../utils/styles/_utils.scss';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getEvent } from '../../api/eventsAPI';
 import { useForm } from 'react-hook-form';
+import { createParticipant } from '../../api/paticipantsAPI';
 
 const RegistrationForm = () => {
-    const { eventID } = useParams();
+    const { eventId } = useParams();
     const [eventInfo, setEventInfo] = useState({});
     const [isErrorLoading, setIsErrorLoading] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         (async () => {
             try {
-                setEventInfo(await getEvent(eventID));
+                setEventInfo(await getEvent(eventId));
             } catch (err) {
                 setIsErrorLoading(true);
             }
@@ -50,7 +52,15 @@ const RegistrationForm = () => {
     };
 
     const onSubmit = (data) => {
-        console.log(data);
+        console.log({ data, eventId });
+        (async () => {
+            try {
+                await createParticipant({ eventId, data });
+                navigate('/gratitude');
+            } catch (err) {
+                setIsErrorLoading(true);
+            }
+        })();
     };
 
     return (

@@ -17,6 +17,7 @@ import Admin from '../../views/Admin/Admin';
 import EditEvents from '../../views/EditEvents';
 import EventForm from '../../views/EventForm';
 import RegistrationForm from '../../views/RegistrationForm';
+import Gratitude from '../../views/Gratitude';
 
 const Routing = () => {
     const setPrivateElement = (element) => (
@@ -30,7 +31,8 @@ const Routing = () => {
             <Route path='/all-courses' element={<AllServices />} />
             <Route path='/team-building' element={<TeamBuilding />} />
             <Route path='/contacts' element={<Contacts />} />
-            <Route path='/events/:eventID' element={<RegistrationForm />} />
+            <Route path='/events/:eventId' element={<RegistrationForm />} />
+            <Route path='/gratitude' element={<Gratitude />} />
 
             <Route path='/login' element={<Login />} />
             <Route path='/admin' element={setPrivateElement(<Admin />)} />

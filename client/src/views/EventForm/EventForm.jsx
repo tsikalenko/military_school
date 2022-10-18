@@ -113,7 +113,9 @@ const EventForm = () => {
                 <h2 className='loading'>Loading...</h2>
             ) : (
                 <div className='edit container'>
-                    <h2 className='edit__title'>Створення форми події</h2>
+                    <h2 className='edit__title'>
+                        {eventID ? 'Редагування події' : 'Створення події'}
+                    </h2>
                     <form
                         onSubmit={handleSubmit(onSubmit)}
                         className='edit__form'
@@ -132,19 +134,6 @@ const EventForm = () => {
                                         className='edit__input edit__input--checkbox'
                                     />
                                 </div>
-
-                                {/*<div className='edit__item'>*/}
-                                {/*    <label className='edit__label'>*/}
-                                {/*        Вимкнена*/}
-                                {/*    </label>*/}
-                                {/*    <input*/}
-                                {/*        type='radio'*/}
-                                {/*        {...register('enable')}*/}
-                                {/*        value={'false'}*/}
-                                {/*        name='enable'*/}
-                                {/*        className='edit__input edit__input--text'*/}
-                                {/*    />*/}
-                                {/*</div>*/}
                             </>
                         )}
 
