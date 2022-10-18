@@ -13,7 +13,7 @@ participantsRouter.post(
     ParticipantsController.createParticipant
 );
 
-participantsRouter.get(
+participantsRouter.post(
     '/',
     [
         check('id', "ID can't is empty").notEmpty(),
@@ -22,7 +22,7 @@ participantsRouter.get(
     ParticipantsController.readParticipant
 );
 
-participantsRouter.get(
+participantsRouter.post(
     '/event',
     [
         check('eventId', "eventId can't is empty").notEmpty(),

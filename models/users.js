@@ -1,17 +1,18 @@
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
-    username: { type: String },
-    firstName: { type: String },
-    lastName: { type: String },
-    family: { type: String },
-    password: { type: String },
-    email: {
+    username: {
         type: String,
         required: true,
-        match: /\S+@\S+\.\S+/,
     },
-    photo: Buffer,
+    password: {
+        type: String,
+        required: true,
+    },
+    isAdmin: {
+        type: Boolean,
+        required: true,
+    },
 });
 
 const Users = mongoose.model('User', userSchema);

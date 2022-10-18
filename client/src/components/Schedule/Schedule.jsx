@@ -26,7 +26,7 @@ const Schedule = ({ type }) => {
                     key={event._id}
                     to={
                         type === 'edit'
-                            ? `/edit/events/${event._id}`
+                            ? `/events/data/${event._id}`
                             : `/events/${event._id}`
                     }
                     className='schedule__item'

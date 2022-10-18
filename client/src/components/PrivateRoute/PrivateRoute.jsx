@@ -13,7 +13,7 @@ const PrivateRoute = ({ children }) => {
         token
             ? (async () => {
                   try {
-                      setIsAdmin(await admin(token));
+                      setIsAdmin((await admin(token)).isAdmin);
                   } catch (err) {
                       localStorage.removeItem('token');
                       navigate('/login');
@@ -21,6 +21,8 @@ const PrivateRoute = ({ children }) => {
               })()
             : setIsAdmin(false);
     }, []);
+
+    console.log(isAdmin);
 
     return isAdmin === null ? (
         <h2 className='loading'>Loading...</h2>

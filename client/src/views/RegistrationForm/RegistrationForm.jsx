@@ -52,7 +52,6 @@ const RegistrationForm = () => {
     };
 
     const onSubmit = (data) => {
-        console.log({ data, eventId });
         (async () => {
             try {
                 await createParticipant({ eventId, data });

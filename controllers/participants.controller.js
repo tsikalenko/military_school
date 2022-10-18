@@ -22,7 +22,7 @@ class ParticipantsController {
 
     async readParticipant(req, res) {
         try {
-            const { id, token } = req.query;
+            const { id, token } = req.body;
             if (checkAdmin(token)) {
                 const event = await Participants.findOne({ _id: id });
                 if (event) {
@@ -40,7 +40,7 @@ class ParticipantsController {
 
     async eventsParticipant(req, res) {
         try {
-            const { eventId, token } = req.query;
+            const { eventId, token } = req.body;
             if (checkAdmin(token)) {
                 const event = await Participants.find({ eventsId: eventId });
                 if (event) {
