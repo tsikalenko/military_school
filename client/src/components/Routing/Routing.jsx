@@ -14,6 +14,12 @@ import Login from '../../views/Login';
 import Edit from '../../views/Edit';
 import PrivateRoute from '../PrivateRoute';
 import Admin from '../../views/Admin/Admin';
+import EditEvents from '../../views/EditEvents';
+import EventForm from '../../views/EventForm';
+import RegistrationForm from '../../views/RegistrationForm';
+import Gratitude from '../../views/Gratitude';
+import EventsData from '../../views/EventsData';
+import EventParticipant from '../../views/EventParticipant';
 
 const Routing = () => {
     const setPrivateElement = (element) => (
@@ -27,6 +33,15 @@ const Routing = () => {
             <Route path='/all-courses' element={<AllServices />} />
             <Route path='/team-building' element={<TeamBuilding />} />
             <Route path='/contacts' element={<Contacts />} />
+            <Route path='/events/'>
+                <Route path=':eventId' element={<RegistrationForm />} />
+                <Route path='data/:eventId' element={<EventsData />} />
+                <Route
+                    path='participants/:eventId'
+                    element={<EventParticipant />}
+                />
+            </Route>
+            <Route path='/gratitude' element={<Gratitude />} />
 
             <Route path='/login' element={<Login />} />
             <Route path='/admin' element={setPrivateElement(<Admin />)} />
@@ -49,7 +64,19 @@ const Routing = () => {
                     path='schedule'
                     element={setPrivateElement(<EditSchedule />)}
                 />
+                <Route
+                    path='events'
+                    element={setPrivateElement(<EditEvents />)}
+                />
+                <Route
+                    path='events/:eventID'
+                    element={setPrivateElement(<EventForm />)}
+                />
             </Route>
+            <Route
+                path='/create-event'
+                element={setPrivateElement(<EventForm />)}
+            />
 
             <Route path='*' element={<Page404 />} />
         </Routes>

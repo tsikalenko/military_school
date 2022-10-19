@@ -6,12 +6,12 @@ const Admin = () => {
 
     return (
         <div className='container container--page'>
-            <h2 className='title'>Адміністрування</h2>
+            <h2 className='title title--sm'>Панель адміністратора</h2>
             <Link to='/editor' className='button button--border'>
                 Редагувати сторінки
             </Link>
-            <Link to='/forms' className='button button--border'>
-                Редагувати форми
+            <Link to='/edit/events' className='button button--border'>
+                Редагувати події
             </Link>
             <button
                 onClick={() => {

@@ -84,6 +84,10 @@
     width: 50%;
     margin: 20px 25%;
   }
+
+  &--sm{
+    padding: 5px 0;
+  }
 }
 
 .accent {
@@ -112,4 +116,11 @@
   margin: 50px 0;
   letter-spacing: 2px;
   text-align: center;
+
+  &--sm{
+    font-size: 25px;
+    @include respond(tablet){
+      font-size: 40px;
+    };
+  }
 }

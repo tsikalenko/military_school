@@ -2,16 +2,17 @@ import './schedule.scss';
 import '../../utils/styles/_utils.scss';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getPage } from '../../api/pagesAPI';
+import { getAllEvents } from '../../api/eventsAPI';
+import PropTypes from 'prop-types';
 
-const Schedule = () => {
-    const [pageInfo, setPageInfo] = useState({});
+const Schedule = ({ type }) => {
+    const [events, setEvents] = useState({});
     const [isErrorLoading, setIsErrorLoading] = useState(false);
 
     useEffect(() => {
         (async () => {
             try {
-                setPageInfo((await getPage('schedule')).data);
+                setEvents(await getAllEvents());
             } catch (err) {
                 setIsErrorLoading(true);
             }
@@ -19,21 +20,31 @@ const Schedule = () => {
     }, []);
 
     const renderEvents = () => {
-        return pageInfo.events.map((event) => {
-            return (
+        return events.map((event) => {
+            const item = (
                 <Link
-                    //change to link
-                    key={event.name}
-                    to={event.link}
+                    key={event._id}
+                    to={
+                        type === 'edit'
+                            ? `/events/data/${event._id}`
+                            : `/events/${event._id}`
+                    }
                     className='schedule__item'
                     style={{
-                        backgroundImage: `url("${event.img}")`,
+                        backgroundImage:
+                            'url(https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg)',
                     }}
                 >
-                    <h3 className='schedule__title'>{event.name}</h3>
+                    <h3 className='schedule__title'>{event.title}</h3>
                     <p className='schedule__date'>{event.date}</p>
                 </Link>
             );
+            if (type !== 'edit' && event.enable) {
+                return item;
+            }
+            if (type === 'edit') {
+                return item;
+            }
         });
     };
 
@@ -44,13 +55,17 @@ const Schedule = () => {
                     Нажаль, виникла проблема зі завантаженням сторінки,
                     спробуйте оновити сторінку
                 </h2>
-            ) : Object.keys(pageInfo).length === 0 ? (
+            ) : Object.keys(events).length === 0 ? (
                 <h2 className='loading'>Loading...</h2>
             ) : (
                 <div className='schedule'>{renderEvents()}</div>
             )}
         </>
     );
+};
+
+Schedule.propTypes = {
+    type: PropTypes.string,
 };
 
 export default Schedule;

@@ -3,6 +3,7 @@ import * as crypto from 'crypto';
 import jwt from 'jsonwebtoken';
 import { validationResult } from 'express-validator';
 import { KEY } from '../config.js';
+import checkAdmin from '../helpers/checkAdmin.js';
 
 class UserController {
     async userCreate(req, res) {
@@ -11,7 +12,7 @@ class UserController {
             if (!errors.isEmpty()) {
                 return res
                     .status(400)
-                    .json({ message: 'Registration error', errors });
+                    .json({ message: 'EditEvents error', errors });
             }
             const { username, password } = req.body;
             const existingUser = await Users.findOne({ username });
@@ -23,6 +24,7 @@ class UserController {
                 .toString('hex');
             const user = await Users.create({
                 ...req.body,
+                isAdmin: false,
                 password: hashPassword,
             });
             return res.json(user);
@@ -63,7 +65,7 @@ class UserController {
     async isAdmin(req, res) {
         try {
             const { token } = req.body;
-            const { isAdmin } = jwt.verify(token, KEY);
+            const isAdmin = checkAdmin(token);
 
             return res.json({ isAdmin });
         } catch (err) {

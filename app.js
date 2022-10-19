@@ -8,6 +8,8 @@ import usersRouter from './routes/users.js';
 
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import eventsRouter from './routes/events.js';
+import participantsRouter from './routes/participants.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -21,6 +23,8 @@ app.use(bp.urlencoded({ extended: true }));
 
 app.use('/api/auth', usersRouter);
 app.use('/api/pages', pagesRouter);
+app.use('/api/events', eventsRouter);
+app.use('/api/participants', participantsRouter);
 
 mongoose
     .connect(
