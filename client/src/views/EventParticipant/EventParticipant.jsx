@@ -5,7 +5,7 @@ import './eventParticipant.scss';
 import '../../utils/styles/_utils.scss';
 
 const EventParticipant = () => {
-    const [participantsList, setParticipantsList] = useState({});
+    const [participantsList, setParticipantsList] = useState(null);
     const [isErrorLoading, setIsErrorLoading] = useState(false);
     const { eventId } = useParams();
     const token = JSON.parse(localStorage.getItem('token'));
@@ -52,11 +52,16 @@ const EventParticipant = () => {
                     Нажаль, виникла проблема зі завантаженням сторінки,
                     спробуйте оновити сторінку
                 </h2>
-            ) : Object.keys(participantsList).length === 0 ? (
+            ) : participantsList === null ? (
                 <h2 className='loading'>Loading...</h2>
             ) : (
                 <div className='event-participants container container--page'>
                     <h2 className='title'>Список учасників події</h2>
+                    {Object.keys(participantsList).length === 0 && (
+                        <p className='edit__subtitle'>
+                            Cписок учасників порожній
+                        </p>
+                    )}
                     {renderParticipantsList()}
                     <Link
                         to={`/events/data/${eventId}`}

@@ -14,7 +14,6 @@ const EventForm = () => {
     const { eventID } = useParams();
 
     useEffect(() => reset(initialState), [initialState]);
-    console.log(!!'0');
 
     useEffect(() => {
         if (eventID) {

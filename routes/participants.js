@@ -26,6 +26,7 @@ participantsRouter.post(
     '/event',
     [
         check('eventId', "eventId can't is empty").notEmpty(),
+        check('email', "email can't is empty").notEmpty(),
         check('token', "Token can't is empty").notEmpty(),
     ],
     ParticipantsController.eventsParticipant

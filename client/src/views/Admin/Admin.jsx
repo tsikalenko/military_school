@@ -6,7 +6,7 @@ const Admin = () => {
 
     return (
         <div className='container container--page'>
-            <h2 className='title'>Адміністрування</h2>
+            <h2 className='title title--sm'>Панель адміністратора</h2>
             <Link to='/editor' className='button button--border'>
                 Редагувати сторінки
             </Link>

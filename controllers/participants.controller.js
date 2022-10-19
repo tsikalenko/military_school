@@ -42,7 +42,7 @@ class ParticipantsController {
         try {
             const { eventId, token } = req.body;
             if (checkAdmin(token)) {
-                const event = await Participants.find({ eventsId: eventId });
+                const event = await Participants.find({ eventId });
                 if (event) {
                     return res.json(event);
                 }

@@ -1,10 +1,11 @@
-import '../../utils/styles/_edit.scss';
-import '../../utils/styles/_utils.scss';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getEvent } from '../../api/eventsAPI';
 import { useForm } from 'react-hook-form';
 import { createParticipant } from '../../api/paticipantsAPI';
+import { sendLead } from '../../api/botAPI';
+import '../../utils/styles/_edit.scss';
+import '../../utils/styles/_utils.scss';
 
 const RegistrationForm = () => {
     const { eventId } = useParams();
@@ -51,10 +52,19 @@ const RegistrationForm = () => {
         ));
     };
 
+    const createMessage = (data) => {
+        const keys = Object.keys(data);
+        const fields = keys.map((field) => {
+            return `\n<b>${field}</b>: ${data[field]}`;
+        });
+        return `<b>${eventInfo.title}</b>\n${eventInfo.date}\n${fields}`;
+    };
+
     const onSubmit = (data) => {
         (async () => {
             try {
-                await createParticipant({ eventId, data });
+                await createParticipant({ eventId, email: data.email, data });
+                await sendLead(createMessage(data));
                 navigate('/gratitude');
             } catch (err) {
                 setIsErrorLoading(true);
@@ -82,6 +92,24 @@ const RegistrationForm = () => {
                         onSubmit={handleSubmit(onSubmit)}
                         className='edit__form'
                     >
+                        <div
+                            className='edit__item edit__item--column'
+                            key={'email'}
+                        >
+                            <h3 className='edit__subtitle'>Email</h3>
+                            <input
+                                type='email'
+                                className='edit__input edit__input--text'
+                                {...register('email', {
+                                    required: true,
+                                })}
+                            />
+                            {errors.email?.type === 'required' && (
+                                <p role='alert' className='edit__error'>
+                                    Заповніть будьласка поле
+                                </p>
+                            )}
+                        </div>
                         {renderFields()}
                         <input
                             type='submit'
