@@ -8,6 +8,9 @@ participantsRouter.post(
     '/',
     [
         check('eventId', "eventId can't is empty").notEmpty(),
+        check('email', "email can't is empty").notEmpty(),
+        check('letterSubject', "letterSubject can't is empty").notEmpty(),
+        check('letterHtml', "letterHtml can't is empty").notEmpty(),
         check('data', "data can't is empty").notEmpty(),
     ],
     ParticipantsController.createParticipant

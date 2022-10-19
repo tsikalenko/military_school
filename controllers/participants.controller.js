@@ -1,19 +1,26 @@
 import { validationResult } from 'express-validator';
 import Participants from '../models/participants.js';
 import checkAdmin from '../helpers/checkAdmin.js';
+import sendEmail from '../helpers/mailSender.js';
 
 class ParticipantsController {
     async createParticipant(req, res) {
         try {
             const errors = validationResult(req);
+            const { eventId, email, letterSubject, letterHtml, data } =
+                req.body;
             if (!errors.isEmpty()) {
                 return res
                     .status(400)
                     .json({ message: 'Incorrect data', errors });
             }
             const event = await Participants.create({
-                ...req.body,
+                eventId,
+                data,
             });
+
+            await sendEmail(email, letterSubject, letterHtml);
+
             return res.json(event);
         } catch (err) {
             res.status(400).json({ message: err.message });

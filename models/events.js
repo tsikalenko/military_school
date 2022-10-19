@@ -16,6 +16,14 @@ const EventsSchema = new Schema(
             type: Schema.Types.String,
             required: true,
         },
+        letterSubject: {
+            type: Schema.Types.String,
+            required: true,
+        },
+        letterHtml: {
+            type: Schema.Types.String,
+            required: true,
+        },
         fields: {
             type: Schema.Types.Mixed,
             required: true,

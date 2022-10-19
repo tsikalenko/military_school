@@ -44,6 +44,8 @@ class EventsController {
                 title,
                 date,
                 description,
+                letterSubject,
+                letterHtml,
                 fields,
                 enable,
             } = req.body;
@@ -57,6 +59,8 @@ class EventsController {
                 title,
                 date,
                 description,
+                letterSubject,
+                letterHtml,
                 fields,
                 enable,
             };

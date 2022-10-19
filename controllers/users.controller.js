@@ -42,7 +42,6 @@ class UserController {
                     .pbkdf2Sync(password, KEY, 7, 16, 'sha512')
                     .toString('hex');
                 if (user.password === hashPassword) {
-                    console.log(user, user['isAdmin']);
                     const token = jwt.sign(
                         {
                             userId: user._id,

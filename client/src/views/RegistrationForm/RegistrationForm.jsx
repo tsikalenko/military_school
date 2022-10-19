@@ -63,7 +63,13 @@ const RegistrationForm = () => {
     const onSubmit = (data) => {
         (async () => {
             try {
-                await createParticipant({ eventId, email: data.email, data });
+                await createParticipant({
+                    eventId,
+                    email: data.email,
+                    letterSubject: eventInfo.letterSubject,
+                    letterHtml: eventInfo.letterHtml,
+                    data,
+                });
                 await sendLead(createMessage(data));
                 navigate('/gratitude');
             } catch (err) {

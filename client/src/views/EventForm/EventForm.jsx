@@ -183,6 +183,37 @@ const EventForm = () => {
                             </p>
                         )}
 
+                        <div className='edit__item'>
+                            <label className='edit__label'>Тема листа:</label>
+                            <input
+                                type='text'
+                                {...register('letterSubject', {
+                                    required: true,
+                                })}
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
+                        {errors?.letterSubject?.type === 'required' && (
+                            <p role='alert' className='edit__error'>
+                                Тема листа обов{"'"}язкова
+                            </p>
+                        )}
+
+                        <div className='edit__item'>
+                            <label className='edit__label'>Текст листа:</label>
+                            <textarea
+                                {...register('letterHtml', {
+                                    required: true,
+                                })}
+                                className='edit__input edit__input--textarea'
+                            />
+                        </div>
+                        {errors?.letterHtml?.type === 'required' && (
+                            <p role='alert' className='edit__error'>
+                                Текст листа обов{"'"}язковий
+                            </p>
+                        )}
+
                         {renderFields()}
 
                         {error && <p className='edit__error'>{error}</p>}
