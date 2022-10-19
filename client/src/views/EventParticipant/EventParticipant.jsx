@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getParticipantOfEvents } from '../../api/paticipantsAPI';
 import './eventParticipant.scss';
 import '../../utils/styles/_utils.scss';
@@ -26,12 +26,16 @@ const EventParticipant = () => {
         return participantsList.map((participant, index) => {
             const keys = Object.keys(participant.data);
             return (
-                <div key={participant._id}>
-                    <h3>Учасник {index + 1}</h3>
+                <div key={participant._id} className='event-participants__item'>
+                    <h3 className='event-participants__name'>
+                        Учасник {index + 1}
+                    </h3>
                     {keys.map((field) => (
-                        <div key={field}>
-                            <p className='subtitle'>{field}</p>
-                            <p className='subtitle'>
+                        <div key={field} className='event-participants__field'>
+                            <p className='event-participants__subtitle'>
+                                {field}:
+                            </p>
+                            <p className='event-participants__value'>
                                 {participant.data[field]}
                             </p>
                         </div>
@@ -51,9 +55,15 @@ const EventParticipant = () => {
             ) : Object.keys(participantsList).length === 0 ? (
                 <h2 className='loading'>Loading...</h2>
             ) : (
-                <div className='container container--page'>
+                <div className='event-participants container container--page'>
                     <h2 className='title'>Список учасників події</h2>
                     {renderParticipantsList()}
+                    <Link
+                        to={`/events/data/${eventId}`}
+                        className='button button--border'
+                    >
+                        Назад
+                    </Link>
                 </div>
             )}
         </>
