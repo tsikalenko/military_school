@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { getEvent } from '../../api/eventsAPI';
 import { useForm } from 'react-hook-form';
 import { createParticipant } from '../../api/paticipantsAPI';
-import { sendLead } from '../../api/botAPI';
 import '../../utils/styles/_edit.scss';
 import '../../utils/styles/_utils.scss';
 
@@ -52,14 +51,6 @@ const RegistrationForm = () => {
         ));
     };
 
-    const createMessage = (data) => {
-        const keys = Object.keys(data);
-        const fields = keys.map((field) => {
-            return `\n<b>${field}</b>: ${data[field]}`;
-        });
-        return `<b>${eventInfo.title}</b>\n${eventInfo.date}\n${fields}`;
-    };
-
     const onSubmit = (data) => {
         (async () => {
             try {
@@ -70,7 +61,6 @@ const RegistrationForm = () => {
                     letterHtml: eventInfo.letterHtml,
                     data,
                 });
-                await sendLead(createMessage(data));
                 navigate('/gratitude');
             } catch (err) {
                 setIsErrorLoading(true);

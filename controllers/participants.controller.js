@@ -1,7 +1,10 @@
 import { validationResult } from 'express-validator';
 import Participants from '../models/participants.js';
+import Events from '../models/events.js';
 import checkAdmin from '../helpers/checkAdmin.js';
 import sendEmail from '../helpers/mailSender.js';
+import sendToTelegram from '../helpers/sendToTelegram.js';
+import createLeadMsg from '../helpers/createLeadMsg.js';
 
 class ParticipantsController {
     async createParticipant(req, res) {
@@ -14,14 +17,15 @@ class ParticipantsController {
                     .status(400)
                     .json({ message: 'Incorrect data', errors });
             }
-            const event = await Participants.create({
+            const event = await Events.findOne({ _id: eventId });
+            const participant = await Participants.create({
                 eventId,
                 data,
             });
-
             await sendEmail(email, letterSubject, letterHtml);
+            await sendToTelegram(createLeadMsg(data, event));
 
-            return res.json(event);
+            return res.json(participant);
         } catch (err) {
             res.status(400).json({ message: err.message });
         }
