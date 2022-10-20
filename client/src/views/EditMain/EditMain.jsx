@@ -73,7 +73,7 @@ const EditMain = () => {
 
     const renderSlider = () => {
         return pageInfo.slider.map((slide, index) => (
-            <>
+            <div className='edit__block' key={slide.img}>
                 <p className='edit__subtitle edit__subtitle--sm'>
                     Slide {index + 1}
                 </p>
@@ -102,7 +102,7 @@ const EditMain = () => {
                         />
                     </div>
                 </div>
-            </>
+            </div>
         ));
     };
 

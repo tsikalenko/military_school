@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { getPage, updatePage } from '../../api/pagesAPI';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import '../../utils/styles/_edit.scss';
 import '../../utils/styles/_utils.scss';
-import { useNavigate } from 'react-router-dom';
 
 const EditAllServices = () => {
     const [pageInfo, setPageInfo] = useState({});
@@ -71,7 +71,7 @@ const EditAllServices = () => {
 
     const renderServices = () => {
         return pageInfo.services.map((service, index) => (
-            <>
+            <div className='edit__block' key={service.title}>
                 <p className='edit__subtitle edit__subtitle--sm'>
                     Послуга {index + 1}
                 </p>
@@ -115,7 +115,6 @@ const EditAllServices = () => {
                     <div className='edit__item'>
                         <label className='edit__label'>description:</label>
                         <textarea
-                            type='text'
                             defaultValue={service.description}
                             {...register(`service${index}Description`, {
                                 required: true,
@@ -136,7 +135,7 @@ const EditAllServices = () => {
                         />
                     </div>
                 </div>
-            </>
+            </div>
         ));
     };
 

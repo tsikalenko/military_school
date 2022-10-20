@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import '../../utils/styles/_utils.scss';
 
-const EventsData = () => {
+const MenuEventData = () => {
     const { eventId } = useParams();
 
     return (
@@ -26,4 +26,4 @@ const EventsData = () => {
     );
 };
 
-export default EventsData;
+export default MenuEventData;

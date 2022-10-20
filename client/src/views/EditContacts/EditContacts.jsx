@@ -48,23 +48,21 @@ const EditContacts = () => {
         })();
     };
 
-    const renderSlider = () => {
+    const renderPhones = () => {
         return pageInfo.phones.map((phone, index) => (
-            <>
-                <div className='edit__photo' key={phone}>
-                    <div className='edit__item'>
-                        <label className='edit__label'>phone{index + 1}:</label>
-                        <input
-                            type='text'
-                            defaultValue={phone}
-                            {...register(`phone${index}`, {
-                                required: true,
-                            })}
-                            className='edit__input edit__input--text'
-                        />
-                    </div>
+            <div className='edit__photo' key={phone}>
+                <div className='edit__item'>
+                    <label className='edit__label'>phone{index + 1}:</label>
+                    <input
+                        type='text'
+                        defaultValue={phone}
+                        {...register(`phone${index}`, {
+                            required: true,
+                        })}
+                        className='edit__input edit__input--text'
+                    />
                 </div>
-            </>
+            </div>
         ));
     };
 
@@ -100,7 +98,7 @@ const EditContacts = () => {
 
                         <p className='edit__subtitle'>Контакты</p>
 
-                        {renderSlider()}
+                        {renderPhones()}
 
                         <div className='edit__item'>
                             <label className='edit__label'>Email:</label>

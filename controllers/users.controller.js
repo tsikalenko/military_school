@@ -12,7 +12,7 @@ class UserController {
             if (!errors.isEmpty()) {
                 return res
                     .status(400)
-                    .json({ message: 'EditEvents error', errors });
+                    .json({ message: 'Create User error', errors });
             }
             const { username, password } = req.body;
             const existingUser = await Users.findOne({ username });

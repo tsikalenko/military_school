@@ -8,17 +8,16 @@ import EditMain from '../../views/EditMain';
 import EditAllServices from '../../views/EditAllServices';
 import EditTeamBuilding from '../../views/EditTeamBuilding';
 import EditContacts from '../../views/EditContacts';
-import EditSchedule from '../../views/EditSchedule';
 import Page404 from '../../views/Page404';
 import Login from '../../views/Login';
-import Edit from '../../views/Edit';
+import MenuPages from '../../views/MenuPages';
 import PrivateRoute from '../PrivateRoute';
 import Admin from '../../views/Admin/Admin';
-import EditEvents from '../../views/EditEvents';
+import MenuEvents from '../../views/MenuEvents';
 import EventForm from '../../views/EventForm';
 import RegistrationForm from '../../views/RegistrationForm';
 import Gratitude from '../../views/Gratitude';
-import EventsData from '../../views/EventsData';
+import MenuEventData from '../../views/MenuEventData';
 import EventParticipant from '../../views/EventParticipant';
 
 const Routing = () => {
@@ -35,7 +34,7 @@ const Routing = () => {
             <Route path='/contacts' element={<Contacts />} />
             <Route path='/events/'>
                 <Route path=':eventId' element={<RegistrationForm />} />
-                <Route path='data/:eventId' element={<EventsData />} />
+                <Route path='data/:eventId' element={<MenuEventData />} />
                 <Route
                     path='participants/:eventId'
                     element={<EventParticipant />}
@@ -45,7 +44,7 @@ const Routing = () => {
 
             <Route path='/login' element={<Login />} />
             <Route path='/admin' element={setPrivateElement(<Admin />)} />
-            <Route path='/editor' element={setPrivateElement(<Edit />)} />
+            <Route path='/editor' element={setPrivateElement(<MenuPages />)} />
             <Route path='/edit/'>
                 <Route path='main' element={setPrivateElement(<EditMain />)} />
                 <Route
@@ -61,12 +60,8 @@ const Routing = () => {
                     element={setPrivateElement(<EditContacts />)}
                 />
                 <Route
-                    path='schedule'
-                    element={setPrivateElement(<EditSchedule />)}
-                />
-                <Route
                     path='events'
-                    element={setPrivateElement(<EditEvents />)}
+                    element={setPrivateElement(<MenuEvents />)}
                 />
                 <Route
                     path='events/:eventID'
