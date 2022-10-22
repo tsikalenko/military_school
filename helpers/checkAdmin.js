@@ -1,8 +1,7 @@
 import jwt from 'jsonwebtoken';
-import { KEY } from '../config.js';
 
 const checkAdmin = (token) => {
-    const { isAdmin } = jwt.verify(token, KEY);
+    const { isAdmin } = jwt.verify(token, process.env.KEY);
     return isAdmin;
 };
 

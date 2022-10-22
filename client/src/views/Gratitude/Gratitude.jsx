@@ -1,6 +1,7 @@
+import { useNavigate } from 'react-router-dom';
+
 import './gratitude.scss';
 import '../../utils/styles/_utils.scss';
-import { useNavigate } from 'react-router-dom';
 
 const Gratitude = () => {
     const navigate = useNavigate();

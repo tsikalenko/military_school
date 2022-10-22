@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { getEvent } from '../../api/eventsAPI';
 import { useForm } from 'react-hook-form';
 import { createParticipant } from '../../api/paticipantsAPI';
+
 import '../../utils/styles/_edit.scss';
 import '../../utils/styles/_utils.scss';
 

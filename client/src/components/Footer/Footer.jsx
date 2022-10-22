@@ -1,6 +1,7 @@
-import './footer.scss';
 import { Link } from 'react-router-dom';
 import { BsTelephone } from 'react-icons/bs';
+
+import './footer.scss';
 
 const Footer = () => {
     return (

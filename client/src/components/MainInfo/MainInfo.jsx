@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import './mainInfo.scss';
 import '../../utils/styles/_utils.scss';
-import PropTypes from 'prop-types';
 
 const MainInfo = ({ data }) => {
     return (

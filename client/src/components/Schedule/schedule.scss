@@ -20,7 +20,7 @@
       padding: 50px 0;
     }
 
-    &:hover{
+    &:hover {
       background-color: $bg-main-color-transparent-dark;
       transition: 200ms;
     }
@@ -36,7 +36,6 @@
   }
 
   &__date {
-    //color: $accent-color;
     font-weight: 500;
     letter-spacing: 1px;
   }

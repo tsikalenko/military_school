@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getPage, updatePage } from '../../api/pagesAPI';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+
 import '../../utils/styles/_edit.scss';
 import '../../utils/styles/_utils.scss';
 

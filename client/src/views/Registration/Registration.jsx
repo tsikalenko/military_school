@@ -1,4 +1,5 @@
 import Schedule from '../../components/Schedule';
+
 import './registration.scss';
 
 const Registration = () => {

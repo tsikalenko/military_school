@@ -1,7 +1,6 @@
 import nodemailer from 'nodemailer';
 
 const sendEmail = async (subscriberMail, letterSubject, letterHtml) => {
-    //authorization for sending email
     let transporter = nodemailer.createTransport({
         service: process.env.MAIL_SERVICE,
         auth: {

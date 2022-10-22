@@ -1,5 +1,6 @@
-import '../../utils/styles/_utils.scss';
 import { Link } from 'react-router-dom';
+
+import '../../utils/styles/_utils.scss';
 
 const MenuPages = () => {
     return (
