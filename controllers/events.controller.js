@@ -47,6 +47,7 @@ class EventsController {
                 letterSubject,
                 letterHtml,
                 fields,
+                maxQuantity,
                 enable,
             } = req.body;
             const event = await Events.findOne({ _id });
@@ -62,6 +63,7 @@ class EventsController {
                 letterSubject,
                 letterHtml,
                 fields,
+                maxQuantity,
                 enable,
             };
 

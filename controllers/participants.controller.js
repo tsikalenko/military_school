@@ -22,6 +22,20 @@ class ParticipantsController {
                 eventId,
                 data,
             });
+
+            const eventsParticipant = await Participants.find({ eventId });
+            if (event.maxQuantity <= eventsParticipant.length) {
+                console.log('test');
+                const filter = { _id: eventId };
+                const update = {
+                    enable: false,
+                };
+
+                await Events.findOneAndUpdate(filter, update, {
+                    new: true,
+                });
+            }
+
             await sendEmail(email, letterSubject, letterHtml);
             await sendToTelegram(createLeadMsg(data, event));
 

@@ -11,6 +11,7 @@ eventsRouter.post(
         check('date', "Date can't is empty").notEmpty(),
         check('description', "Description can't is empty").notEmpty(),
         check('fields', "Fields can't is empty").notEmpty(),
+        check('maxQuantity', "maxQuantity can't is empty").notEmpty(),
         check('enable', "Enable can't is empty").notEmpty(),
     ],
     EventsController.createEvent
@@ -24,9 +25,10 @@ eventsRouter.put(
         check('id', "ID can't is empty").notEmpty(),
         check('title', "Title can't is empty").notEmpty(),
         check('date', "Date can't is empty").notEmpty(),
-        check('letterSubject', "Date can't is empty").notEmpty(),
-        check('LetterHtml', "Date can't is empty").notEmpty(),
+        check('letterSubject', "Letter Subject can't is empty").notEmpty(),
+        check('letterHtml', "Letter Html can't is empty").notEmpty(),
         check('fields', "Fields can't is empty").notEmpty(),
+        check('maxQuantity', "maxQuantity can't is empty").notEmpty(),
         check('enable', "Enable can't is empty").notEmpty(),
     ],
     EventsController.updateEvent
