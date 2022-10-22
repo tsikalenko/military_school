@@ -2,7 +2,7 @@ import Schedule from '../../components/Schedule';
 import './registration.scss';
 import { Link } from 'react-router-dom';
 
-const EditEvents = () => {
+const MenuEvents = () => {
     return (
         <div className='registration'>
             <p className='registration__title'>Редагувати події</p>
@@ -20,4 +20,4 @@ const EditEvents = () => {
     );
 };
 
-export default EditEvents;
+export default MenuEvents;

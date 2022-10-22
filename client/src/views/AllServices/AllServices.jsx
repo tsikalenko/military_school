@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getPage } from '../../api/pagesAPI';
 import classNames from 'classnames';
@@ -38,12 +37,6 @@ const AllServices = () => {
                     <div className='services__info'>
                         <h3 className='services__subtitle'>{item.title}</h3>
                         <p className='services__text'>{item.description}</p>
-                        <Link
-                            to={item.link}
-                            className='button button--center button--accent'
-                        >
-                            More info
-                        </Link>
                     </div>
                 </div>
             );

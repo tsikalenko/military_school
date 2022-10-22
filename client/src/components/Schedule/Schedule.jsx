@@ -1,9 +1,10 @@
-import './schedule.scss';
-import '../../utils/styles/_utils.scss';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getAllEvents } from '../../api/eventsAPI';
 import PropTypes from 'prop-types';
+
+import './schedule.scss';
+import '../../utils/styles/_utils.scss';
 
 const Schedule = ({ type }) => {
     const [events, setEvents] = useState({});

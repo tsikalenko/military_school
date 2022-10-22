@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { getPage, updatePage } from '../../api/pagesAPI';
-import { useForm } from 'react-hook-form';
+import { useFieldArray, useForm } from 'react-hook-form';
 import '../../utils/styles/_edit.scss';
 import '../../utils/styles/_utils.scss';
 import { useNavigate } from 'react-router-dom';
+import EditSlider from '../../components/EditSlider';
 
 const EditTeamBuilding = () => {
     const [pageInfo, setPageInfo] = useState({});
@@ -23,83 +24,26 @@ const EditTeamBuilding = () => {
         })();
     }, []);
 
-    const { register, handleSubmit } = useForm();
+    useEffect(() => reset(pageInfo), [pageInfo]);
+
+    const { register, handleSubmit, control, reset } = useForm({
+        defaultValues: pageInfo,
+    });
+
+    const { fields, append, remove } = useFieldArray({
+        control,
+        name: 'slider',
+    });
 
     const onSubmit = (data) => {
-        const formData = {
-            title: data.title,
-            description: data.description,
-            slider: [
-                {
-                    img: data.slide0Img,
-                    alt: data.slide0Alt,
-                },
-                {
-                    img: data.slide1Img,
-                    alt: data.slide1Alt,
-                },
-                {
-                    img: data.slide2Img,
-                    alt: data.slide2Alt,
-                },
-                {
-                    img: data.slide3Img,
-                    alt: data.slide3Alt,
-                },
-                {
-                    img: data.slide4Img,
-                    alt: data.slide4Alt,
-                },
-            ],
-            info: {
-                title: data.infoTitle,
-                description: data.infoDescription,
-            },
-            text: data.text,
-        };
         (async () => {
             try {
-                await updatePage(pageID, formData);
+                await updatePage(pageID, data);
                 navigate('/team-building');
             } catch (err) {
                 setIsErrorLoading(true);
             }
         })();
-    };
-
-    const renderSlider = () => {
-        return pageInfo.slider.map((slide, index) => (
-            <>
-                <p className='edit__subtitle edit__subtitle--sm'>
-                    Slide {index + 1}
-                </p>
-                <div className='edit__photo' key={slide.img}>
-                    <div className='edit__item'>
-                        <label className='edit__label'>img:</label>
-                        <input
-                            type='url'
-                            defaultValue={slide.img}
-                            {...register(`slide${index}Img`, {
-                                required: true,
-                            })}
-                            className='edit__input edit__input--text'
-                        />
-                    </div>
-
-                    <div className='edit__item'>
-                        <label className='edit__label'>alt:</label>
-                        <input
-                            type='text'
-                            defaultValue={slide.alt}
-                            {...register(`slide${index}Alt`, {
-                                required: true,
-                            })}
-                            className='edit__input edit__input--text'
-                        />
-                    </div>
-                </div>
-            </>
-        ));
     };
 
     return (
@@ -134,7 +78,20 @@ const EditTeamBuilding = () => {
 
                         <p className='edit__subtitle'>Slider</p>
 
-                        {renderSlider()}
+                        <EditSlider
+                            fields={fields}
+                            remove={remove}
+                            register={register}
+                        />
+
+                        <div
+                            className='button button--border'
+                            onClick={() => {
+                                append({});
+                            }}
+                        >
+                            Додати слайд
+                        </div>
 
                         <p className='edit__subtitle'>Info</p>
 
@@ -143,7 +100,7 @@ const EditTeamBuilding = () => {
                             <input
                                 type='text'
                                 defaultValue={pageInfo.info.title}
-                                {...register('infoTitle', { required: true })}
+                                {...register('info.title', { required: true })}
                                 className='edit__input edit__input--text'
                             />
                         </div>
@@ -154,7 +111,7 @@ const EditTeamBuilding = () => {
                             </label>
                             <textarea
                                 defaultValue={pageInfo.info.description}
-                                {...register('infoDescription', {
+                                {...register('info.description', {
                                     required: true,
                                 })}
                                 className='edit__input edit__input--textarea'
