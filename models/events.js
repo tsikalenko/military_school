@@ -28,6 +28,10 @@ const EventsSchema = new Schema(
             type: Schema.Types.Mixed,
             required: true,
         },
+        maxQuantity: {
+            type: Schema.Types.Number,
+            required: true,
+        },
         enable: {
             type: Schema.Types.Boolean,
             required: true,

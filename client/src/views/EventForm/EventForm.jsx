@@ -128,7 +128,6 @@ const EventForm = () => {
                                     <input
                                         type='checkbox'
                                         {...register('enable')}
-                                        // value={true}
                                         name='enable'
                                         className='edit__input edit__input--checkbox'
                                     />
@@ -180,6 +179,24 @@ const EventForm = () => {
                         {errors?.date?.type === 'required' && (
                             <p role='alert' className='edit__error'>
                                 Дата події обов{"'"}язкова
+                            </p>
+                        )}
+
+                        <div className='edit__item'>
+                            <label className='edit__label'>
+                                Кількість учасників:
+                            </label>
+                            <input
+                                type='number'
+                                {...register('maxQuantity', {
+                                    required: true,
+                                })}
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
+                        {errors?.maxQuantity?.type === 'required' && (
+                            <p role='alert' className='edit__error'>
+                                Кількість учасників обов{"'"}язкова
                             </p>
                         )}
 
