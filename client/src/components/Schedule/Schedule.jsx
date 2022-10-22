@@ -13,7 +13,7 @@ const Schedule = ({ type }) => {
     useEffect(() => {
         (async () => {
             try {
-                setEvents(await getAllEvents());
+                setEvents((await getAllEvents()).reverse());
             } catch (err) {
                 setIsErrorLoading(true);
             }
