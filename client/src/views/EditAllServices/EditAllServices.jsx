@@ -145,15 +145,15 @@ const EditAllServices = () => {
                         <p className='edit__subtitle'>Послуги</p>
 
                         {renderFields()}
-                        {/*{renderServices()}*/}
-                        <button
+
+                        <div
                             className='button button--border'
                             onClick={() => {
                                 append({});
                             }}
                         >
                             Додати поле
-                        </button>
+                        </div>
 
                         <input
                             type='submit'
