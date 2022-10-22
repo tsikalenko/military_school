@@ -33,13 +33,13 @@
     @include flex($dir: column);
 
     @include respond(tablet) {
-      @include flex();
+      @include flex($align: flex-start);
       max-width: 900px;
     }
 
     &--right {
       @include respond(tablet) {
-        @include flex($dir: row-reverse);
+        @include flex($dir: row-reverse, $align: flex-start);
       }
     }
   }
@@ -55,6 +55,11 @@
     width: 90%;
 
     @include green-bg();
+
+    @include respond(tablet){
+      min-width: 280px;
+      max-width: 280px;
+    }
   }
 
   &__info {

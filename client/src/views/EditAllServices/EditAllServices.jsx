@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getPage, updatePage } from '../../api/pagesAPI';
-import { useForm } from 'react-hook-form';
+import { useFieldArray, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import '../../utils/styles/_edit.scss';
 import '../../utils/styles/_utils.scss';
@@ -10,6 +10,8 @@ const EditAllServices = () => {
     const [pageID, setPageID] = useState('');
     const [isErrorLoading, setIsErrorLoading] = useState(false);
     const navigate = useNavigate();
+
+    useEffect(() => reset(pageInfo), [pageInfo]);
 
     useEffect(() => {
         (async () => {
@@ -23,45 +25,20 @@ const EditAllServices = () => {
         })();
     }, []);
 
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, control, reset } = useForm({
+        defaultValues: pageInfo,
+    });
+
+    const { fields, append, remove } = useFieldArray({
+        control,
+        name: 'services',
+    });
 
     const onSubmit = (data) => {
-        const formData = {
-            title: data.title,
-            services: [
-                {
-                    title: data.service0Title,
-                    photo: data.service0Photo,
-                    alt: data.service0Alt,
-                    description: data.service0Description,
-                    link: data.service0Link,
-                },
-                {
-                    title: data.service1Title,
-                    photo: data.service1Photo,
-                    alt: data.service1Alt,
-                    description: data.service1Description,
-                    link: data.service1Link,
-                },
-                {
-                    title: data.service2Title,
-                    photo: data.service2Photo,
-                    alt: data.service2Alt,
-                    description: data.service2Description,
-                    link: data.service2Link,
-                },
-                {
-                    title: data.service3Title,
-                    photo: data.service3Photo,
-                    alt: data.service3Alt,
-                    description: data.service3Description,
-                    link: data.service3Link,
-                },
-            ],
-        };
+        console.log(data);
         (async () => {
             try {
-                await updatePage(pageID, formData);
+                await updatePage(pageID, data);
                 navigate('/all-courses');
             } catch (err) {
                 setIsErrorLoading(true);
@@ -69,74 +46,72 @@ const EditAllServices = () => {
         })();
     };
 
-    const renderServices = () => {
-        return pageInfo.services.map((service, index) => (
-            <div className='edit__block' key={service.title}>
-                <p className='edit__subtitle edit__subtitle--sm'>
-                    Послуга {index + 1}
-                </p>
-                <div className='edit__photo' key={service.photo}>
-                    <div className='edit__item'>
-                        <label className='edit__label'>title:</label>
-                        <input
-                            type='text'
-                            defaultValue={service.title}
-                            {...register(`service${index}Title`, {
-                                required: true,
-                            })}
-                            className='edit__input edit__input--text'
-                        />
-                    </div>
+    const renderFields = () => {
+        return fields.map((item, index) => {
+            return (
+                <div className='edit__block' key={item.id}>
+                    <p className='edit__subtitle edit__subtitle--sm'>
+                        Послуга {index + 1}
+                    </p>
+                    <div className='edit__photo'>
+                        <div className='edit__item'>
+                            <label className='edit__label'>title:</label>
+                            <input
+                                type='text'
+                                defaultValue={item.title}
+                                {...register(`services.${index}.title`, {
+                                    required: true,
+                                })}
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
 
-                    <div className='edit__item'>
-                        <label className='edit__label'>photo:</label>
-                        <input
-                            type='url'
-                            defaultValue={service.photo}
-                            {...register(`service${index}Photo`, {
-                                required: true,
-                            })}
-                            className='edit__input edit__input--text'
-                        />
-                    </div>
+                        <div className='edit__item'>
+                            <label className='edit__label'>photo:</label>
+                            <input
+                                type='url'
+                                defaultValue={item.photo}
+                                {...register(`services.${index}.photo`, {
+                                    required: true,
+                                })}
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
 
-                    <div className='edit__item'>
-                        <label className='edit__label'>alt:</label>
-                        <input
-                            type='text'
-                            defaultValue={service.alt}
-                            {...register(`service${index}Alt`, {
-                                required: true,
-                            })}
-                            className='edit__input edit__input--text'
-                        />
-                    </div>
+                        <div className='edit__item'>
+                            <label className='edit__label'>alt:</label>
+                            <input
+                                type='text'
+                                defaultValue={item.alt}
+                                {...register(`services.${index}.alt`, {
+                                    required: true,
+                                })}
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
 
-                    <div className='edit__item'>
-                        <label className='edit__label'>description:</label>
-                        <textarea
-                            defaultValue={service.description}
-                            {...register(`service${index}Description`, {
-                                required: true,
-                            })}
-                            className='edit__input edit__input--textarea'
-                        />
+                        <div className='edit__item'>
+                            <label className='edit__label'>description:</label>
+                            <textarea
+                                defaultValue={item.description}
+                                {...register(`services.${index}.description`, {
+                                    required: true,
+                                })}
+                                className='edit__input edit__input--textarea'
+                            />
+                        </div>
                     </div>
-
-                    <div className='edit__item'>
-                        <label className='edit__label'>link:</label>
-                        <input
-                            type='text'
-                            defaultValue={service.link}
-                            {...register(`service${index}Link`, {
-                                required: true,
-                            })}
-                            className='edit__input edit__input--text'
-                        />
-                    </div>
+                    <button
+                        className='button button--border button--sm button--center'
+                        onClick={() => {
+                            remove(index);
+                        }}
+                    >
+                        Видалити сервіс
+                    </button>
                 </div>
-            </div>
-        ));
+            );
+        });
     };
 
     return (
@@ -169,7 +144,16 @@ const EditAllServices = () => {
 
                         <p className='edit__subtitle'>Послуги</p>
 
-                        {renderServices()}
+                        {renderFields()}
+                        {/*{renderServices()}*/}
+                        <button
+                            className='button button--border'
+                            onClick={() => {
+                                append({});
+                            }}
+                        >
+                            Додати поле
+                        </button>
 
                         <input
                             type='submit'
