@@ -27,7 +27,17 @@
   }
 
   &--color{
+    width: 100%;
     color: $main-color;
+    margin: 120px 0 50px;
+
+    @include respond(tablet) {
+      margin-top: 167px;
+    }
+
+    @include respond(laptop) {
+      margin-top: 100px;
+    }
   }
 }
 
