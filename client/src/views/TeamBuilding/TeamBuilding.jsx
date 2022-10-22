@@ -1,11 +1,12 @@
 import Slider from '../../components/Slider';
-import './teamBuilding.scss';
 import { HashLink } from 'react-router-hash-link';
 import { useEffect, useState } from 'react';
 import { getPage } from '../../api/pagesAPI';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { sendTeamBuilding } from '../../api/mailerAPI';
+
+import './teamBuilding.scss';
 
 const TeamBuilding = () => {
     const [pageInfo, setPageInfo] = useState({});

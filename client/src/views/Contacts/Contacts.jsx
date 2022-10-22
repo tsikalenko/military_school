@@ -1,10 +1,11 @@
 import { BsInstagram, BsTelephone } from 'react-icons/bs';
 import { FaViber, FaTelegramPlane } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
-import './contacts.scss';
-import '../../utils/styles/_utils.scss';
 import { useEffect, useState } from 'react';
 import { getPage } from '../../api/pagesAPI';
+
+import './contacts.scss';
+import '../../utils/styles/_utils.scss';
 
 const Contacts = () => {
     const [pageInfo, setPageInfo] = useState({});

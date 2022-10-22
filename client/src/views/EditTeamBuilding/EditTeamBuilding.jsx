@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { getPage, updatePage } from '../../api/pagesAPI';
 import { useFieldArray, useForm } from 'react-hook-form';
-import '../../utils/styles/_edit.scss';
-import '../../utils/styles/_utils.scss';
 import { useNavigate } from 'react-router-dom';
 import EditSlider from '../../components/EditSlider';
+
+import '../../utils/styles/_edit.scss';
+import '../../utils/styles/_utils.scss';
 
 const EditTeamBuilding = () => {
     const [pageInfo, setPageInfo] = useState({});

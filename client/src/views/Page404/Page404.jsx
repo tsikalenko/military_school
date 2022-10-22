@@ -1,6 +1,7 @@
+import { useNavigate } from 'react-router-dom';
+
 import './page404.scss';
 import '../../utils/styles/_utils.scss';
-import { useNavigate } from 'react-router-dom';
 
 const Page404 = () => {
     const navigate = useNavigate();

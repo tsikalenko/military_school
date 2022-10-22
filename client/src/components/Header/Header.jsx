@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdClose, MdNoteAlt } from 'react-icons/md';
 import { BsInstagram, BsTelephone } from 'react-icons/bs';
+
 import './header.scss';
 import '../../utils/styles/_utils.scss';
 

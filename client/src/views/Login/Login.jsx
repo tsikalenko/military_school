@@ -1,9 +1,10 @@
 import { useForm } from 'react-hook-form';
-import '../../utils/styles/_utils.scss';
-import '../../utils/styles/_edit.scss';
 import { login } from '../../api/userAPI';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import '../../utils/styles/_utils.scss';
+import '../../utils/styles/_edit.scss';
 
 const Login = () => {
     const [error, setError] = useState('');

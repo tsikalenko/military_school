@@ -14,6 +14,7 @@ import 'swiper/scss/pagination';
 import 'swiper/scss/scrollbar';
 import 'swiper/scss/effect-fade';
 import 'swiper/scss/autoplay';
+
 import './slider.scss';
 
 const Slider = ({ slides }) => {

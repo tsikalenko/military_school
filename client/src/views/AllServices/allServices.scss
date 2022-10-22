@@ -56,7 +56,7 @@
 
     @include green-bg();
 
-    @include respond(tablet){
+    @include respond(tablet) {
       min-width: 280px;
       max-width: 280px;
     }

@@ -1,6 +1,6 @@
 @import "./src/utils/styles/mixins";
 
-.gratitude{
+.gratitude {
   width: 100%;
   padding: 0 20px;
   color: $main-color;
@@ -14,11 +14,11 @@
   @include respond(laptop) {
     margin-top: 200px;
   }
-  
-  &__link{
+
+  &__link {
     text-align: center;
   }
-  
+
   &__title {
     font-weight: 700;
     text-align: center;
@@ -32,7 +32,7 @@
     }
   }
 
-  &__text{
+  &__text {
     font-size: 25px;
   }
 }

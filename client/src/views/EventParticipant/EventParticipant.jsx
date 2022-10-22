@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getParticipantOfEvents } from '../../api/paticipantsAPI';
+
 import './eventParticipant.scss';
 import '../../utils/styles/_utils.scss';
 

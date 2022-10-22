@@ -2,7 +2,6 @@ import Users from '../models/users.js';
 import * as crypto from 'crypto';
 import jwt from 'jsonwebtoken';
 import { validationResult } from 'express-validator';
-import { KEY } from '../config.js';
 import checkAdmin from '../helpers/checkAdmin.js';
 
 class UserController {
@@ -20,7 +19,7 @@ class UserController {
                 return res.status(400).json({ message: 'this login is busy' });
             }
             const hashPassword = crypto
-                .pbkdf2Sync(password, KEY, 7, 16, 'sha512')
+                .pbkdf2Sync(password, process.env.KEY, 7, 16, 'sha512')
                 .toString('hex');
             const user = await Users.create({
                 ...req.body,
@@ -39,7 +38,7 @@ class UserController {
             const user = await Users.findOne({ username });
             if (user) {
                 const hashPassword = crypto
-                    .pbkdf2Sync(password, KEY, 7, 16, 'sha512')
+                    .pbkdf2Sync(password, process.env.KEY, 7, 16, 'sha512')
                     .toString('hex');
                 if (user.password === hashPassword) {
                     const token = jwt.sign(
@@ -48,7 +47,7 @@ class UserController {
                             username: user.username,
                             isAdmin: user.isAdmin,
                         },
-                        KEY,
+                        process.env.KEY,
                         {
                             expiresIn: '24h',
                         }
@@ -98,7 +97,7 @@ class UserController {
                 family,
                 photo,
             } = req.body;
-            const { userId } = jwt.verify(token, KEY);
+            const { userId } = jwt.verify(token, process.env.KEY);
             const oldUser = await Users.findOne({ _id: userId });
             if (!oldUser) {
                 return res.status(400).json({ message: 'User not found' });
@@ -112,7 +111,7 @@ class UserController {
 
             const filter = { _id: userId };
             const hashPassword = crypto
-                .pbkdf2Sync(password, KEY, 7, 16, 'sha512')
+                .pbkdf2Sync(password, process.env.KEY, 7, 16, 'sha512')
                 .toString('hex');
             const update = {
                 username,
@@ -136,7 +135,7 @@ class UserController {
     async deleteUser(req, res) {
         try {
             const { token } = req.body;
-            const { userId } = jwt.verify(token, KEY);
+            const { userId } = jwt.verify(token, process.env.KEY);
 
             const result = await Users.deleteOne({ _id: userId });
 

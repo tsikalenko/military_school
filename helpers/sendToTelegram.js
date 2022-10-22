@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const sendToTelegram = (message) => {
-    axios.post(
+const sendToTelegram = async (message) => {
+    await axios.post(
         `https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendMessage`,
         {
             chat_id: process.env.CHAT_ID,
