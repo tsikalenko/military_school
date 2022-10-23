@@ -10,7 +10,7 @@ function App() {
             className='app'
             style={{
                 backgroundImage:
-                    'url(https://res.cloudinary.com/dkngcqeid/image/upload/v1665554629/military_school/cover3_ora3x2.jpg)',
+                    'url(https://res.cloudinary.com/dv6xzqwka/image/upload/v1666514364/cover_lcame0.jpg)',
             }}
         >
             <Header />

@@ -33,7 +33,7 @@ const Schedule = ({ type }) => {
                     className='schedule__item'
                     style={{
                         backgroundImage:
-                            'url(https://res.cloudinary.com/dkngcqeid/image/upload/v1665554630/military_school/schedule_nyacni.jpg)',
+                            'url(https://res.cloudinary.com/dv6xzqwka/image/upload/v1666514365/schedule1_jfg7kn.jpg)',
                     }}
                 >
                     <h3 className='schedule__title'>{event.title}</h3>
