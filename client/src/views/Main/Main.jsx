@@ -55,7 +55,7 @@ const Main = () => {
                         <h3 className='main__subtitle'>
                             {pageInfo.text.title}
                         </h3>
-                        <p className='main__text'>
+                        <p className='main__text pre-wrap'>
                             {pageInfo.text.description}
                         </p>
                     </section>

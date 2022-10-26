@@ -61,7 +61,7 @@ const TeamBuilding = () => {
                             <h3 className='team-building__subtitle'>
                                 {pageInfo.info.title}
                             </h3>
-                            <p className='team-building__text'>
+                            <p className='team-building__text pre-wrap'>
                                 {pageInfo.info.description}
                             </p>
                             <HashLink
@@ -73,7 +73,9 @@ const TeamBuilding = () => {
                         </div>
                     </div>
 
-                    <p className='team-building__text'>{pageInfo.text}</p>
+                    <p className='team-building__text pre-wrap'>
+                        {pageInfo.text}
+                    </p>
 
                     <form
                         className='edit__form'
