@@ -7,7 +7,7 @@ import './schedule.scss';
 import '../../utils/styles/_utils.scss';
 
 const Schedule = ({ type }) => {
-    const [events, setEvents] = useState({});
+    const [events, setEvents] = useState(null);
     const [isErrorLoading, setIsErrorLoading] = useState(false);
 
     useEffect(() => {
@@ -56,8 +56,12 @@ const Schedule = ({ type }) => {
                     Нажаль, виникла проблема зі завантаженням сторінки,
                     спробуйте оновити сторінку
                 </h2>
-            ) : Object.keys(events).length === 0 ? (
+            ) : events === null ? (
                 <h2 className='loading'>Loading...</h2>
+            ) : Object.keys(events).length === 0 ? (
+                <h2 className='loading'>
+                    Нажаль зараз відсутні відкріті реестрації
+                </h2>
             ) : (
                 <div className='schedule'>{renderEvents()}</div>
             )}

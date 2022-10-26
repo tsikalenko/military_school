@@ -32,14 +32,14 @@ const EditSlider = ({ fields, register, remove }) => {
                         />
                     </div>
                 </div>
-                <button
+                <div
                     className='button button--border button--sm button--center'
                     onClick={() => {
                         remove(index);
                     }}
                 >
                     Видалити поле
-                </button>
+                </div>
             </div>
         );
     });
