@@ -101,14 +101,14 @@ const EditAllServices = () => {
                             />
                         </div>
                     </div>
-                    <button
+                    <div
                         className='button button--border button--sm button--center'
                         onClick={() => {
                             remove(index);
                         }}
                     >
                         Видалити сервіс
-                    </button>
+                    </div>
                 </div>
             );
         });
