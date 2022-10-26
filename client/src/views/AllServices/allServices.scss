@@ -29,7 +29,7 @@
   }
 
   &__item {
-    margin: 15px 0;
+    margin: 15px auto;
     @include flex($dir: column);
 
     @include respond(tablet) {
@@ -64,7 +64,7 @@
 
   &__info {
     margin-top: 20px;
-
+    flex-grow: 1;
     @include respond(tablet) {
       margin: 0 30px;
     }
@@ -74,6 +74,10 @@
     font-size: 20px;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+  }
+
+  &__block{
+    width: 100%;
   }
 }
