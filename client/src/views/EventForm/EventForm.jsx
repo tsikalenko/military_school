@@ -73,14 +73,14 @@ const EventForm = () => {
                             className='edit__input edit__input--text'
                         />
                     </div>
-                    <button
+                    <div
                         className='button button--border button--sm button--center'
                         onClick={() => {
                             remove(index);
                         }}
                     >
                         Видалити поле
-                    </button>
+                    </div>
                 </div>
             );
         });
@@ -235,14 +235,14 @@ const EventForm = () => {
 
                         {error && <p className='edit__error'>{error}</p>}
 
-                        <button
+                        <div
                             className='button button--border'
                             onClick={() => {
                                 append({});
                             }}
                         >
                             Додати поле
-                        </button>
+                        </div>
                         <input
                             type='submit'
                             className='button button--accent'
