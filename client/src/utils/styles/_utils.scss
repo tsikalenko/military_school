@@ -145,3 +145,18 @@
   ;
   }
 }
+
+.pre-wrap{
+  white-space: pre-wrap;
+}
+
+.line{
+  margin: 10px auto 30px;
+  display: block;
+  height: 2px;
+  width: 50%;
+  background-color: $main-color;
+  @include respond(laptop){
+    width: 25%;
+  }
+}

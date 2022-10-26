@@ -25,19 +25,24 @@ const AllServices = () => {
                 'services__item--right': index % 2 !== 0,
             });
             return (
-                <div className={itemClass} key={item.title}>
-                    <div className='services__photo'>
-                        <img
-                            src={item.photo}
-                            alt={item.alt}
-                            className='services__img'
-                            width={280}
-                        />
+                <div className='services__block' key={item.title}>
+                    <div className={itemClass}>
+                        <div className='services__photo'>
+                            <img
+                                src={item.photo}
+                                alt={item.alt}
+                                className='services__img'
+                                width={280}
+                            />
+                        </div>
+                        <div className='services__info'>
+                            <h3 className='services__subtitle'>{item.title}</h3>
+                            <p className='services__text pre-wrap'>
+                                {item.description}
+                            </p>
+                        </div>
                     </div>
-                    <div className='services__info'>
-                        <h3 className='services__subtitle'>{item.title}</h3>
-                        <p className='services__text'>{item.description}</p>
-                    </div>
+                    <div className='line'></div>
                 </div>
             );
         });
