@@ -57,10 +57,10 @@ const Schedule = ({ type }) => {
                     спробуйте оновити сторінку
                 </h2>
             ) : events === null ? (
-                <h2 className='loading'>Loading...</h2>
+                <h2 className='loading loading--sm'>Loading...</h2>
             ) : Object.keys(events).length === 0 ? (
-                <h2 className='loading'>
-                    Нажаль зараз відсутні відкріті реестрації
+                <h2 className='loading loading--sm'>
+                    Нажаль зараз відсутні відкриті реестрації
                 </h2>
             ) : (
                 <div className='schedule'>{renderEvents()}</div>

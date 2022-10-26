@@ -123,6 +123,10 @@
   @include respond(laptop) {
     margin: 250px 0 50px;
   }
+
+  &--sm{
+    margin-top: 50px;
+  }
 }
 
 .title {
