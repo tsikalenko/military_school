@@ -1,5 +1,6 @@
 @import "./src/utils/styles/colors";
 @import "./src/utils/styles/mixins";
+@import "../CustomCalendar/calendar";
 
 .schedule {
   @include flex($wrap: wrap, $align: stretch);

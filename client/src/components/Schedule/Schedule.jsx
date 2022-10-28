@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getAllEvents, getEnableEvents } from '../../api/eventsAPI';
 import PropTypes from 'prop-types';
+import CustomCalendar from '../CustomCalendar';
 
 import './schedule.scss';
 import '../../utils/styles/_utils.scss';
@@ -64,7 +65,10 @@ const Schedule = ({ type }) => {
                     Нажаль зараз відсутні відкриті реестрації
                 </h2>
             ) : (
-                <div className='schedule'>{renderEvents()}</div>
+                <div className='schedule container'>
+                    {renderEvents()}
+                    <CustomCalendar type={type} events={events} />
+                </div>
             )}
         </>
     );
