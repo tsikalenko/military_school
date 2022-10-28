@@ -1,0 +1,63 @@
+@import "../../utils/styles/colors";
+@import "../../utils/styles/mixins";
+
+.calendarWrapper{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.modeButton {
+  color: $main-color;
+
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+.modeButtonActive {
+  color: $accent-color;
+}
+
+.calendarWrapper {
+  color: $main-color;
+}
+
+.calendarHeaderButtons {
+  color: $accent-color;
+}
+
+.currentDay {
+  background-color: $accent-color;
+}
+
+.yearlyMonth {
+  display: block;
+  float: none;
+  width: 100%;
+  margin: 0 auto;
+
+  @include respond(tablet) {
+    display: inline-block;
+    float: left;
+    width: calc(100% / 3);
+    margin: auto;
+  }
+}
+
+.dailyEventWrapper {
+  cursor: pointer;
+  @include flex();
+  @include respond(tablet) {
+    font-size: 20px;
+  }
+
+  &:hover {
+    background-color: $dark-accent-color !important;
+    transition: 300ms;
+  }
+}
+
+.dayEvent{
+  width: 100% !important;
+  left: 0 !important;
+}

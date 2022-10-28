@@ -6,7 +6,7 @@
   color: $main-color;
   position: fixed;
   width: 100%;
-  z-index: 9;
+  z-index: 9999;
 
   &__container {
     padding: 5px 20px !important;

@@ -8,7 +8,10 @@ eventsRouter.post(
     '/',
     [
         check('title', "Title can't is empty").notEmpty(),
-        check('date', "Date can't is empty").notEmpty(),
+        check('startDate', "startDate can't is empty").notEmpty(),
+        check('endDate', "endDate can't is empty").notEmpty(),
+        check('startTime', "startTime can't is empty").notEmpty(),
+        check('endTime', "endTime can't is empty").notEmpty(),
         check('description', "Description can't is empty").notEmpty(),
         check('fields', "Fields can't is empty").notEmpty(),
         check('maxQuantity', "maxQuantity can't is empty").notEmpty(),

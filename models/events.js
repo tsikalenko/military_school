@@ -34,7 +34,6 @@ const EventsSchema = new Schema(
         },
         img: {
             type: Schema.Types.String,
-            required: true,
         },
         letterSubject: {
             type: Schema.Types.String,

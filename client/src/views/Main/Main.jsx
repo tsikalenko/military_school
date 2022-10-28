@@ -46,9 +46,6 @@ const Main = () => {
                         <MainInfo data={pageInfo.info} />
                     </section>
 
-                    <h3 className='main__subtitle main__subtitle--center main__subtitle--large'>
-                        Найближчі <span className='accent'>події</span>
-                    </h3>
                     <Schedule />
 
                     <section className='main__about'>
