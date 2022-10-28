@@ -40,6 +40,9 @@ const AllServices = () => {
                             <p className='services__text pre-wrap'>
                                 {item.description}
                             </p>
+                            <h3 className='services__subtitle services__subtitle--mt'>
+                                Вартість: {item.price} грн.
+                            </h3>
                         </div>
                     </div>
                     <div className='line'></div>

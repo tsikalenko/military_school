@@ -8,7 +8,11 @@ const EventsSchema = new Schema(
             type: Schema.Types.String,
             required: true,
         },
-        date: {
+        price: {
+            type: Schema.Types.Number,
+            required: true,
+        },
+        startDate: {
             type: Schema.Types.String,
             required: true,
         },
@@ -16,7 +20,19 @@ const EventsSchema = new Schema(
             type: Schema.Types.String,
             required: true,
         },
+        endDate: {
+            type: Schema.Types.String,
+            required: true,
+        },
+        endTime: {
+            type: Schema.Types.String,
+            required: true,
+        },
         description: {
+            type: Schema.Types.String,
+            required: true,
+        },
+        img: {
             type: Schema.Types.String,
             required: true,
         },

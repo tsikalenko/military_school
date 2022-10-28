@@ -86,6 +86,14 @@
       font-weight: 400;
       font-size: 14px;
     }
+
+    &--lowercase{
+      text-transform: lowercase;
+    }
+
+    &--capitalize{
+      text-transform: capitalize;
+    }
   }
 
   &__item {
@@ -124,5 +132,6 @@
     font-weight: 500;
     color: $light-text-color;
     margin: 5px;
+    text-align: center;
   }
 }

@@ -166,19 +166,36 @@ const EventForm = () => {
                         )}
 
                         <div className='edit__item'>
-                            <label className='edit__label'>Дата події:</label>
+                            <label className='edit__label'>Вартість:</label>
                             <input
-                                type='date'
-                                {...register('date', {
+                                type='number'
+                                {...register('price', {
                                     required: true,
                                 })}
-                                // placeholder='дд.мм.рррр'
                                 className='edit__input edit__input--text'
                             />
                         </div>
                         {errors?.date?.type === 'required' && (
                             <p role='alert' className='edit__error'>
-                                Дата події обов{"'"}язкова
+                                Вартість події обов{"'"}язкова
+                            </p>
+                        )}
+
+                        <div className='edit__item'>
+                            <label className='edit__label'>
+                                Дата початку події:
+                            </label>
+                            <input
+                                type='date'
+                                {...register('startDate', {
+                                    required: true,
+                                })}
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
+                        {errors?.date?.type === 'required' && (
+                            <p role='alert' className='edit__error'>
+                                Дата початку події обов{"'"}язкова
                             </p>
                         )}
 
@@ -194,7 +211,43 @@ const EventForm = () => {
                         </div>
                         {errors?.date?.type === 'required' && (
                             <p role='alert' className='edit__error'>
-                                Дата події обов{"'"}язкова
+                                Час початку події обов{"'"}язковий
+                            </p>
+                        )}
+
+                        <div className='edit__item'>
+                            <label className='edit__label'>
+                                Дата завершення події:
+                            </label>
+                            <input
+                                type='date'
+                                {...register('endDate', {
+                                    required: true,
+                                })}
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
+                        {errors?.date?.type === 'required' && (
+                            <p role='alert' className='edit__error'>
+                                Дата завершення події обов{"'"}язкова
+                            </p>
+                        )}
+
+                        <div className='edit__item'>
+                            <label className='edit__label'>
+                                Час завершення:
+                            </label>
+                            <input
+                                type='time'
+                                {...register('endTime', {
+                                    required: true,
+                                })}
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
+                        {errors?.date?.type === 'required' && (
+                            <p role='alert' className='edit__error'>
+                                Час завершення події обов{"'"}язковій
                             </p>
                         )}
 
@@ -215,6 +268,15 @@ const EventForm = () => {
                                 Кількість учасників обов{"'"}язкова
                             </p>
                         )}
+
+                        <div className='edit__item'>
+                            <label className='edit__label'>Зображення:</label>
+                            <input
+                                type='url'
+                                {...register('img')}
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
 
                         <div className='edit__item'>
                             <label className='edit__label'>Тема листа:</label>

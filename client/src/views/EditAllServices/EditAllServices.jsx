@@ -100,6 +100,18 @@ const EditAllServices = () => {
                                 className='edit__input edit__input--textarea'
                             />
                         </div>
+
+                        <div className='edit__item'>
+                            <label className='edit__label'>price:</label>
+                            <input
+                                type='number'
+                                defaultValue={item.price}
+                                {...register(`services.${index}.price`, {
+                                    required: true,
+                                })}
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
                     </div>
                     <div
                         className='button button--border button--sm button--center'
