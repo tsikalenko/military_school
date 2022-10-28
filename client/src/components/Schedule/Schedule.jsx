@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getAllEvents } from '../../api/eventsAPI';
+import { getAllEvents, getEnableEvents } from '../../api/eventsAPI';
 import PropTypes from 'prop-types';
 
 import './schedule.scss';
@@ -13,7 +13,11 @@ const Schedule = ({ type }) => {
     useEffect(() => {
         (async () => {
             try {
-                setEvents((await getAllEvents()).reverse());
+                const events =
+                    type === 'edit'
+                        ? (await getAllEvents()).reverse()
+                        : (await getEnableEvents()).reverse();
+                setEvents(events);
             } catch (err) {
                 setIsErrorLoading(true);
             }
@@ -22,7 +26,7 @@ const Schedule = ({ type }) => {
 
     const renderEvents = () => {
         return events.map((event) => {
-            const item = (
+            return (
                 <Link
                     key={event._id}
                     to={
@@ -38,14 +42,9 @@ const Schedule = ({ type }) => {
                 >
                     <h3 className='schedule__title'>{event.title}</h3>
                     <p className='schedule__date'>{event.date}</p>
+                    <p className='schedule__date'>{event.startTime}</p>
                 </Link>
             );
-            if (type !== 'edit' && event.enable) {
-                return item;
-            }
-            if (type === 'edit') {
-                return item;
-            }
         });
     };
 

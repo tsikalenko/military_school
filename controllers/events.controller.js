@@ -37,12 +37,23 @@ class EventsController {
         }
     }
 
+    async getEnableEvents(req, res) {
+        try {
+            const event = await Events.find({ enable: true });
+
+            return res.json(event);
+        } catch (err) {
+            res.status(400).json({ message: err.message });
+        }
+    }
+
     async updateEvent(req, res) {
         try {
             const {
                 id: _id,
                 title,
                 date,
+                startTime,
                 description,
                 letterSubject,
                 letterHtml,
@@ -59,6 +70,7 @@ class EventsController {
             const update = {
                 title,
                 date,
+                startTime,
                 description,
                 letterSubject,
                 letterHtml,

@@ -10,6 +10,11 @@ export const getAllEvents = async () => {
     return data;
 };
 
+export const getEnableEvents = async () => {
+    const { data } = await axios.get('/events/enable');
+    return data;
+};
+
 export const getEvent = async (eventID) => {
     const { data } = await axios.get(`/events?id=${eventID}`);
     return data;

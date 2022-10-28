@@ -54,7 +54,7 @@ const Footer = () => {
                     </li>
                     <li className='nav__item nav__item--accent'>
                         <Link to='/registration' className='nav__link'>
-                            Запис на тренування
+                            Запис на курс
                         </Link>
                     </li>
                 </ul>

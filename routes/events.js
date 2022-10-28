@@ -19,6 +19,8 @@ eventsRouter.post(
 
 eventsRouter.get('/', EventsController.readEvent);
 
+eventsRouter.get('/enable', EventsController.getEnableEvents);
+
 eventsRouter.put(
     '/',
     [
