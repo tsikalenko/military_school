@@ -3,6 +3,7 @@
 @import "../CustomCalendar/calendar";
 
 .schedule {
+  width: 100%;
   @include flex($wrap: wrap, $align: stretch);
 
   &__item {

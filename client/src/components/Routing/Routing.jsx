@@ -3,7 +3,6 @@ import Main from '../../views/Main';
 import Contacts from '../../views/Contacts';
 import AllServices from '../../views/AllServices';
 import TeamBuilding from '../../views/TeamBuilding';
-import Registration from '../../views/Registration';
 import EditMain from '../../views/EditMain';
 import EditAllServices from '../../views/EditAllServices';
 import EditTeamBuilding from '../../views/EditTeamBuilding';
@@ -19,6 +18,7 @@ import RegistrationForm from '../../views/RegistrationForm';
 import Gratitude from '../../views/Gratitude';
 import MenuEventData from '../../views/MenuEventData';
 import EventParticipant from '../../views/EventParticipant';
+import Schedule from '../Schedule';
 
 const Routing = () => {
     const setPrivateElement = (element) => (
@@ -28,7 +28,10 @@ const Routing = () => {
     return (
         <Routes>
             <Route path='/' element={<Main />} />
-            <Route path='/registration' element={<Registration />} />
+            <Route
+                path='/registration'
+                element={<Schedule calendar={true} isPage={true} />}
+            />
             <Route path='/all-courses' element={<AllServices />} />
             <Route path='/team-building' element={<TeamBuilding />} />
             <Route path='/contacts' element={<Contacts />} />

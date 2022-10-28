@@ -13,7 +13,7 @@ const MenuEvents = () => {
             >
                 Створиті нову подію
             </Link>
-            <Schedule type={'edit'} />
+            <Schedule type={'edit'} calendar={true} />
             <Link to='/admin' className='button button--border button--center'>
                 Назад
             </Link>

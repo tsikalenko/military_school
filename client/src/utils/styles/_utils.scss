@@ -34,10 +34,6 @@
     @include respond(tablet) {
       margin-top: 167px;
     }
-
-    @include respond(laptop) {
-      margin-top: 100px;
-    }
   }
 }
 
@@ -144,6 +140,15 @@
     }
   ;
   }
+}
+
+.subtitle{
+  font-size: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+
 }
 
 .pre-wrap{
