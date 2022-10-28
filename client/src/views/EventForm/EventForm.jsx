@@ -168,11 +168,27 @@ const EventForm = () => {
                         <div className='edit__item'>
                             <label className='edit__label'>Дата події:</label>
                             <input
-                                type='text'
+                                type='date'
                                 {...register('date', {
                                     required: true,
                                 })}
-                                placeholder='дд.мм.рррр'
+                                // placeholder='дд.мм.рррр'
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
+                        {errors?.date?.type === 'required' && (
+                            <p role='alert' className='edit__error'>
+                                Дата події обов{"'"}язкова
+                            </p>
+                        )}
+
+                        <div className='edit__item'>
+                            <label className='edit__label'>Час початку:</label>
+                            <input
+                                type='time'
+                                {...register('startTime', {
+                                    required: true,
+                                })}
                                 className='edit__input edit__input--text'
                             />
                         </div>

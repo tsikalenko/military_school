@@ -12,6 +12,10 @@ const EventsSchema = new Schema(
             type: Schema.Types.String,
             required: true,
         },
+        startTime: {
+            type: Schema.Types.String,
+            required: true,
+        },
         description: {
             type: Schema.Types.String,
             required: true,

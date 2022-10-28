@@ -39,7 +39,7 @@ const Main = () => {
                         Наші курси
                     </Link>
                     <Link to='/registration' className='button button--accent'>
-                        Записатися на тренування
+                        Записатись на курс
                     </Link>
                     <section className='main__info'>
                         <Slider slides={pageInfo.slider} />

@@ -89,7 +89,7 @@ const Header = () => {
                     </li>
                     <li className='nav__item nav__item--mobile nav__item--colored'>
                         <Link to='/registration' className='nav__link'>
-                            Запис на тренування
+                            Запис на курс
                         </Link>
                     </li>
                     <li className='nav__item nav__item--special'>
@@ -115,7 +115,7 @@ const Header = () => {
                 >
                     <MdNoteAlt className='header__registration header__registration--img' />
                     <span className='header__registration header__registration--text'>
-                        Запис на тренування
+                        Запис на курс
                     </span>
                 </button>
             </div>
