@@ -52,14 +52,35 @@ const RegistrationForm = () => {
         ));
     };
 
+    const parseDate = (data) => {
+        const startDate = data.startDate.split('-').join('');
+        const endDate = data.endDate.split('-').join('');
+        const startTime = data.startTime.split(':').join('') + '00';
+        const endTime = data.endTime.split(':').join('') + '00';
+        return startDate + 'T' + startTime + '/' + endDate + 'T' + endTime;
+    };
+
     const onSubmit = (data) => {
+        const letterHtml =
+            eventInfo.letterHtml +
+            `
+            <br/>
+            <br/>
+            <a href='https://www.google.com/calendar/event?action=TEMPLATE&text=${
+                eventInfo.title
+            }&dates=${parseDate(eventInfo)}&details=${
+                eventInfo.description
+            }' target='_blank' rel='noreferrer'>
+                Додати в мій Google Calendar
+            </a>`;
+        console.log(letterHtml);
         (async () => {
             try {
                 await createParticipant({
                     eventId,
                     email: data.email,
                     letterSubject: eventInfo.letterSubject,
-                    letterHtml: eventInfo.letterHtml,
+                    letterHtml: letterHtml,
                     data,
                 });
                 navigate('/gratitude');
@@ -83,8 +104,18 @@ const RegistrationForm = () => {
                     <h2 className='edit__title edit__title--closest'>
                         {eventInfo.title}
                     </h2>
-                    <h3 className='edit__subtitle'>{eventInfo.date}</h3>
-                    <p className='edit__description'>{eventInfo.description}</p>
+                    <h3 className='edit__subtitle edit__subtitle--capitalize'>
+                        Початок: {eventInfo.startDate}, {eventInfo.startTime}
+                    </h3>
+                    <h3 className='edit__subtitle edit__subtitle--capitalize'>
+                        Завершення: {eventInfo.endDate}, {eventInfo.endTime}
+                    </h3>
+                    <p className='edit__description pre-wrap'>
+                        {eventInfo.description}
+                    </p>
+                    <h3 className='edit__subtitle edit__subtitle--lowercase'>
+                        {eventInfo.price} грн.
+                    </h3>
                     <form
                         onSubmit={handleSubmit(onSubmit)}
                         className='edit__form'

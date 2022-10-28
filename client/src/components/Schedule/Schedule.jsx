@@ -26,6 +26,9 @@ const Schedule = ({ type }) => {
 
     const renderEvents = () => {
         return events.map((event) => {
+            const img = event.img
+                ? event.img
+                : 'https://res.cloudinary.com/dv6xzqwka/image/upload/v1666514365/schedule1_jfg7kn.jpg';
             return (
                 <Link
                     key={event._id}
@@ -36,12 +39,11 @@ const Schedule = ({ type }) => {
                     }
                     className='schedule__item'
                     style={{
-                        backgroundImage:
-                            'url(https://res.cloudinary.com/dv6xzqwka/image/upload/v1666514365/schedule1_jfg7kn.jpg)',
+                        backgroundImage: `url(${img})`,
                     }}
                 >
                     <h3 className='schedule__title'>{event.title}</h3>
-                    <p className='schedule__date'>{event.date}</p>
+                    <p className='schedule__date'>{event.startDate}</p>
                     <p className='schedule__date'>{event.startTime}</p>
                 </Link>
             );

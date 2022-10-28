@@ -2,7 +2,7 @@
 @import "./src/utils/styles/mixins";
 
 .schedule {
-  @include flex($wrap: wrap);
+  @include flex($wrap: wrap, $align: stretch);
 
   &__item {
     margin: 20px 0;
@@ -14,10 +14,10 @@
     @include flex($dir: column);
 
     @include respond(tablet) {
-      max-width: 280px;
+      max-width: 320px;
       min-height: 230px;
       margin: 30px 20px;
-      padding: 50px 0;
+      padding: 50px 10px;
     }
 
     &:hover {
