@@ -93,7 +93,7 @@ const Header = () => {
                             className='nav__link'
                             rel='noreferrer'
                         >
-                            Оплатити
+                            Оплата
                         </a>
                     </li>
                     <li className='nav__item nav__item--special'>

@@ -19,11 +19,12 @@ export const sendSuccessfulPayment = async (req, res) => {
         const { email, phone, amount, currency, comment, transactionStatus } =
             req.body;
 
-        await sendToTelegram(
-            `<b>Нова сплата</b>\nEmail: ${email}\nТелефон: ${phone}\nСумма: ${amount} ${currency}\nКоментар: ${comment}\ntransactionStatus: ${transactionStatus}`
-        );
-
-        return res.redirect('../../payment/successful');
+        // await sendToTelegram(
+        //     `<b>Нова сплата</b>\nEmail: ${email}\nТелефон: ${phone}\nСумма: ${amount} ${currency}\nКоментар: ${comment}\ntransactionStatus: ${transactionStatus}`
+        // );
+        //
+        // return res.redirect('../../payment/successful');
+        return res.json({ body: req.body, req });
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
