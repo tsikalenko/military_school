@@ -24,7 +24,7 @@ export const sendSuccessfulPayment = async (req, res) => {
         // );
         //
         // return res.redirect('../../payment/successful');
-        return res.json({ body: req.body, req });
+        return res.json(JSON.stringify(req.body));
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
