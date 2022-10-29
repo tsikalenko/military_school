@@ -16,10 +16,10 @@ export const sendMessageTeamBuilding = async (req, res) => {
 
 export const sendSuccessfulPayment = async (req, res) => {
     try {
-        const { email, phone, amount, currency, transactionStatus } = req.body;
+        const { email, phone, amount, currency } = req.body;
 
         await sendToTelegram(
-            `<b>Нова сплата</b>\nEmail: ${email}\nТелефон: ${phone}\nСумма: ${amount} ${currency}\ntransactionStatus: ${transactionStatus}`
+            `<b>Нова сплата</b>\nEmail: ${email}\nТелефон: ${phone}\nСумма: ${amount} ${currency}`
         );
 
         return res.redirect('../../payment/successful');
