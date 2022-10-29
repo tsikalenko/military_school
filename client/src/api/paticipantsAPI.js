@@ -12,3 +12,13 @@ export const getParticipantOfEvents = async (eventId, token) => {
     });
     return data;
 };
+
+export const getParticipant = async (participantId) => {
+    const { data } = await axios.get(`/participants?id=${participantId}`);
+    return data;
+};
+
+export const deleteParticipant = async (participantId) => {
+    const { data } = await axios.delete(`/participants/${participantId}`);
+    return data;
+};

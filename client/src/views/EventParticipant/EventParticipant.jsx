@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { getParticipantOfEvents } from '../../api/paticipantsAPI';
 
 import './eventParticipant.scss';
@@ -10,6 +10,7 @@ const EventParticipant = () => {
     const [isErrorLoading, setIsErrorLoading] = useState(false);
     const { eventId } = useParams();
     const token = JSON.parse(localStorage.getItem('token'));
+    const navigate = useNavigate();
 
     useEffect(() => {
         (async () => {
@@ -41,6 +42,14 @@ const EventParticipant = () => {
                             </p>
                         </div>
                     ))}
+                    <button
+                        className='button button--border button--center button--sm'
+                        onClick={() => {
+                            navigate(`/participant/delete/${participant._id}`);
+                        }}
+                    >
+                        Видалити учасника
+                    </button>
                 </div>
             );
         });
