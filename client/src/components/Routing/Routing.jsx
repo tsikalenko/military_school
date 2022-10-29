@@ -58,7 +58,7 @@ const Routing = () => {
                     path='successful'
                     element={
                         <InfoPage
-                            title='Дякуемо за передплату!'
+                            title='Дякуемо за оплату!'
                             content='Платіж пройшов успішно'
                         />
                     }
