@@ -35,7 +35,17 @@ class ParticipantsController {
                 });
             }
 
-            await sendEmail(email, letterSubject, letterHtml);
+            const newLetterHtml =
+                letterHtml +
+                `
+                    <br/>
+                    <br/>
+                    <a href='https://military-school.herokuapp.com/participant/delete/${participant._id}' target='_blank' rel='noreferrer'>
+                        Видалити реєстрацію
+                    </a>
+                `;
+
+            await sendEmail(email, letterSubject, newLetterHtml);
             await sendToTelegram(createLeadMsg(data, event));
 
             return res.json(participant);
@@ -46,17 +56,12 @@ class ParticipantsController {
 
     async readParticipant(req, res) {
         try {
-            const { id, token } = req.body;
-            if (checkAdmin(token)) {
-                const event = await Participants.findOne({ _id: id });
-                if (event) {
-                    return res.json(event);
-                }
-                res.status(400).json({ message: 'Event not found' });
+            const { id } = req.query;
+            const event = await Participants.findOne({ _id: id });
+            if (event) {
+                return res.json(event);
             }
-            res.status(400).json({
-                message: 'You have not permission for this response',
-            });
+            res.status(400).json({ message: 'Event not found' });
         } catch (err) {
             res.status(400).json({ message: err.message });
         }
@@ -115,19 +120,15 @@ class ParticipantsController {
 
     async deleteParticipant(req, res) {
         try {
-            const { _id, token } = req.body;
-            if (checkAdmin(token)) {
-                const result = await Participants.deleteOne({ _id });
+            const { participantId } = req.params;
 
-                if (result.deletedCount > 0) {
-                    return res.json({ message: 'Page was deleted' });
-                }
+            const result = await Participants.deleteOne({ _id: participantId });
 
-                res.status(400).json({ message: 'Something going wrong' });
+            if (result.deletedCount > 0) {
+                return res.json({ message: 'Participant was deleted' });
             }
-            res.status(400).json({
-                message: 'You have not permission for this response',
-            });
+
+            res.status(400).json({ message: 'Something going wrong' });
         } catch (err) {
             res.status(400).json({ message: err.message });
         }

@@ -73,7 +73,7 @@ const RegistrationForm = () => {
             }' target='_blank' rel='noreferrer'>
                 Додати в мій Google Calendar
             </a>`;
-        console.log(letterHtml);
+
         (async () => {
             try {
                 await createParticipant({

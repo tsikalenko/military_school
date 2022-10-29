@@ -19,6 +19,7 @@ import Gratitude from '../../views/Gratitude';
 import MenuEventData from '../../views/MenuEventData';
 import EventParticipant from '../../views/EventParticipant';
 import Schedule from '../Schedule';
+import DeleteParticipant from '../../views/DeleteParticipant';
 
 const Routing = () => {
     const setPrivateElement = (element) => (
@@ -44,6 +45,10 @@ const Routing = () => {
                 />
             </Route>
             <Route path='/gratitude' element={<Gratitude />} />
+            <Route
+                path='participant/delete/:id'
+                element={<DeleteParticipant />}
+            />
 
             <Route path='/login' element={<Login />} />
             <Route path='/admin' element={setPrivateElement(<Admin />)} />

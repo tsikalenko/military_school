@@ -16,14 +16,7 @@ participantsRouter.post(
     ParticipantsController.createParticipant
 );
 
-participantsRouter.post(
-    '/',
-    [
-        check('id', "ID can't is empty").notEmpty(),
-        check('token', "Token can't is empty").notEmpty(),
-    ],
-    ParticipantsController.readParticipant
-);
+participantsRouter.get('/', ParticipantsController.readParticipant);
 
 participantsRouter.post(
     '/event',
@@ -46,11 +39,7 @@ participantsRouter.put(
 );
 
 participantsRouter.delete(
-    '/',
-    [
-        check('id', "ID can't is empty").notEmpty(),
-        check('token', "Token can't is empty").notEmpty(),
-    ],
+    '/:participantId',
     ParticipantsController.deleteParticipant
 );
 
