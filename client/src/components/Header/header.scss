@@ -75,11 +75,23 @@
       letter-spacing: 1px;
       padding: 10px;
       border: 2px solid $accent-color;
+      margin-left: 10px;
+
+      &:first-child{
+        margin-left: 0;
+      }
+
       &:hover{
         background-color: $accent-color;
         transition: 300ms;
       }
+
+
     }
+  }
+
+  &__buttons{
+    @include flex();
   }
 
   .nav {

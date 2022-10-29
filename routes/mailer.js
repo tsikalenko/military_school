@@ -1,10 +1,10 @@
 import Router from 'express';
 import { check } from 'express-validator';
-import sendMessageTeamBuilding from '../helpers/sendMessageTeamBuilding.js';
+import { sendMessageTeamBuilding } from '../helpers/sendMessageTeamBuilding.js';
 
-const participantsRouter = new Router();
+const mailerRouter = new Router();
 
-participantsRouter.post(
+mailerRouter.post(
     '/team-building',
     [
         check('name', "name can't is empty").notEmpty(),
@@ -14,4 +14,4 @@ participantsRouter.post(
     sendMessageTeamBuilding
 );
 
-export default participantsRouter;
+export default mailerRouter;

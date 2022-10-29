@@ -88,9 +88,13 @@ const Header = () => {
                         </Link>
                     </li>
                     <li className='nav__item nav__item--mobile nav__item--colored'>
-                        <Link to='/registration' className='nav__link'>
-                            Запис на курс
-                        </Link>
+                        <a
+                            href='https://secure.wayforpay.com/button/bb727bef0c1df'
+                            className='nav__link'
+                            rel='noreferrer'
+                        >
+                            Оплатити
+                        </a>
                     </li>
                     <li className='nav__item nav__item--special'>
                         <a
@@ -107,17 +111,27 @@ const Header = () => {
                         </a>
                     </li>
                 </ul>
-                <button
-                    className='header__button'
-                    onClick={() => {
-                        navigate('/registration');
-                    }}
-                >
-                    <MdNoteAlt className='header__registration header__registration--img' />
-                    <span className='header__registration header__registration--text'>
-                        Запис на курс
-                    </span>
-                </button>
+
+                <div className='header__buttons'>
+                    <a
+                        href='https://secure.wayforpay.com/button/bb727bef0c1df'
+                        className='header__button header__registration--text'
+                        rel='noreferrer'
+                    >
+                        Оплата
+                    </a>
+                    <button
+                        className=' header__button'
+                        onClick={() => {
+                            navigate('/registration');
+                        }}
+                    >
+                        <MdNoteAlt className=' header__registration header__registration--img' />
+                        <span className=' header__registration header__registration--text'>
+                            Запис на курс
+                        </span>
+                    </button>
+                </div>
             </div>
         </header>
     );
