@@ -38,9 +38,21 @@ class ParticipantsController {
             const newLetterHtml =
                 letterHtml +
                 `
-                    <br/>
-                    <br/>
-                    <a href='https://military-school.herokuapp.com/participant/delete/${participant._id}' target='_blank' rel='noreferrer'>
+                    <a href='https://military-school.herokuapp.com/participant/delete/${participant._id}' 
+                    target='_blank' 
+                    style='font-size: 18px;
+                    display: block;
+                    cursor: pointer;
+                    text-align: center;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    padding: 15px 0;
+                    margin: 20px auto;
+                    width: 50%;
+                    border: 2px solid #000000;
+                    color: #808000;
+                    text-decoration: none;''>
                         Видалити реєстрацію
                     </a>
                 `;

@@ -15,7 +15,7 @@ import Admin from '../../views/Admin/Admin';
 import MenuEvents from '../../views/MenuEvents';
 import EventForm from '../../views/EventForm';
 import RegistrationForm from '../../views/RegistrationForm';
-import Gratitude from '../../views/Gratitude';
+import InfoPage from '../../views/infoPage';
 import MenuEventData from '../../views/MenuEventData';
 import EventParticipant from '../../views/EventParticipant';
 import Schedule from '../Schedule';
@@ -44,7 +44,43 @@ const Routing = () => {
                     element={<EventParticipant />}
                 />
             </Route>
-            <Route path='/gratitude' element={<Gratitude />} />
+            <Route
+                path='/gratitude'
+                element={
+                    <InfoPage
+                        title='Дякуемо за реестрацію!'
+                        content="Ми з зв'яжемося Вами найближчим часом."
+                    />
+                }
+            />
+            <Route path='/payment/'>
+                <Route
+                    path='successful'
+                    element={
+                        <InfoPage
+                            title='Дякуемо за передполату!'
+                            content='Платіж пройшов успішно'
+                        />
+                    }
+                />
+                <Route
+                    path='error'
+                    element={
+                        <InfoPage
+                            title='Нажль при сплаті трапилась помилка!'
+                            content={
+                                <a
+                                    href='https://secure.wayforpay.com/button/bb727bef0c1df'
+                                    className='button button--accent button--center'
+                                    rel='noreferrer'
+                                >
+                                    Спробувати сплатити знов
+                                </a>
+                            }
+                        />
+                    }
+                />
+            </Route>
             <Route
                 path='participant/delete/:id'
                 element={<DeleteParticipant />}

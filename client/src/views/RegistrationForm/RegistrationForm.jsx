@@ -64,13 +64,47 @@ const RegistrationForm = () => {
         const letterHtml =
             eventInfo.letterHtml +
             `
-            <br/>
-            <br/>
-            <a href='https://www.google.com/calendar/event?action=TEMPLATE&text=${
-                eventInfo.title
-            }&dates=${parseDate(eventInfo)}&details=${
+            <a
+                href='https://secure.wayforpay.com/button/bb727bef0c1df'
+                style='font-size: 18px;
+                    display: block;
+                    cursor: pointer;
+                    text-align: center;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    padding: 15px 0;
+                    margin: 20px auto;
+                    width: 50%;
+                    border: 2px solid transparent;
+                    background-color: #808000;
+                    color: #000000;
+                    text-decoration: none;'
+                rel='noreferrer'
+            >
+                Сплатити за курс
+            </a>
+            <a 
+                href='https://www.google.com/calendar/event?action=TEMPLATE&text=${
+                    eventInfo.title
+                }&dates=${parseDate(eventInfo)}&details=${
                 eventInfo.description
-            }' target='_blank' rel='noreferrer'>
+            }' 
+                target='_blank' 
+                style='font-size: 18px;
+                    display: block;
+                    cursor: pointer;
+                    text-align: center;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    padding: 15px 0;
+                    margin: 20px auto;
+                    width: 50%;
+                    border: 2px solid transparent;
+                    background-color: #808000;
+                    color: #000000;
+                    text-decoration: none;'>
                 Додати в мій Google Calendar
             </a>`;
 
