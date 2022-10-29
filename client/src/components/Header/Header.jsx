@@ -118,7 +118,7 @@ const Header = () => {
                         className='header__button header__registration--text'
                         rel='noreferrer'
                     >
-                        Оплата+
+                        Оплата
                     </a>
                     <button
                         className=' header__button'

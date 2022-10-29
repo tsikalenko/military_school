@@ -16,15 +16,13 @@ export const sendMessageTeamBuilding = async (req, res) => {
 
 export const sendSuccessfulPayment = async (req, res) => {
     try {
-        const { email, phone, amount, currency, comment, transactionStatus } =
-            req.body;
+        const { email, phone, amount, currency, transactionStatus } = req.body;
 
-        // await sendToTelegram(
-        //     `<b>Нова сплата</b>\nEmail: ${email}\nТелефон: ${phone}\nСумма: ${amount} ${currency}\nКоментар: ${comment}\ntransactionStatus: ${transactionStatus}`
-        // );
-        //
-        // return res.redirect('../../payment/successful');
-        return res.json(JSON.stringify(req.body));
+        await sendToTelegram(
+            `<b>Нова сплата</b>\nEmail: ${email}\nТелефон: ${phone}\nСумма: ${amount} ${currency}\ntransactionStatus: ${transactionStatus}`
+        );
+
+        return res.redirect('../../payment/successful');
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
