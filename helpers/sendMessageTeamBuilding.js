@@ -35,16 +35,18 @@ export const sendEventParticipants = async (req, res) => {
 
         const event = await Events.findOne({ _id: eventId });
 
-        const text = participantList.map((participant) => {
+        const text = participantList.map((participant, index) => {
             const keys = Object.keys(participant.data);
             const participantData = keys.map((field) => {
                 return `\n${field}: ${participant.data[field]}`;
             });
-            return `\n\n${participantData}\n${participant.payment} грн.`;
+            return `\n\n\nУчасник ${index + 1}\n${participantData}\n${
+                participant.payment
+            } грн.`;
         });
 
         await sendToTelegram(
-            `<b>${event.title}</b>\n${event.startDate}, ${event.startTime}\n${text}`
+            `<b>${event.title}</b>\n${event.startDate}, ${event.startTime}\nВсього зареестровано - ${participantList.length}\n${text}`
         );
 
         return res.json();
