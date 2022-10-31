@@ -35,8 +35,8 @@ const Main = () => {
                 <div className='main container'>
                     <h2 className='main__title'>{pageInfo.title}</h2>
                     <p className='main__description'>{pageInfo.description}</p>
-                    <Link to='/all-courses' className='button button--border'>
-                        Наші курси
+                    <Link to='/team-building' className='button button--border'>
+                        Корпоративи
                     </Link>
                     <Link to='/registration' className='button button--accent'>
                         Записатись на курс

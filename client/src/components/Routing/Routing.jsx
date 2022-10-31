@@ -47,10 +47,19 @@ const Routing = () => {
                 />
             </Route>
             <Route
-                path='/gratitude'
+                path='/gratitude/:payBtn'
                 element={
                     <InfoPage
                         title='Дякуемо за реестрацію!'
+                        content="Ми з зв'яжемося Вами найближчим часом."
+                    />
+                }
+            />
+            <Route
+                path='/gratitude'
+                element={
+                    <InfoPage
+                        title='Дякуемо за замовлення!'
                         content="Ми з зв'яжемося Вами найближчим часом."
                     />
                 }

@@ -55,7 +55,7 @@ const DeleteParticipant = () => {
                             (async () => {
                                 try {
                                     await deleteParticipant(id);
-                                    navigate('/');
+                                    navigate(-1);
                                 } catch (err) {
                                     setIsErrorLoading(true);
                                 }

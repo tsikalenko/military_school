@@ -61,11 +61,12 @@ const RegistrationForm = () => {
     };
 
     const onSubmit = (data) => {
+        const payBtn = eventInfo.payBtn || 'bb727bef0c1df';
         const letterHtml =
             eventInfo.letterHtml +
             `
             <a
-                href='https://secure.wayforpay.com/button/bb727bef0c1df'
+                href='https://secure.wayforpay.com/button/${payBtn}'
                 style='font-size: 18px;
                     display: block;
                     cursor: pointer;
@@ -117,7 +118,7 @@ const RegistrationForm = () => {
                     letterHtml: letterHtml,
                     data,
                 });
-                navigate('/gratitude');
+                navigate(`/gratitude/${payBtn}`);
             } catch (err) {
                 setIsErrorLoading(true);
             }
