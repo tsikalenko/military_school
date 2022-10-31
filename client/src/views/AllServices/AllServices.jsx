@@ -3,6 +3,7 @@ import { getPage } from '../../api/pagesAPI';
 import classNames from 'classnames';
 
 import './allServices.scss';
+import { Link } from 'react-router-dom';
 
 const AllServices = () => {
     const [pageInfo, setPageInfo] = useState({});
@@ -43,6 +44,12 @@ const AllServices = () => {
                             <h3 className='services__subtitle services__subtitle--mt'>
                                 Вартість: {item.price} грн.
                             </h3>
+                            <Link
+                                to='/registration'
+                                className='button button--accent button--center button--fifteen'
+                            >
+                                Записатись на курс
+                            </Link>
                         </div>
                     </div>
                     <div className='line'></div>
