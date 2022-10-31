@@ -33,6 +33,12 @@ const DeleteParticipant = () => {
                         </p>
                     </div>
                 ))}
+                <div className='event-participants__field'>
+                    <p className='event-participants__subtitle'>Сплачено:</p>
+                    <p className='event-participants__value'>
+                        {participant.payment}
+                    </p>
+                </div>
             </div>
         );
     };

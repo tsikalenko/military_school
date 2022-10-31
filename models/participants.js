@@ -13,6 +13,10 @@ const ParticipantsSchema = new Schema(
             type: Schema.Types.Mixed,
             required: true,
         },
+        payment: {
+            type: Schema.Types.Number,
+            required: true,
+        },
     },
     { timestamps: true }
 );

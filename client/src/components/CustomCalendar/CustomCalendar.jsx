@@ -19,7 +19,7 @@ const CustomCalendar = ({ events, type }) => {
 
     const handlerClickEvent = (event) => {
         navigate(
-            type === 'edit' ? `/edit/events/${event}` : `/events/${event}`
+            type === 'edit' ? `/events/data/${event}` : `/events/${event}`
         );
     };
 
