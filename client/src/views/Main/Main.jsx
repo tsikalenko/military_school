@@ -48,7 +48,7 @@ const Main = () => {
 
                     <Schedule />
 
-                    <section className='main__about'>
+                    <section id='about' className='main__about'>
                         <h3 className='main__subtitle'>
                             {pageInfo.text.title}
                         </h3>

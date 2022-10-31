@@ -30,14 +30,14 @@ const EditContacts = () => {
         const formData = {
             title: data.title,
             phones: [data.phone0, data.phone1, data.phone2],
-            info: {
-                title: data.infoTitle,
-                description: data.infoDescription,
-            },
             email: data.email,
             telegram: data.telegram,
             viber: data.viber,
             instagram: data.instagram,
+            facebookId: data.facebookId,
+            facebookName: data.facebookName,
+            locationText: data.locationText,
+            locationUrl: data.locationUrl,
         };
         (async () => {
             try {
@@ -137,6 +137,56 @@ const EditContacts = () => {
                                 type='text'
                                 defaultValue={pageInfo.instagram}
                                 {...register('instagram', { required: true })}
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
+
+                        <div className='edit__item'>
+                            <label className='edit__label'>Facebook ID:</label>
+                            <input
+                                type='text'
+                                defaultValue={pageInfo.facebookId}
+                                {...register('facebookId', { required: true })}
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
+
+                        <div className='edit__item'>
+                            <label className='edit__label'>
+                                Facebook name:
+                            </label>
+                            <input
+                                type='text'
+                                defaultValue={pageInfo.facebookName}
+                                {...register('facebookName', {
+                                    required: true,
+                                })}
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
+
+                        <div className='edit__item'>
+                            <label className='edit__label'>
+                                Location text:
+                            </label>
+                            <input
+                                type='text'
+                                defaultValue={pageInfo.locationText}
+                                {...register('locationText', {
+                                    required: true,
+                                })}
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
+
+                        <div className='edit__item'>
+                            <label className='edit__label'>Location url:</label>
+                            <input
+                                type='text'
+                                defaultValue={pageInfo.locationUrl}
+                                {...register('locationUrl', {
+                                    required: true,
+                                })}
                                 className='edit__input edit__input--text'
                             />
                         </div>

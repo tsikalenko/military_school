@@ -6,7 +6,7 @@
   width: 100%;
 
   &__container {
-    padding: 30px 10px;
+    padding: 30px 10px 20px;
     color: $main-color;
     @include flex($dir: column);
     position: relative;
@@ -85,5 +85,13 @@
         }
       }
     }
+  }
+
+  &__social{
+    font-size: 0;
+  }
+
+  &__icon{
+    font-size: 30px;
   }
 }

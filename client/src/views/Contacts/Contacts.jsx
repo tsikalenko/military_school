@@ -1,8 +1,9 @@
-import { BsInstagram, BsTelephone } from 'react-icons/bs';
+import { BsFacebook, BsInstagram, BsTelephone } from 'react-icons/bs';
 import { FaViber, FaTelegramPlane } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
 import { getPage } from '../../api/pagesAPI';
+import { ImLocation } from 'react-icons/im';
 
 import './contacts.scss';
 import '../../utils/styles/_utils.scss';
@@ -53,6 +54,16 @@ const Contacts = () => {
                     {renderPhones()}
 
                     <a
+                        href={pageInfo.locationUrl}
+                        className='contacts__mail'
+                        target='_blank'
+                        rel='noreferrer'
+                    >
+                        <ImLocation className='contacts__icon contacts__icon--accent' />
+                        <p className='contacts__tel'>{pageInfo.locationText}</p>
+                    </a>
+
+                    <a
                         href={`mailto:${pageInfo.email}`}
                         className='contacts__mail'
                         rel='noreferrer'
@@ -62,12 +73,12 @@ const Contacts = () => {
                     </a>
 
                     <a
-                        href={`tg://resolve?domain=&${pageInfo.telegram}`}
+                        href={`tg://resolve?domain=${pageInfo.telegram}`}
                         target='_blank'
                         className='contacts__social'
                         rel='noreferrer'
                     >
-                        <FaTelegramPlane className='contacts__icon contacts__icon--blue' />
+                        <FaTelegramPlane className='contacts__icon tg-blue' />
                         <span className='contacts__username'>
                             @{pageInfo.telegram}
                         </span>
@@ -79,7 +90,7 @@ const Contacts = () => {
                         className='contacts__social'
                         rel='noreferrer'
                     >
-                        <FaViber className='contacts__icon contacts__icon--violet' />
+                        <FaViber className='contacts__icon viber-violet' />
                         <span className='contacts__username'>
                             +{pageInfo.viber}
                         </span>
@@ -91,9 +102,21 @@ const Contacts = () => {
                         className='contacts__social'
                         rel='noreferrer'
                     >
-                        <BsInstagram className='contacts__icon contacts__icon--pink' />
+                        <BsInstagram className='contacts__icon inst-pink' />
                         <span className='contacts__username'>
                             @{pageInfo.instagram}
+                        </span>
+                    </a>
+
+                    <a
+                        href={`https://www.facebook.com/profile.php?id=${pageInfo.facebookId}`}
+                        target='_blank'
+                        className='contacts__social'
+                        rel='noreferrer'
+                    >
+                        <BsFacebook className='contacts__icon facebook-blue' />
+                        <span className='contacts__username'>
+                            {pageInfo.facebookName}
                         </span>
                     </a>
                 </div>

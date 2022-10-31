@@ -20,6 +20,8 @@ import MenuEventData from '../../views/MenuEventData';
 import EventParticipant from '../../views/EventParticipant';
 import Schedule from '../Schedule';
 import DeleteParticipant from '../../views/DeleteParticipant';
+import PublicOffer from '../../views/PublicOffer';
+import EditPublicOffer from '../../views/EditPublicOffer';
 
 const Routing = () => {
     const setPrivateElement = (element) => (
@@ -85,6 +87,7 @@ const Routing = () => {
                 path='participant/delete/:id'
                 element={<DeleteParticipant />}
             />
+            <Route path='public-offer' element={<PublicOffer />} />
 
             <Route path='/login' element={<Login />} />
             <Route path='/admin' element={setPrivateElement(<Admin />)} />
@@ -102,6 +105,10 @@ const Routing = () => {
                 <Route
                     path='contacts'
                     element={setPrivateElement(<EditContacts />)}
+                />
+                <Route
+                    path='public-offer'
+                    element={setPrivateElement(<EditPublicOffer />)}
                 />
                 <Route
                     path='events'
