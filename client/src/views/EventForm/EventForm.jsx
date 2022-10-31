@@ -315,9 +315,7 @@ const EventForm = () => {
                             </label>
                             <input
                                 type='text'
-                                {...register('payBtn', {
-                                    required: true,
-                                })}
+                                {...register('payBtn')}
                                 placeholder='like: bb727bef0c1df'
                                 className='edit__input edit__input--text'
                             />
