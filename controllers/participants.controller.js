@@ -21,6 +21,7 @@ class ParticipantsController {
             const participant = await Participants.create({
                 eventId,
                 data,
+                payment: 0,
             });
 
             const eventsParticipant = await Participants.find({ eventId });
@@ -73,7 +74,7 @@ class ParticipantsController {
             if (event) {
                 return res.json(event);
             }
-            res.status(400).json({ message: 'Event not found' });
+            return res.status(400).json({ message: 'Event not found' });
         } catch (err) {
             res.status(400).json({ message: err.message });
         }
@@ -87,9 +88,9 @@ class ParticipantsController {
                 if (event) {
                     return res.json(event);
                 }
-                res.status(400).json({ message: 'Event not found' });
+                return res.status(400).json({ message: 'Event not found' });
             }
-            res.status(400).json({
+            return res.status(400).json({
                 message: 'You have not permission for this response',
             });
         } catch (err) {
@@ -99,9 +100,10 @@ class ParticipantsController {
 
     async updateParticipants(req, res) {
         try {
-            const { _id, eventID, data, token } = req.body;
+            const { _id, eventID, data, payment, token } = req.body;
             if (checkAdmin(token)) {
                 const event = await Participants.findOne({ _id });
+
                 if (!event) {
                     return res.status(400).json({ message: 'Event not found' });
                 }
@@ -110,6 +112,7 @@ class ParticipantsController {
                 const update = {
                     eventID,
                     data,
+                    payment,
                 };
 
                 const newEvent = await Participants.findOneAndUpdate(
@@ -120,9 +123,9 @@ class ParticipantsController {
                     }
                 );
 
-                res.json(newEvent);
+                return res.json(newEvent);
             }
-            res.status(400).json({
+            return res.status(400).json({
                 message: 'You have not permission for this response',
             });
         } catch (err) {
@@ -140,7 +143,7 @@ class ParticipantsController {
                 return res.json({ message: 'Participant was deleted' });
             }
 
-            res.status(400).json({ message: 'Something going wrong' });
+            return res.status(400).json({ message: 'Something going wrong' });
         } catch (err) {
             res.status(400).json({ message: err.message });
         }

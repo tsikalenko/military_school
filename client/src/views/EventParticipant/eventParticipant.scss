@@ -47,4 +47,14 @@
   &__value {
     text-align: center;
   }
+
+  &__btn{
+    font-size: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+
+    &:hover{
+      color: $dark-accent-color;
+    }
+  }
 }

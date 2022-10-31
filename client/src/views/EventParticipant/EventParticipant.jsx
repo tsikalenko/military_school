@@ -4,10 +4,15 @@ import { getParticipantOfEvents } from '../../api/paticipantsAPI';
 
 import './eventParticipant.scss';
 import '../../utils/styles/_utils.scss';
+import { FiPlusSquare } from 'react-icons/fi';
+import PriceModal from '../../components/PriceModal';
+import { sentEventParticipants } from '../../api/mailerAPI';
 
 const EventParticipant = () => {
     const [participantsList, setParticipantsList] = useState(null);
     const [isErrorLoading, setIsErrorLoading] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalParticipant, setModalParticipant] = useState(null);
     const { eventId } = useParams();
     const token = JSON.parse(localStorage.getItem('token'));
     const navigate = useNavigate();
@@ -22,7 +27,22 @@ const EventParticipant = () => {
                 setIsErrorLoading(true);
             }
         })();
-    }, []);
+    }, [isModalOpen]);
+
+    const handleClickSent = () => {
+        (async () => {
+            try {
+                await sentEventParticipants(participantsList, eventId);
+            } catch (err) {
+                setIsErrorLoading(true);
+            }
+        })();
+    };
+
+    const openModal = (participant) => {
+        setModalParticipant(participant);
+        setIsModalOpen(true);
+    };
 
     const renderParticipantsList = () => {
         return participantsList.map((participant, index) => {
@@ -42,6 +62,20 @@ const EventParticipant = () => {
                             </p>
                         </div>
                     ))}
+                    <div className='event-participants__field'>
+                        <p className='event-participants__subtitle'>
+                            Сплачено:
+                        </p>
+                        <p className='event-participants__value'>
+                            {participant.payment} грн.
+                        </p>
+                        <FiPlusSquare
+                            className='event-participants__btn accent'
+                            onClick={() => {
+                                openModal(participant);
+                            }}
+                        />
+                    </div>
                     <button
                         className='button button--border button--center button--sm'
                         onClick={() => {
@@ -73,12 +107,24 @@ const EventParticipant = () => {
                         </p>
                     )}
                     {renderParticipantsList()}
+                    <div
+                        onClick={handleClickSent}
+                        className='button button--accent'
+                    >
+                        Отримати повний список
+                    </div>
                     <Link
                         to={`/events/data/${eventId}`}
                         className='button button--border'
                     >
                         Назад
                     </Link>
+                    {isModalOpen && (
+                        <PriceModal
+                            participant={modalParticipant}
+                            setIsModalOpen={setIsModalOpen}
+                        />
+                    )}
                 </div>
             )}
         </>

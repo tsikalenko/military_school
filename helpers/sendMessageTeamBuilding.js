@@ -1,4 +1,5 @@
 import sendToTelegram from './sendToTelegram.js';
+import Events from '../models/events.js';
 
 export const sendMessageTeamBuilding = async (req, res) => {
     try {
@@ -23,6 +24,30 @@ export const sendSuccessfulPayment = async (req, res) => {
         );
 
         return res.redirect('../../payment/successful');
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+};
+
+export const sendEventParticipants = async (req, res) => {
+    try {
+        const { participantList, eventId } = req.body;
+
+        const event = await Events.findOne({ _id: eventId });
+
+        const text = participantList.map((participant) => {
+            const keys = Object.keys(participant.data);
+            const participantData = keys.map((field) => {
+                return `\n${field}: ${participant.data[field]}`;
+            });
+            return `\n\n${participantData}\n${participant.payment} грн.`;
+        });
+
+        await sendToTelegram(
+            `<b>${event.title}</b>\n${event.startDate}, ${event.startTime}\n${text}`
+        );
+
+        return res.json();
     } catch (err) {
         res.status(400).json({ message: err.message });
     }

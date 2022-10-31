@@ -102,6 +102,15 @@
     }
   }
 
+  &--eighteen {
+    width: 80%;
+    margin: 20px 10%;
+    @include respond(tablet){
+      width: 80%;
+      margin: 20px 10%;
+    }
+  }
+
   &--sm {
     padding: 5px 0;
   }

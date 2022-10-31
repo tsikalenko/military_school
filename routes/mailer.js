@@ -1,6 +1,9 @@
 import Router from 'express';
 import { check } from 'express-validator';
-import { sendMessageTeamBuilding } from '../helpers/sendMessageTeamBuilding.js';
+import {
+    sendEventParticipants,
+    sendMessageTeamBuilding,
+} from '../helpers/sendMessageTeamBuilding.js';
 
 const mailerRouter = new Router();
 
@@ -12,6 +15,15 @@ mailerRouter.post(
         check('quantity', "quantity can't is empty").notEmpty(),
     ],
     sendMessageTeamBuilding
+);
+
+mailerRouter.post(
+    '/event',
+    [
+        check('participantList', "participantList can't is empty").notEmpty(),
+        check('eventId', "eventId can't is empty").notEmpty(),
+    ],
+    sendEventParticipants
 );
 
 export default mailerRouter;

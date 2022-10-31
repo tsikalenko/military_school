@@ -5,6 +5,23 @@ export const createParticipant = async (newParticipant) => {
     return data;
 };
 
+export const updateParticipant = async (
+    _id,
+    eventID,
+    participantData,
+    payment,
+    token
+) => {
+    const { data } = await axios.put('/participants', {
+        _id,
+        eventID,
+        data: participantData,
+        payment,
+        token,
+    });
+    return data;
+};
+
 export const getParticipantOfEvents = async (eventId, token) => {
     const { data } = await axios.post('/participants/event', {
         eventId,
