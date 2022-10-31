@@ -3,7 +3,7 @@ const createLeadMsg = (data, eventInfo) => {
     const fields = keys.map((field) => {
         return `\n<b>${field}</b>: ${data[field]}`;
     });
-    return `<b>${eventInfo.title}</b>\n${eventInfo.date}\n${fields}`;
+    return `<b>${eventInfo.title}</b>\n${eventInfo.startDate}, ${eventInfo.startTime}\n${fields}`;
 };
 
 export default createLeadMsg;

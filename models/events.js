@@ -43,6 +43,10 @@ const EventsSchema = new Schema(
             type: Schema.Types.String,
             required: true,
         },
+        payBtn: {
+            type: Schema.Types.String,
+            required: true,
+        },
         fields: {
             type: Schema.Types.Mixed,
             required: true,
