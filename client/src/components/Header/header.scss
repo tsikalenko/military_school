@@ -77,11 +77,11 @@
       border: 2px solid $accent-color;
       margin-left: 10px;
 
-      &:first-child{
+      &:first-child {
         margin-left: 0;
       }
 
-      &:hover{
+      &:hover {
         background-color: $accent-color;
         transition: 300ms;
       }
@@ -90,7 +90,7 @@
     }
   }
 
-  &__buttons{
+  &__buttons {
     @include flex();
   }
 
@@ -151,6 +151,20 @@
         @include flex($align: center);
         @include respond(laptop) {
           display: none;
+        }
+      }
+
+      &:first-child {
+        margin-top: 20px;
+        @include respond(laptop){
+          margin-top: 0;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 20px;
+        @include respond(laptop){
+          margin-bottom: 0;
         }
       }
     }

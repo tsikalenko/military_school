@@ -18,6 +18,9 @@ const MenuPages = () => {
             <Link to='/edit/contacts' className='button button--border'>
                 Редагувати контакти
             </Link>
+            <Link to='/edit/public-offer' className='button button--border'>
+                Редагувати публічну офферту
+            </Link>
             <Link to='/admin' className='button button--border'>
                 Назад
             </Link>

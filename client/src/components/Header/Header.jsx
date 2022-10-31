@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdClose, MdNoteAlt } from 'react-icons/md';
-import { BsInstagram, BsTelephone } from 'react-icons/bs';
+import { HashLink } from 'react-router-hash-link';
 
 import './header.scss';
 import '../../utils/styles/_utils.scss';
@@ -73,6 +73,11 @@ const Header = () => {
                 </Link>
                 <ul className={navClass}>
                     <li className='nav__item'>
+                        <HashLink to='/#about' className='nav__link'>
+                            Про нас
+                        </HashLink>
+                    </li>
+                    <li className='nav__item'>
                         <Link to='/all-courses' className='nav__link'>
                             Усі послуги
                         </Link>
@@ -94,20 +99,6 @@ const Header = () => {
                             rel='noreferrer'
                         >
                             Оплата
-                        </a>
-                    </li>
-                    <li className='nav__item nav__item--special'>
-                        <a
-                            href='https://www.instagram.com/militaryschool_kyiv/'
-                            target='_blank'
-                            className='nav__social'
-                            rel='noreferrer'
-                        >
-                            <BsInstagram className='nav__icon' />
-                        </a>
-                        <BsTelephone className='nav__icon nav__icon--accent' />
-                        <a href='tel:+380123456789' className='nav__tel'>
-                            +380123456789
                         </a>
                     </li>
                 </ul>
