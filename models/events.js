@@ -45,7 +45,6 @@ const EventsSchema = new Schema(
         },
         payBtn: {
             type: Schema.Types.String,
-            required: true,
         },
         fields: {
             type: Schema.Types.Mixed,
