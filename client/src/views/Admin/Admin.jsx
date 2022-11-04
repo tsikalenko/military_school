@@ -1,7 +1,11 @@
 import { Link, useNavigate } from 'react-router-dom';
 import '../../utils/styles/_utils.scss';
+import PayBtnModal from '../../components/PayButtonModal';
+import { useState } from 'react';
 
 const Admin = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     const navigate = useNavigate();
 
     return (
@@ -14,6 +18,14 @@ const Admin = () => {
                 Редагувати події
             </Link>
             <button
+                className='button button--border'
+                onClick={() => {
+                    setIsModalOpen(true);
+                }}
+            >
+                Головну платіжна кнопка
+            </button>
+            <button
                 onClick={() => {
                     localStorage.removeItem('token');
                     navigate('/login');
@@ -22,6 +34,7 @@ const Admin = () => {
             >
                 Вийти
             </button>
+            {isModalOpen && <PayBtnModal setIsModalOpen={setIsModalOpen} />}
         </div>
     );
 };
