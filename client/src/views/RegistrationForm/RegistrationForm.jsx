@@ -6,12 +6,25 @@ import { createParticipant } from '../../api/paticipantsAPI';
 
 import '../../utils/styles/_edit.scss';
 import '../../utils/styles/_utils.scss';
+import { getUrl } from '../../api/urlsAPI';
 
 const RegistrationForm = () => {
     const { eventId } = useParams();
     const [eventInfo, setEventInfo] = useState({});
     const [isErrorLoading, setIsErrorLoading] = useState(false);
     const navigate = useNavigate();
+
+    const [payBtn, setPayBtn] = useState('');
+
+    useEffect(() => {
+        (async () => {
+            try {
+                setPayBtn((await getUrl('mainPayBtn')).url);
+            } catch (err) {
+                setIsErrorLoading(true);
+            }
+        })();
+    }, []);
 
     useEffect(() => {
         (async () => {
@@ -26,8 +39,8 @@ const RegistrationForm = () => {
     const {
         register,
         handleSubmit,
-        formState: { errors },
-    } = useForm();
+        formState: { errors, isSubmitting, isDirty, isValid, isSubmitted },
+    } = useForm({ mode: 'onChange' });
 
     const renderFields = () => {
         return eventInfo.fields.map((field) => (
@@ -61,12 +74,12 @@ const RegistrationForm = () => {
     };
 
     const onSubmit = (data) => {
-        const payBtn = eventInfo.payBtn || 'bb727bef0c1df';
+        const resultPayBtn = eventInfo.payBtn || payBtn;
         const letterHtml =
             eventInfo.letterHtml +
             `
             <a
-                href='https://secure.wayforpay.com/button/${payBtn}'
+                href='https://secure.wayforpay.com/button/${resultPayBtn}'
                 style='font-size: 18px;
                     display: block;
                     cursor: pointer;
@@ -174,10 +187,18 @@ const RegistrationForm = () => {
                             )}
                         </div>
                         {renderFields()}
-                        <input
+                        <button
                             type='submit'
                             className='button button--accent'
-                        />
+                            disabled={
+                                !isDirty ||
+                                !isValid ||
+                                isSubmitting ||
+                                isSubmitted
+                            }
+                        >
+                            Зарееструватися
+                        </button>
                     </form>
                 </div>
             )}

@@ -7,11 +7,25 @@ import { HashLink } from 'react-router-hash-link';
 
 import './header.scss';
 import '../../utils/styles/_utils.scss';
+import { getUrl } from '../../api/urlsAPI';
 
 const Header = () => {
     const navigate = useNavigate();
     const [isBurgerOpen, setIsBurgerOpen] = useState(false);
     const [width, setWidth] = useState(window.innerWidth);
+
+    const [payBtn, setPayBtn] = useState('');
+    const [isErrorLoading, setIsErrorLoading] = useState(false);
+
+    useEffect(() => {
+        (async () => {
+            try {
+                setPayBtn((await getUrl('mainPayBtn')).url);
+            } catch (err) {
+                setIsErrorLoading(true);
+            }
+        })();
+    }, []);
 
     useEffect(() => {
         const resize = () => {
@@ -93,24 +107,28 @@ const Header = () => {
                         </Link>
                     </li>
                     <li className='nav__item nav__item--mobile nav__item--colored'>
-                        <a
-                            href='https://secure.wayforpay.com/button/bb727bef0c1df'
-                            className='nav__link'
-                            rel='noreferrer'
-                        >
-                            Оплата
-                        </a>
+                        {!isErrorLoading && (
+                            <a
+                                href={`https://secure.wayforpay.com/button/${payBtn}`}
+                                className='nav__link'
+                                rel='noreferrer'
+                            >
+                                Оплата
+                            </a>
+                        )}
                     </li>
                 </ul>
 
                 <div className='header__buttons'>
-                    <a
-                        href='https://secure.wayforpay.com/button/bb727bef0c1df'
-                        className='header__button header__registration--text'
-                        rel='noreferrer'
-                    >
-                        Оплата
-                    </a>
+                    {!isErrorLoading && (
+                        <a
+                            href={`https://secure.wayforpay.com/button/${payBtn}`}
+                            className='header__button header__registration--text'
+                            rel='noreferrer'
+                        >
+                            Оплата
+                        </a>
+                    )}
                     <button
                         className=' header__button'
                         onClick={() => {

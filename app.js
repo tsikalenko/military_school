@@ -12,6 +12,7 @@ import eventsRouter from './routes/events.js';
 import participantsRouter from './routes/participants.js';
 import mailer from './routes/mailer.js';
 import payment from './routes/payment.js';
+import urlRouter from './routes/urls.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -25,6 +26,7 @@ app.use(bp.urlencoded({ extended: true }));
 
 app.use('/api/auth', usersRouter);
 app.use('/api/pages', pagesRouter);
+app.use('/api/urls', urlRouter);
 app.use('/api/events', eventsRouter);
 app.use('/api/participants', participantsRouter);
 app.use('/api/mailer', mailer);
