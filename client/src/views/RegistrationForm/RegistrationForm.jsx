@@ -131,7 +131,7 @@ const RegistrationForm = () => {
                     letterHtml: letterHtml,
                     data,
                 });
-                navigate(`/gratitude/${payBtn}`);
+                navigate(`/gratitude/${resultPayBtn}`);
             } catch (err) {
                 setIsErrorLoading(true);
             }
