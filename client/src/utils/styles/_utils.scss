@@ -26,7 +26,7 @@
     }
   }
 
-  &--color{
+  &--color {
     width: 100%;
     color: $main-color;
     margin: 120px 0 50px;
@@ -96,7 +96,7 @@
   &--fifteen {
     width: 80%;
     margin: 20px 10%;
-    @include respond(tablet){
+    @include respond(tablet) {
       width: 50%;
       margin: 20px 25%;
     }
@@ -105,7 +105,7 @@
   &--eighteen {
     width: 80%;
     margin: 20px 10%;
-    @include respond(tablet){
+    @include respond(tablet) {
       width: 80%;
       margin: 20px 10%;
     }
@@ -132,16 +132,20 @@
   color: $inst-color;
 }
 
-.facebook-blue{
+.facebook-blue {
   color: $facebook-color;
 }
 
-.secondary{
+.secondary {
   color: $secondary-text-color;
 }
 
-.light-color{
+.light-color {
   color: $light-text-color;
+}
+
+.attention {
+  color: $attention;
 }
 
 .error, .loading {
@@ -158,7 +162,7 @@
     margin: 250px 0 50px;
   }
 
-  &--sm{
+  &--sm {
     margin-top: 50px;
   }
 }
@@ -180,7 +184,7 @@
   }
 }
 
-.subtitle{
+.subtitle {
   font-size: 30px;
   text-transform: uppercase;
   text-align: center;
@@ -189,17 +193,17 @@
 
 }
 
-.pre-wrap{
+.pre-wrap {
   white-space: pre-wrap;
 }
 
-.line{
+.line {
   margin: 10px auto 30px;
   display: block;
   height: 2px;
   width: 50%;
   background-color: $main-color;
-  @include respond(laptop){
+  @include respond(laptop) {
     width: 25%;
   }
 }

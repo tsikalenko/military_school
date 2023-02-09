@@ -64,6 +64,7 @@ class EventsController {
                 payBtn,
                 fields,
                 maxQuantity,
+                freeSlots,
                 enable,
             } = req.body;
             const event = await Events.findOne({ _id });
@@ -86,6 +87,7 @@ class EventsController {
                 payBtn,
                 fields,
                 maxQuantity,
+                freeSlots,
                 enable,
             };
 
