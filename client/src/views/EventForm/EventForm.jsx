@@ -270,6 +270,24 @@ const EventForm = () => {
                         )}
 
                         <div className='edit__item'>
+                            <label className='edit__label'>
+                                Залишилось місць:
+                            </label>
+                            <input
+                                type='number'
+                                {...register('freeSlots', {
+                                    required: true,
+                                })}
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
+                        {errors?.freeSlots?.type === 'required' && (
+                            <p role='alert' className='edit__error'>
+                                Кількість учасників обов{"'"}язкова
+                            </p>
+                        )}
+
+                        <div className='edit__item'>
                             <label className='edit__label'>Зображення:</label>
                             <input
                                 type='url'

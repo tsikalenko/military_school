@@ -55,6 +55,9 @@ const Schedule = ({ type, calendar, isPage }) => {
                         <h3 className='schedule__title'>{event.title}</h3>
                         <p className='schedule__date'>{event.startDate}</p>
                         <p className='schedule__date'>{event.startTime}</p>
+                        <p className='schedule__slots'>
+                            Вільних місць: {event.freeSlots}
+                        </p>
                     </Link>
                 );
             }
