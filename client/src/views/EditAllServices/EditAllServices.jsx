@@ -112,6 +112,20 @@ const EditAllServices = () => {
                                 className='edit__input edit__input--text'
                             />
                         </div>
+
+                        <div className='edit__item'>
+                            <label className='edit__label'>
+                                nearest event:
+                            </label>
+                            <input
+                                type='date'
+                                defaultValue={item.nearestEvent}
+                                {...register(`services.${index}.nearestEvent`, {
+                                    // required: true,
+                                })}
+                                className='edit__input edit__input--text'
+                            />
+                        </div>
                     </div>
                     <div
                         className='button button--border button--sm button--center'
