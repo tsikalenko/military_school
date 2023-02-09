@@ -44,6 +44,11 @@ const AllServices = () => {
                             <h3 className='services__subtitle services__subtitle--mt'>
                                 Вартість: {item.price} грн.
                             </h3>
+                            {item.nearestEvent && (
+                                <h3 className='services__subtitle services__subtitle--mt'>
+                                    Найближча подія: {item.nearestEvent}
+                                </h3>
+                            )}
                             <Link
                                 to='/registration'
                                 className='button button--accent button--center button--fifteen'
