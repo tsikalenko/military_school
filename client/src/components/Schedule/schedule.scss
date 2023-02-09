@@ -41,4 +41,11 @@
     font-weight: 500;
     letter-spacing: 1px;
   }
+
+  &__slots {
+    letter-spacing: 1px;
+    margin-top: 10px;
+    font-weight: 700;
+    color: $attention;
+  }
 }

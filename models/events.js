@@ -54,6 +54,10 @@ const EventsSchema = new Schema(
             type: Schema.Types.Number,
             required: true,
         },
+        freeSlots: {
+            type: Schema.Types.Number,
+            required: true,
+        },
         enable: {
             type: Schema.Types.Boolean,
             required: true,

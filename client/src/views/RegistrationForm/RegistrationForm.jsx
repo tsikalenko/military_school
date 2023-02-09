@@ -152,6 +152,9 @@ const RegistrationForm = () => {
                     <h2 className='edit__title edit__title--closest'>
                         {eventInfo.title}
                     </h2>
+                    <h3 className='edit__subtitle edit__subtitle--capitalize attention'>
+                        Вільних місць: {eventInfo.freeSlots}
+                    </h3>
                     <h3 className='edit__subtitle edit__subtitle--capitalize'>
                         Початок: {eventInfo.startDate}, {eventInfo.startTime}
                     </h3>
